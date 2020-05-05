@@ -10,9 +10,9 @@ end
 
 preload_app true
 
-worker_processes (ENV['WORKER_NUM'] || 8).to_i
+worker_processes (ENV['WORKER_NUM'] || 4).to_i
 
-pid '/tmp/unicorn.pid'
+pid '/run/unicorn.pid'
 stdout_path '/dev/stdout'
 stderr_path '/dev/stderr'
 

@@ -1,0 +1,15 @@
+# vim: ft=dockerfile
+FROM <%= base %>:<%= ruby %>-<%= distro %>
+
+# Versions
+ARG RUBY=<%= ruby %>
+ARG DEB_RUBY_DEFAULT=<%= deb_ruby_default %>
+ARG DEB_RUBY=<%= deb_ruby %>
+
+RUN apt-get update \
+  && apt-get install --no-install-recommends --no-install-suggests -y \
+    ruby-dev=${DEB_RUBY_DEFAULT} \
+    ruby${RUBY}-dev=${DEB_RUBY} \
+    build-essential \
+    zlib1g-dev \
+  && apt-get remove --purge --auto-remove -y && rm -rf /var/lib/apt/lists/*
