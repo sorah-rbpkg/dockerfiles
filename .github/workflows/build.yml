@@ -5,7 +5,6 @@ on:
   push:
     branches:
       - master
-
 jobs:
   build:
     name: build
@@ -23,3 +22,5 @@ jobs:
       - name: login-dockerhub
         run: "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
       - run: "ruby build.rb --push"
+        env:
+          GCP_PROJECT: ${{ secrets.GCP_PROJECT }}
