@@ -57,10 +57,10 @@ PUSH = !!ARGV.delete('--push')
 if PULL
   SERIES.each do |series|
     DISTROS.each do |distro|
-      pulled_image = PUSH_REPOS.find do |repo|
-        image =  "#{repo}:#{series}-#{distro.name}"
-        cmd("docker", "pull", image, exception: false) or next
-        image
+      pulled_image = PUSH_REPOS.map do |repo|
+        "#{repo}:#{series}-#{distro.name}"
+      end.find do |image|
+        cmd("docker", "pull", exception: false)
       end
       next unless pulled_image
       cmd("docker", "tag", pulled_image, "#{REPO}:#{series}-#{distro.name}")
