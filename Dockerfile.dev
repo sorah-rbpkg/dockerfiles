@@ -10,6 +10,7 @@ RUN apt-get update \
   && apt-get install --no-install-recommends --no-install-suggests -y \
     ruby-dev=${DEB_RUBY_DEFAULT} \
     ruby${RUBY}-dev=${DEB_RUBY} \
+    git-core \
     build-essential \
     zlib1g-dev \
   && apt-get remove --purge --auto-remove -y && rm -rf /var/lib/apt/lists/*
