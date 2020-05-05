@@ -60,7 +60,7 @@ if PULL
       pulled_image = PUSH_REPOS.map do |repo|
         "#{repo}:#{series}-#{distro.name}"
       end.find do |image|
-        cmd("docker", "pull", exception: false)
+        cmd("docker", "pull", image, exception: false)
       end
       next unless pulled_image
       cmd("docker", "tag", pulled_image, "#{REPO}:#{series}-#{distro.name}")
