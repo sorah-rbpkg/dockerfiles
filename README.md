@@ -1,8 +1,12 @@
 # sorah-rbpkg Docker images
 
-## Image Tag
+![docker-build](https://github.com/sorah-rbpkg/dockerfiles/workflows/docker-build/badge.svg)
 
-e.g. `sorah/ruby:2.7`, `sorah/ruby:2.7-dev`
+## Public repository
+
+https://hub.docker.com/r/sorah/ruby
+
+## Image tag
 
 - base
   - `sorah/ruby:{SERIES}`
@@ -16,3 +20,8 @@ where,
 - SERIES is like `2.5`, `2.6`, `2.7`
 - DISTRO is like `bionic`, `focal`, `buster`
 
+### List
+
+- 2.5.8: `2.5`, `2.5-dev` (dist=`bionic`)
+- 2.6.6: `2.6`, `2.6-dev` (dist=`focal`, `bionic`, `buster`)
+- 2.7.1: `2.7`, `2.7-dev` (dist=`focal`, `bionic`, `buster`)
