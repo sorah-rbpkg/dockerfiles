@@ -102,7 +102,7 @@ SERIES.each do |series|
     File.write(dev_dockerfile_path, dev_dockerfile)
     dev_tag = "#{REPO}:#{series}-dev-#{distro.name}"
     cmd('docker', 'build', '--cache-from', dev_tag, '-t', dev_tag, '-f', dev_dockerfile_path, __dir__)
-    (@built_tags_by_series["#{series}-dev"] ||= []) << tag
+    (@built_tags_by_series["#{series}-dev"] ||= []) << dev_tag
   end
 end
 
