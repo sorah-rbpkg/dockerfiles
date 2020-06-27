@@ -13,14 +13,22 @@ jobs:
       - uses: actions/setup-ruby@master
         with:
           ruby-version: '2.7'
-      - uses: actions/checkout@master
       - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
         with:
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           project_id: ${{ secrets.GCP_PROJECT }}
+
       - run: 'gcloud --quiet auth configure-docker'
       - name: login-dockerhub
         run: "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
-      - run: "ruby build.rb --push"
+
+      - run: |
+          mkdir -p ~/.docker
+          echo '{"experimental": "enabled"}' > ~/.docker/config.json
+          sudo docker run --rm --privileged multiarch/qemu-user-static --reset --persistent yes --credential yes
+
+      - uses: actions/checkout@master
+
+      - run: "ruby build.rb --push --pull"
         env:
           GCP_PROJECT: ${{ secrets.GCP_PROJECT }}

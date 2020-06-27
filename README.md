@@ -13,7 +13,7 @@ https://hub.docker.com/r/sorah/ruby
   - `sorah/ruby:{SERIES}-{DISTRO}`
 - with build-essential
   - `sorah/ruby:{SERIES}-dev`
-  - `sorah/ruby:{SERIES}-{DISTRO}-dev`
+  - `sorah/ruby:{SERIES}-dev-{DISTRO}`
 
 where,
 
@@ -25,3 +25,7 @@ where,
 - 2.5.8: `2.5`, `2.5-dev` (dist=`bionic`)
 - 2.6.6: `2.6`, `2.6-dev` (dist=`focal`, `bionic`, `buster`)
 - 2.7.1: `2.7`, `2.7-dev` (dist=`focal`, `bionic`, `buster`)
+
+## aarch64 (arm64 support)
+
+2.7 images are built on amd64 (x86_64) and arm64 (aarch64).

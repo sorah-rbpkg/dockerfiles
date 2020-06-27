@@ -1,5 +1,5 @@
 # vim: ft=dockerfile
-FROM <%= base %>:<%= ruby %>-<%= distro %>
+FROM <%= base %>
 
 # Versions
 ARG RUBY=<%= ruby %>

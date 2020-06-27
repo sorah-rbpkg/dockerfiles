@@ -27,43 +27,77 @@ def apt_packages(repo_url)
     .to_h
 end
 
-Distro = Struct.new(:family, :name, :apt_url, keyword_init: true)
+Release = Struct.new(:version, :arm, keyword_init: true)
+Distro = Struct.new(:family, :name, :apt_url, :arm, keyword_init: true)
+BuiltImage = Struct.new(:series, :distro, :dev, :arch, keyword_init: true) do
+  def repo
+    'sorah-ruby'
+  end
+
+  def series_tag
+    "#{series}#{dev ? '-dev' : nil}"
+  end
+
+  def manifest_tag
+    "#{series_tag}-#{distro}"
+  end
+
+  def arch_tag
+    "#{manifest_tag}-#{arch}"
+  end
+
+  def platform
+    "linux/#{arch}"
+  end
+end
+
 DISTROS = [
   Distro.new(
     family: 'ubuntu',
     name: 'focal',
     apt_url: 'https://cache.ruby-lang.org/lab/sorah/deb/dists/focal/main/binary-amd64/Packages',
+    arm: true,
   ),
   Distro.new(
     family: 'debian',
     name: 'buster',
     apt_url: 'https://cache.ruby-lang.org/lab/sorah/deb/dists/buster/main/binary-amd64/Packages',
+    arm: true,
   ),
   Distro.new(
     family: 'ubuntu',
     name: 'bionic',
     apt_url: 'https://cache.ruby-lang.org/lab/sorah/deb/dists/bionic/main/binary-amd64/Packages',
+    arm: true,
   ),
 ]
-SERIES = %w(2.5 2.6 2.7)
-REPO = 'sorah-ruby'
+SERIES = [
+  Release.new(version: '2.5'),
+  Release.new(version: '2.6'),
+  Release.new(version: '2.7', arm: true),
+]
 PUSH_REPOS = %W(sorah/ruby gcr.io/#{ENV['GCP_PROJECT']}/ruby)
-PULL = true
+PULL = !!ARGV.delete('--pull')
 PUSH = !!ARGV.delete('--push')
 
-@built_tags_by_series = {}
+@built_images = []
 
 # Pull
 if PULL
   SERIES.each do |series|
     DISTROS.each do |distro|
-      pulled_image = PUSH_REPOS.map do |repo|
-        "#{repo}:#{series}-#{distro.name}"
+      pulled_image = PUSH_REPOS.flat_map do |repo|
+        [
+          "#{repo}:#{series.version}-#{distro.name}-amd64",
+          "#{repo}:#{series.version}-#{distro.name}-arm64",
+          "#{repo}:#{series.version}-dev-#{distro.name}-amd64",
+          "#{repo}:#{series.version}-dev-#{distro.name}-arm64",
+        ]
       end.find do |image|
         cmd("docker", "pull", image, exception: false)
       end
       next unless pulled_image
-      cmd("docker", "tag", pulled_image, "#{REPO}:#{series}-#{distro.name}")
+      cmd("docker", "tag", pulled_image, "sorah-ruby:#{series.version}-#{distro.name}")
     end
   end
 end
@@ -76,62 +110,62 @@ SERIES.each do |series|
   DISTROS.each do |distro|
     packages = apt_packages(distro.apt_url)
 
-    default_version = packages.dig('ruby-defaults', 'ruby')&.map { |_| _.fetch('Version')[0] }&.grep(/#{Regexp.escape(series)}\./)&.sort&.last
-    version = packages.dig("ruby#{series}", "ruby#{series}")&.map { |_| _.fetch('Version')[0] }&.sort&.last
+    default_version = packages.dig('ruby-defaults', 'ruby')&.map { |_| _.fetch('Version')[0] }&.grep(/#{Regexp.escape(series.version)}\./)&.sort&.last
+    version = packages.dig("ruby#{series.version}", "ruby#{series.version}")&.map { |_| _.fetch('Version')[0] }&.sort&.last
     next unless default_version && version
 
     locals = {
-      ruby: series,
+      ruby: series.version,
       base: distro.family,
       distro: distro.name,
       deb_ruby: version,
       deb_ruby_default: default_version,
     }
 
-    dockerfile = dockerfile_template.result_with_hash(locals)
-    dockerfile_path = "./tmp/Dockerfile-#{series}-#{distro.name}"
-    File.write(dockerfile_path, dockerfile)
-    tag = "#{REPO}:#{series}-#{distro.name}"
-    cmd('docker', 'build', '--pull', '--cache-from', tag, '-t', tag, '-f', dockerfile_path, __dir__)
-    (@built_tags_by_series[series] ||= []) << tag
+    %w(arm64 amd64).each do |arch|
+      next if arch == 'arm64' && (!distro.arm || !series.arm)
+      dockerfile = dockerfile_template.result_with_hash(locals)
+      dockerfile_path = "./tmp/Dockerfile-#{series.version}-#{distro.name}-#{arch}"
+      File.write(dockerfile_path, dockerfile)
+      built_image = BuiltImage.new(series: series.version, distro: distro.name, dev: false, arch: arch)
 
-    dev_dockerfile = dockerfile_dev_template.result_with_hash(locals.merge(
-      base: REPO,
-    ))
-    dev_dockerfile_path = "./tmp/Dockerfile.dev-#{series}-#{distro.name}"
-    File.write(dev_dockerfile_path, dev_dockerfile)
-    dev_tag = "#{REPO}:#{series}-dev-#{distro.name}"
-    cmd('docker', 'build', '--cache-from', dev_tag, '-t', dev_tag, '-f', dev_dockerfile_path, __dir__)
-    (@built_tags_by_series["#{series}-dev"] ||= []) << dev_tag
-  end
-end
+      dev_dockerfile = dockerfile_dev_template.result_with_hash(locals.merge( base: "#{built_image.repo}:#{built_image.arch_tag}" ))
+      dev_dockerfile_path = "./tmp/Dockerfile.dev-#{series.version}-#{distro.name}-#{arch}"
+      File.write(dev_dockerfile_path, dev_dockerfile)
+      built_dev_image = BuiltImage.new(series: series.version, distro: distro.name, dev: true, arch: arch)
 
-@built_tags_by_series['latest'] = [
-  @built_tags_by_series.fetch(SERIES.last).first,
-]
-@built_tags_by_series['latest-dev'] = [
-  @built_tags_by_series.fetch("#{SERIES.last}-dev").first,
-]
-
-pp @built_tags_by_series
-
-@built_tags_by_series.each do |series, tags|
-  tag =  "#{REPO}:#{series}"
-  cmd('docker', 'tag', tags.first, tag)
-  tags << tag
-end
-
-cmd('docker', 'images', 'sorah-ruby', '--digests')
-
-if PUSH
-  @built_tags_by_series.each do |series, tags|
-    tags.each do |tag|
-      tag_only = tag.split(?:, 2)[1]
-      PUSH_REPOS.each do |repo|
-        push_tag =  "#{repo}:#{tag_only}"
-        cmd('docker', 'tag', tag, push_tag)
-        cmd('docker', 'push', push_tag)
-      end
+      cmd('docker', 'build', '--pull', '--platform', built_image.platform, '--cache-from', "#{built_image.repo}:#{built_image.arch_tag}", '-t',  "#{built_image.repo}:#{built_image.arch_tag}", '-f', dockerfile_path, __dir__)
+      @built_images << built_image
+      cmd('docker', 'build', '--platform', built_dev_image.platform, '--cache-from', "#{built_image.repo}:#{built_dev_image.arch_tag}", '-t',  "#{built_image.repo}:#{built_dev_image.arch_tag}", '-f', dev_dockerfile_path, __dir__)
+      @built_images << built_dev_image
     end
   end
 end
+
+manifests = @built_images.group_by(&:manifest_tag)
+@built_images.group_by(&:series_tag).transform_values { |is| is[0].manifest_tag }.each do |(series, manifest_tag)|
+  manifests[series] = manifests.fetch(manifest_tag)
+end
+manifests['latest'] = manifests.fetch(manifests.fetch(SERIES.last.version).first.manifest_tag)
+manifests['latest-dev'] = manifests.fetch(manifests.fetch("#{SERIES.last.version}-dev").first.manifest_tag)
+pp manifests
+
+
+if PUSH
+  @built_images.each do |image|
+    PUSH_REPOS.each do |repo|
+      cmd('docker', 'tag', "#{image.repo}:#{image.arch_tag}", "#{repo}:#{image.arch_tag}")
+      cmd('docker', 'push', "#{repo}:#{image.arch_tag}")
+    end
+  end
+
+  manifests.each do |manifest_tag, images|
+    PUSH_REPOS.each do |repo|
+      cmd('docker', 'manifest', 'create', '--amend', "#{repo}:#{manifest_tag}", *images.map { |_| "#{repo}:#{_.arch_tag}" })
+      cmd('docker', 'manifest', 'push', "#{repo}:#{manifest_tag}")
+    end
+  end
+end
+
+pp manifests
+cmd('docker', 'images', 'sorah-ruby', '--digests')
