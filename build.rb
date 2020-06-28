@@ -153,7 +153,7 @@ pp manifests
 
 
 if PUSH
-  buildinfo = {"images": [], "manifests": {}}
+  buildinfo = {"images" => [], "manifests" => {}}
   @built_images.each do |image|
     PUSH_REPOS.each do |repo|
       cmd('docker', 'tag', "#{image.repo}:#{image.arch_tag}", "#{repo}:#{image.arch_tag}")
