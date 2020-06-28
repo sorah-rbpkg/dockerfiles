@@ -163,8 +163,6 @@ if PUSH
 
   manifests.each do |manifest_tag, images|
     PUSH_REPOS.each do |repo|
-      cmd('docker', 'manifest', 'create', '--amend', "#{repo}:#{manifest_tag}", *)
-      cmd('docker', 'manifest', 'push', "#{repo}:#{manifest_tag}")
       buildinfo['manifests']["#{repo}:#{manifest_tag}"] = images.map { |_| "#{repo}:#{_.arch_tag}" }
     end
   end
