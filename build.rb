@@ -1,5 +1,6 @@
 require 'erb'
 require 'open-uri'
+require 'json'
 
 def cmd(*args, exception: true)
   puts "$ #{args.join(" ")}"
@@ -152,19 +153,23 @@ pp manifests
 
 
 if PUSH
+  buildinfo = {"images": [], "manifests": {}}
   @built_images.each do |image|
     PUSH_REPOS.each do |repo|
       cmd('docker', 'tag', "#{image.repo}:#{image.arch_tag}", "#{repo}:#{image.arch_tag}")
-      cmd('docker', 'push', "#{repo}:#{image.arch_tag}")
+      buildinfo['images'] << "#{repo}:#{image.arch_tag}"
     end
   end
 
   manifests.each do |manifest_tag, images|
     PUSH_REPOS.each do |repo|
-      cmd('docker', 'manifest', 'create', '--amend', "#{repo}:#{manifest_tag}", *images.map { |_| "#{repo}:#{_.arch_tag}" })
+      cmd('docker', 'manifest', 'create', '--amend', "#{repo}:#{manifest_tag}", *)
       cmd('docker', 'manifest', 'push', "#{repo}:#{manifest_tag}")
+      buildinfo['manifests']["#{repo}:#{manifest_tag}"] = images.map { |_| "#{repo}:#{_.arch_tag}" }
     end
   end
+  p buildinfo
+  File.write "tmp/buildinfo.json", "#{buildinfo.to_json}\n"
 end
 
 pp manifests

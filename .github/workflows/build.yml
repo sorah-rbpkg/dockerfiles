@@ -19,8 +19,6 @@ jobs:
           project_id: ${{ secrets.GCP_PROJECT }}
 
       - run: 'gcloud --quiet auth configure-docker'
-      - name: login-dockerhub
-        run: "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
 
       - run: |
           mkdir -p ~/.docker
@@ -30,5 +28,12 @@ jobs:
       - uses: actions/checkout@master
 
       - run: "ruby build.rb --push --pull"
+        env:
+          GCP_PROJECT: ${{ secrets.GCP_PROJECT }}
+
+      - name: login-dockerhub
+        run: "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+
+      - run: "ruby push.rb"
         env:
           GCP_PROJECT: ${{ secrets.GCP_PROJECT }}
