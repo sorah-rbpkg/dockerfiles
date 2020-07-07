@@ -6,7 +6,7 @@ def cmd(*args, exception: true)
   system(*args, exception: exception)
 end
 
-buildinfo  = File.read('tmp/buildinfo.json')
+buildinfo  = JSON.parse(File.read('tmp/buildinfo.json'))
 buildinfo.fetch('images').each do |tag|
   cmd('docker', 'push', tag)
 end
