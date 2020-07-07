@@ -11,6 +11,6 @@ buildinfo.fetch('images').each do |tag|
   cmd('docker', 'push', tag)
 end
 buildinfo.fetch('manifests').each do |manifest_tag, image_tags|
-  cmd('docker', 'manifest', 'create', '--amend', manifest_tag, image_tagss)
+  cmd('docker', 'manifest', 'create', '--amend', manifest_tag, image_tags)
   cmd('docker', 'manifest', 'push', manifest_tag)
 end
