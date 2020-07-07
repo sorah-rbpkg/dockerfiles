@@ -23,6 +23,7 @@ RUN apt-get update \
   ruby${RUBY}=${DEB_RUBY} \
   libruby${RUBY}=${DEB_RUBY} \
   ruby${RUBY}-gems=${DEB_RUBY} \
+  tzdata \
   && apt-get remove --purge -y gnupg2 \
   && apt-get remove --purge --auto-remove -y \
   && rm -rf /var/lib/apt/lists/*
