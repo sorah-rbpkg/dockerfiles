@@ -40,9 +40,12 @@ jobs:
           aws-region: us-east-1
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
           role-duration-seconds: 14400
-      - name: Login to Amazon ECR
-        id: login-ecr
-        uses: aws-actions/amazon-ecr-login@v1
+
+      # FIXME: https://github.com/aws-actions/amazon-ecr-login/issues/116
+      #- name: Login to Amazon ECR
+      #  id: login-ecr
+      #  uses: aws-actions/amazon-ecr-login@v1
+      - run: 'aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws'
 
       - uses: actions/checkout@master
 
