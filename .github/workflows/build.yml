@@ -15,7 +15,7 @@ jobs:
           echo '{"experimental": "enabled"}' > ~/.docker/config.json
           sudo docker run --rm --privileged multiarch/qemu-user-static --reset --persistent yes --credential yes
 
-      - uses: actions/setup-ruby@master
+      - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.0'
 
