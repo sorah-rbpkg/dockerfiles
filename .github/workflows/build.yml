@@ -32,20 +32,17 @@ jobs:
       - name: login-dockerhub
         run: "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
 
-      - name: Configure AWS Credentials
+      - uses: aws-actions/configure-aws-credentials@a78fcb01f76c8c5c3b05ab82718a6f7919fc0269
         # FIXME: https://github.com/aws-actions/configure-aws-credentials/issues/271
         # uses: aws-actions/configure-aws-credentials@v1
-        uses: aws-actions/configure-aws-credentials@a78fcb01f76c8c5c3b05ab82718a6f7919fc0269
         with:
           aws-region: us-east-1
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
           role-duration-seconds: 14400
-
-      # FIXME: https://github.com/aws-actions/amazon-ecr-login/issues/116
-      #- name: Login to Amazon ECR
-      #  id: login-ecr
-      #  uses: aws-actions/amazon-ecr-login@v1
-      - run: 'aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws'
+      - name: Login to ECR Public
+        run: 'aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws'
+        # FIXME: https://github.com/aws-actions/amazon-ecr-login/issues/116
+        # uses: aws-actions/amazon-ecr-login@v1
 
       - uses: actions/checkout@master
 
