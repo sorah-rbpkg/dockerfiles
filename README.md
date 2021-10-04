@@ -4,16 +4,17 @@
 
 ## Public repository
 
-https://hub.docker.com/r/sorah/ruby
+- https://gallery.ecr.aws/d6b1h6s1/ruby
+- https://hub.docker.com/r/sorah/ruby
 
 ## Image tag
 
 - base
-  - `sorah/ruby:{SERIES}`
-  - `sorah/ruby:{SERIES}-{DISTRO}`
+  - `public.ecr.aws/d6b1h6s1/ruby:{SERIES}`
+  - `public.ecr.aws/d6b1h6s1/ruby:{SERIES}-{DISTRO}`
 - with build-essential
-  - `sorah/ruby:{SERIES}-dev`
-  - `sorah/ruby:{SERIES}-dev-{DISTRO}`
+  - `public.ecr.aws/d6b1h6s1/ruby:{SERIES}-dev`
+  - `public.ecr.aws/d6b1h6s1/ruby:{SERIES}-dev-{DISTRO}`
 
 where,
 
