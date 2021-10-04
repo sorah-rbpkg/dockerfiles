@@ -78,7 +78,7 @@ SERIES = [
   Release.new(version: '2.7', arm: true),
   Release.new(version: '3.0', arm: true),
 ]
-PUSH_REPOS = %W(sorah/ruby gcr.io/#{ENV['GCP_PROJECT']}/ruby)
+PUSH_REPOS = %W(sorah/ruby gcr.io/#{ENV['GCP_PROJECT']}/ruby public.ecr.aws/d6b1h6s1/ruby)
 PULL = !!ARGV.delete('--pull')
 PUSH = !!ARGV.delete('--push')
 
