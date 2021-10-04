@@ -9,6 +9,10 @@ jobs:
   build:
     name: build
     runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+
     steps:
       - run: |
           mkdir -p ~/.docker
@@ -33,7 +37,7 @@ jobs:
         # uses: aws-actions/configure-aws-credentials@v1
         uses: aws-actions/configure-aws-credentials@a78fcb01f76c8c5c3b05ab82718a6f7919fc0269
         with:
-          aws-region: ap-northeast-1
+          aws-region: us-east-1
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
           role-duration-seconds: 14400
       - name: Login to Amazon ECR
