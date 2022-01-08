@@ -61,8 +61,8 @@ DISTROS = [
   ),
   Distro.new(
     family: 'debian',
-    name: 'buster',
-    apt_url: 'https://cache.ruby-lang.org/lab/sorah/deb/dists/buster/main/binary-amd64/Packages',
+    name: 'bullseye',
+    apt_url: 'https://cache.ruby-lang.org/lab/sorah/deb/dists/bullseye/main/binary-amd64/Packages',
     arm: true,
   ),
   Distro.new(
@@ -71,14 +71,20 @@ DISTROS = [
     apt_url: 'https://cache.ruby-lang.org/lab/sorah/deb/dists/bionic/main/binary-amd64/Packages',
     arm: true,
   ),
+  Distro.new(
+    family: 'debian',
+    name: 'buster',
+    apt_url: 'https://cache.ruby-lang.org/lab/sorah/deb/dists/buster/main/binary-amd64/Packages',
+    arm: true,
+  ),
 ]
 SERIES = [
-  Release.new(version: '2.5'),
   Release.new(version: '2.6'),
   Release.new(version: '2.7', arm: true),
   Release.new(version: '3.0', arm: true),
+  Release.new(version: '3.1', arm: true),
 ]
-PUSH_REPOS = %W(sorah/ruby gcr.io/#{ENV['GCP_PROJECT']}/ruby public.ecr.aws/d6b1h6s1/ruby)
+PUSH_REPOS = %W(sorah/ruby gcr.io/#{ENV['GCP_PROJECT']}/ruby public.ecr.aws/sorah/ruby)
 PULL = !!ARGV.delete('--pull')
 PUSH = !!ARGV.delete('--push')
 
