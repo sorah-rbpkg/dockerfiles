@@ -37,6 +37,7 @@ jobs:
           aws-region: us-east-1
           role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
           role-duration-seconds: 14400
+          role-skip-session-tagging: 'true'
       - name: Login to ECR Public
         run: 'aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws'
         # FIXME: https://github.com/aws-actions/amazon-ecr-login/issues/116
