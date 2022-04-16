@@ -23,16 +23,6 @@ jobs:
         with:
           ruby-version: '3.0'
 
-      - uses: 'google-github-actions/auth@v0'
-        with:
-          credentials_json: ${{ secrets.GCP_SA_KEY }}
-
-      - uses: 'google-github-actions/setup-gcloud@v0'
-        with:
-          project_id: ${{ secrets.GCP_PROJECT }}
-
-      - run: 'gcloud --quiet auth configure-docker'
-
       - name: login-dockerhub
         run: "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
 
@@ -50,9 +40,4 @@ jobs:
       - uses: actions/checkout@master
 
       - run: "ruby build.rb --push --pull"
-        env:
-          GCP_PROJECT: ${{ secrets.GCP_PROJECT }}
-
       - run: "ruby push.rb"
-        env:
-          GCP_PROJECT: ${{ secrets.GCP_PROJECT }}
