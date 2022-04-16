@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 require 'json'
 
-def cmd(*args, exception: true, num_retries: 0)
+def cmd(*args, exception: true, num_retries: 5)
   puts "$ #{args.join(" ")}"
   tries = 0
   begin
@@ -23,9 +23,9 @@ end
 
 buildinfo  = JSON.parse(File.read('tmp/buildinfo.json'))
 buildinfo.fetch('images').each do |tag|
-  cmd('docker', 'push', tag, num_retries: 5)
+  cmd('docker', 'push', tag)
 end
 buildinfo.fetch('manifests').each do |manifest_tag, image_tags|
   cmd('docker', 'manifest', 'create', '--amend', manifest_tag, *image_tags)
-  cmd('docker', 'manifest', 'push', manifest_tag, num_retries: 5)
+  cmd('docker', 'manifest', 'push', manifest_tag)
 end
