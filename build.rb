@@ -28,7 +28,7 @@ def apt_packages(repo_url)
     .to_h
 end
 
-Release = Struct.new(:version, :arm, keyword_init: true)
+Release = Struct.new(:version, :arm, :default_distro, keyword_init: true)
 Distro = Struct.new(:family, :name, :apt_url, :arm, keyword_init: true)
 BuiltImage = Struct.new(:series, :distro, :dev, :arch, keyword_init: true) do
   def repo
@@ -60,6 +60,12 @@ DISTROS = [
     arm: true,
   ),
   Distro.new(
+    family: 'ubuntu',
+    name: 'jammy',
+    apt_url: 'https://cache.ruby-lang.org/lab/sorah/deb/dists/jammy/main/binary-amd64/Packages',
+    arm: true,
+  ),
+  Distro.new(
     family: 'debian',
     name: 'bullseye',
     apt_url: 'https://cache.ruby-lang.org/lab/sorah/deb/dists/bullseye/main/binary-amd64/Packages',
@@ -79,10 +85,10 @@ DISTROS = [
   ),
 ]
 SERIES = [
-  Release.new(version: '2.6'),
-  Release.new(version: '2.7', arm: true),
-  Release.new(version: '3.0', arm: true),
-  Release.new(version: '3.1', arm: true),
+  Release.new(version: '2.6', default_distro: 'focal'),
+  Release.new(version: '2.7', default_distro: 'focal', arm: true),
+  Release.new(version: '3.0', default_distro: 'focal', arm: true),
+  Release.new(version: '3.1', default_distro: 'jammy', arm: true),
 ]
 PUSH_REPOS = %W(sorah/ruby public.ecr.aws/sorah/ruby)
 PULL = !!ARGV.delete('--pull')
@@ -151,7 +157,10 @@ SERIES.each do |series|
 end
 
 manifests = @built_images.group_by(&:manifest_tag)
-@built_images.group_by(&:series_tag).transform_values { |is| is[0].manifest_tag }.each do |(series, manifest_tag)|
+# default distro
+@built_images.group_by(&:series_tag)
+  .transform_values { |is| rel = SERIES.find { |r| r.version == is[0].series }; (is.find { |i| rel.default_distro && i.distro == rel.default_distro } || is[0]).manifest_tag }
+  .each do |(series, manifest_tag)|
   manifests[series] = manifests.fetch(manifest_tag)
 end
 manifests['latest'] = manifests.fetch(manifests.fetch(SERIES.last.version).first.manifest_tag)
