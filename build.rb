@@ -94,12 +94,21 @@ PUSH_REPOS = %W(sorah/ruby public.ecr.aws/sorah/ruby)
 PULL = !!ARGV.delete('--pull')
 PUSH = !!ARGV.delete('--push')
 
+DISTRO_FILTER = ENV['DIST_FILTER']&.split(/,\s*/)
+ARCH_FILTER = ENV['ARCH_FILTER']&.split(/,\s*/)
+SERIES_FILTER = ENV['SERIES_FILTER']&.split(/,\s*/)
+
+p filters: {distro: DISTRO_FILTER, arch: ARCH_FILTER, series: SERIES_FILTER }
+
 @built_images = []
 
 # Pull
 if PULL
   SERIES.each do |series|
+    next if SERIES_FILTER && !SERIES_FILTER.include?(series.version)
     DISTROS.each do |distro|
+      next if DISTRO_FILTER && !DISTRO_FILTER.include?(distro.name)
+
       pulled_image = PUSH_REPOS.flat_map do |repo|
         [
           "#{repo}:#{series.version}-#{distro.name}-amd64",
@@ -121,12 +130,18 @@ dockerfile_template = ERB.new(File.read(File.join(__dir__, 'Dockerfile')))
 dockerfile_dev_template = ERB.new(File.read(File.join(__dir__, 'Dockerfile.dev')))
 Dir.mkdir('./tmp') unless File.directory?('./tmp')
 SERIES.each do |series|
+  next if SERIES_FILTER && !SERIES_FILTER.include?(series.version)
   DISTROS.each do |distro|
+    next if DISTRO_FILTER && !DISTRO_FILTER.include?(distro.name)
+
     packages = apt_packages(distro.apt_url)
 
     default_version = packages.dig('ruby-defaults', 'ruby')&.map { |_| _.fetch('Version')[0] }&.grep(/#{Regexp.escape(series.version)}\./)&.sort&.last
     version = packages.dig("ruby#{series.version}", "ruby#{series.version}")&.map { |_| _.fetch('Version')[0] }&.sort&.last
-    next unless default_version && version
+    unless default_version && version
+      puts "=> #{series.version}-#{distro.name} skipped due to inexistent package"
+      next
+    end
 
     locals = {
       ruby: series.version,
@@ -137,7 +152,9 @@ SERIES.each do |series|
     }
 
     %w(arm64 amd64).each do |arch|
+      next if ARCH_FILTER && !ARCH_FILTER.include?(arch)
       next if arch == 'arm64' && (!distro.arm || !series.arm)
+
       dockerfile = dockerfile_template.result_with_hash(locals)
       dockerfile_path = "./tmp/Dockerfile-#{series.version}-#{distro.name}-#{arch}"
       File.write(dockerfile_path, dockerfile)
@@ -158,13 +175,16 @@ end
 
 manifests = @built_images.group_by(&:manifest_tag)
 # default distro
-@built_images.group_by(&:series_tag)
-  .transform_values { |is| rel = SERIES.find { |r| r.version == is[0].series }; (is.find { |i| rel.default_distro && i.distro == rel.default_distro } || is[0]).manifest_tag }
-  .each do |(series, manifest_tag)|
-  manifests[series] = manifests.fetch(manifest_tag)
+if !DISTRO_FILTER && !SERIES_FILTER && !ARCH_FILTER
+  @built_images.group_by(&:series_tag)
+    .transform_values { |is| rel = SERIES.find { |r| r.version == is[0].series }; (is.find { |i| rel.default_distro && i.distro == rel.default_distro } || is[0]).manifest_tag }
+    .each do |(series, manifest_tag)|
+    manifests[series] = manifests.fetch(manifest_tag)
+  end
+  manifests['latest'] = manifests.fetch(manifests.fetch(SERIES.last.version).first.manifest_tag)
+  manifests['latest-dev'] = manifests.fetch(manifests.fetch("#{SERIES.last.version}-dev").first.manifest_tag)
 end
-manifests['latest'] = manifests.fetch(manifests.fetch(SERIES.last.version).first.manifest_tag)
-manifests['latest-dev'] = manifests.fetch(manifests.fetch("#{SERIES.last.version}-dev").first.manifest_tag)
+
 pp manifests
 
 
