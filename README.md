@@ -19,15 +19,17 @@
 where,
 
 - SERIES is like `2.6`, `2.7`, `3.0`, `3.1`
-- DISTRO is like `bionic`, `focal`, `buster`, `bullseye`
+- DISTRO is like `bionic`, `focal`, `jammy`, `buster`, `bullseye`
 
 ### List
 
-- 2.6: `2.6`, `2.6-dev` (dist=`focal`, `bionic`, `buster`)
-- 2.7: `2.7`, `2.7-dev` (dist=`focal`, `bionic`, `bullseye`, `buster`)
-- 3.0: `3.0`, `3.0-dev` (dist=`focal`, `bionic`, `bullseye`, `buster`)
-- 3.1: `3.1`, `3.1-dev` (dist=`focal`, `bionic`, `bullseye`)
+- 2.6: `2.6`, `2.6-dev` (dist= __`focal`__, `bionic`, `buster`)
+- 2.7: `2.7`, `2.7-dev` (dist= __`focal`__, `bionic`, `bullseye`, `buster`)
+- 3.0: `3.0`, `3.0-dev` (dist= `jammy`, __`focal`__, `bionic`, `bullseye`, `buster`)
+- 3.1: `3.1`, `3.1-dev` (dist= __`jammy`__, `focal`, `bionic`, `bullseye`)
+
+_distro in bold is default_
 
 ## aarch64 (arm64 support)
 
-images are built on amd64 (x86_64) and arm64 (aarch64) except 2.6.
+images are built on amd64 (x86_64) and arm64 (aarch64) since 2.7.
