@@ -145,7 +145,7 @@ SERIES.each do |series|
 
     locals = {
       ruby: series.version,
-      base: distro.family,
+      base: {'ubuntu' => 'public.ecr.aws/ubuntu/ubuntu', 'debian' => 'mirror.gcr.io/library/debian'}.fetch(distro.family),
       distro: distro.name,
       deb_ruby: version,
       deb_ruby_default: default_version,
