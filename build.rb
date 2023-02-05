@@ -2,9 +2,11 @@ require 'erb'
 require 'open-uri'
 require 'json'
 
+DOIT = !(ENV['DRY_RUN'] == '1')
+
 def cmd(*args, exception: true)
-  puts "$ #{args.join(" ")}"
-  system(*args, exception: exception)
+  puts "#{DOIT ? '' : '(dry-run) '}$ #{args.join(" ")}"
+  system(*args, exception: exception) if DOIT
 end
 
 @apt_repo_packages = {}
@@ -202,9 +204,13 @@ if PUSH
       buildinfo['manifests']["#{repo}:#{manifest_tag}"] = images.map { |_| "#{repo}:#{_.arch_tag}" }
     end
   end
-  p buildinfo
+
+  puts "=> buildinfo.json"
+  puts JSON.pretty_generate(buildinfo)
+
   File.write "tmp/buildinfo.json", "#{buildinfo.to_json}\n"
 end
 
+puts "=> Manifests and Digests"
 pp manifests
 cmd('docker', 'images', 'sorah-ruby', '--digests')

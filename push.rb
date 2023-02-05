@@ -1,11 +1,13 @@
 #!/usr/bin/env ruby
 require 'json'
 
+DOIT = !(ENV['DRY_RUN'] == '1')
+
 def cmd(*args, exception: true, num_retries: 5)
-  puts "$ #{args.join(" ")}"
+  puts "#{DOIT ? '' : '(dry-run) '}$ #{args.join(" ")}"
   tries = 0
   begin
-    system(*args, exception: exception)
+    system(*args, exception: exception) if DOIT
   rescue RuntimeError => e
     tries += 1
     wait = [(2**tries)+ (rand(2000)/1000.0), 60.0].min
