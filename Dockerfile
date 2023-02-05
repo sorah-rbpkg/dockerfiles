@@ -11,10 +11,13 @@ ARG BUNDLER1_VERSION="~> 1"
 ARG BUNDLER2_VERSION="~> 2"
 
 COPY files/sorah-rbpkg.gpg /usr/local/share/keyrings/sorah-rbpkg.gpg
+COPY files/apt-preference-priority /etc/apt/preferences.d/90-sorah-rbpkg-preference
 
 RUN apt-get update \
   && apt-get upgrade -y \
   && echo "deb [signed-by=/usr/local/share/keyrings/sorah-rbpkg.gpg] http://cache.ruby-lang.org/lab/sorah/deb/ <%= distro %> main" > /etc/apt/sources.list.d/sorah-ruby.list \
+  && echo "Package: src:ruby-defaults\nPin: version $DEB_RUBY_DEFAULT\nPin-Priority: 999" > /etc/apt/preferences.d/91-sorah-rbpkg-ruby-defaults \
+  && grep -r . /etc/apt/preferences.d \
   && apt-get update \
   && apt-get install --no-install-recommends --no-install-suggests -y \
   ca-certificates \

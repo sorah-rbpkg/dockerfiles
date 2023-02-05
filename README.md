@@ -33,3 +33,12 @@ _distro in bold is default_
 ## aarch64 (arm64 support)
 
 images are built on amd64 (x86_64) and arm64 (aarch64) since 2.7.
+
+## Misc
+
+### Pin
+
+The image has the following pinning with apt_preferences(5):
+
+- src:rubygems-integration, src:ruby2.*, src:ruby3.* (specified individually) has pin-priority of 600.
+- src:ruby-defaults has pin-priority of 999 with the latest version installed on build.

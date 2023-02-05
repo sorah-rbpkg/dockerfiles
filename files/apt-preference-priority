@@ -1,0 +1,29 @@
+# vim: ft=debcontrol
+# ruby-defaults is pinned by version in Dockerfile
+Package: src:rubygems-integration
+Pin: origin "cache.ruby-lang.org"
+Pin-Priority: 600
+
+Package: src:ruby2.5
+Pin: origin "cache.ruby-lang.org"
+Pin-Priority: 600
+
+Package: src:ruby2.6
+Pin: origin "cache.ruby-lang.org"
+Pin-Priority: 600
+
+Package: src:ruby2.7
+Pin: origin "cache.ruby-lang.org"
+Pin-Priority: 600
+
+Package: src:ruby3.0
+Pin: origin "cache.ruby-lang.org"
+Pin-Priority: 600
+
+Package: src:ruby3.1
+Pin: origin "cache.ruby-lang.org"
+Pin-Priority: 600
+
+Package: src:ruby3.2
+Pin: origin "cache.ruby-lang.org"
+Pin-Priority: 600
