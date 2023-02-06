@@ -49,8 +49,12 @@ local manifest_subtag_job_patterns = [
   for series in build_job_matrix.series
 ];
 
+local pattern_to_job_name(prefix, pattern) =
+  std.format('%s-%s-%s', [prefix, std.strReplace(pattern.series, '.', 'x'), pattern.distro]) +
+  (if std.objectHas(pattern, 'arch') then std.format('-%s', [pattern.arch]) else '');
+
 local build_job(pattern) =
-  local name = std.format('build-%s-%s-%s', [pattern.series, pattern.distro, pattern.arch]);
+  local name = pattern_to_job_name('build', pattern);
   {
     _name:: name,
     [name]: {
@@ -90,7 +94,7 @@ local manifest_job(name, kind, env, parents) = {
         uses: 'actions/download-artifact@v3',
         with: {
           name: parent + '_built_images.json',
-          path: 'tmp/' + name,
+          path: 'tmp/' + self.name,
         },
       }
       for parent in parents
@@ -107,8 +111,8 @@ local manifest_job(name, kind, env, parents) = {
 };
 
 local manifest_subtag_job(pattern) = {
-  local name = std.format('manifest-%s-%s', [pattern.series, pattern.distro]),
-  local parents = [std.format('build-%s-%s-%s', [pattern.series, pattern.distro, arch]) for arch in build_job_matrix.arch],
+  local name = pattern_to_job_name('manifest', pattern),
+  local parents = [pattern_to_job_name('build', pattern { arch: arch }) for arch in build_job_matrix.arch],
   local env = {
     DIST_FILTER: pattern.distro,
     SERIES_FILTER: pattern.series,

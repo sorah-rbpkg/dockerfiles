@@ -1,7 +1,7 @@
 {
    "jobs": {
-      "build-2.6-bionic-amd64": {
-         "name": "build-2.6-bionic-amd64",
+      "build-2x6-bionic-amd64": {
+         "name": "build-2x6-bionic-amd64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -51,15 +51,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-2.6-bionic-amd64_built-images.json",
+                  "name": "build-2x6-bionic-amd64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-2.6-bionic-arm64": {
-         "name": "build-2.6-bionic-arm64",
+      "build-2x6-bionic-arm64": {
+         "name": "build-2x6-bionic-arm64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -109,15 +109,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-2.6-bionic-arm64_built-images.json",
+                  "name": "build-2x6-bionic-arm64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-2.6-bookworm-amd64": {
-         "name": "build-2.6-bookworm-amd64",
+      "build-2x6-bookworm-amd64": {
+         "name": "build-2x6-bookworm-amd64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -167,15 +167,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-2.6-bookworm-amd64_built-images.json",
+                  "name": "build-2x6-bookworm-amd64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-2.6-bookworm-arm64": {
-         "name": "build-2.6-bookworm-arm64",
+      "build-2x6-bookworm-arm64": {
+         "name": "build-2x6-bookworm-arm64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -225,15 +225,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-2.6-bookworm-arm64_built-images.json",
+                  "name": "build-2x6-bookworm-arm64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-2.6-bullseye-amd64": {
-         "name": "build-2.6-bullseye-amd64",
+      "build-2x6-bullseye-amd64": {
+         "name": "build-2x6-bullseye-amd64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -283,15 +283,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-2.6-bullseye-amd64_built-images.json",
+                  "name": "build-2x6-bullseye-amd64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-2.6-bullseye-arm64": {
-         "name": "build-2.6-bullseye-arm64",
+      "build-2x6-bullseye-arm64": {
+         "name": "build-2x6-bullseye-arm64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -341,15 +341,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-2.6-bullseye-arm64_built-images.json",
+                  "name": "build-2x6-bullseye-arm64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-2.6-buster-amd64": {
-         "name": "build-2.6-buster-amd64",
+      "build-2x6-buster-amd64": {
+         "name": "build-2x6-buster-amd64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -399,15 +399,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-2.6-buster-amd64_built-images.json",
+                  "name": "build-2x6-buster-amd64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-2.6-buster-arm64": {
-         "name": "build-2.6-buster-arm64",
+      "build-2x6-buster-arm64": {
+         "name": "build-2x6-buster-arm64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -457,15 +457,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-2.6-buster-arm64_built-images.json",
+                  "name": "build-2x6-buster-arm64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-2.6-focal-amd64": {
-         "name": "build-2.6-focal-amd64",
+      "build-2x6-focal-amd64": {
+         "name": "build-2x6-focal-amd64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -515,15 +515,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-2.6-focal-amd64_built-images.json",
+                  "name": "build-2x6-focal-amd64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-2.6-focal-arm64": {
-         "name": "build-2.6-focal-arm64",
+      "build-2x6-focal-arm64": {
+         "name": "build-2x6-focal-arm64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -573,15 +573,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-2.6-focal-arm64_built-images.json",
+                  "name": "build-2x6-focal-arm64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-2.6-jammy-amd64": {
-         "name": "build-2.6-jammy-amd64",
+      "build-2x6-jammy-amd64": {
+         "name": "build-2x6-jammy-amd64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -631,15 +631,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-2.6-jammy-amd64_built-images.json",
+                  "name": "build-2x6-jammy-amd64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-2.6-jammy-arm64": {
-         "name": "build-2.6-jammy-arm64",
+      "build-2x6-jammy-arm64": {
+         "name": "build-2x6-jammy-arm64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -689,15 +689,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-2.6-jammy-arm64_built-images.json",
+                  "name": "build-2x6-jammy-arm64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-2.7-bionic-amd64": {
-         "name": "build-2.7-bionic-amd64",
+      "build-2x7-bionic-amd64": {
+         "name": "build-2x7-bionic-amd64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -747,15 +747,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-2.7-bionic-amd64_built-images.json",
+                  "name": "build-2x7-bionic-amd64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-2.7-bionic-arm64": {
-         "name": "build-2.7-bionic-arm64",
+      "build-2x7-bionic-arm64": {
+         "name": "build-2x7-bionic-arm64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -805,15 +805,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-2.7-bionic-arm64_built-images.json",
+                  "name": "build-2x7-bionic-arm64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-2.7-bookworm-amd64": {
-         "name": "build-2.7-bookworm-amd64",
+      "build-2x7-bookworm-amd64": {
+         "name": "build-2x7-bookworm-amd64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -863,15 +863,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-2.7-bookworm-amd64_built-images.json",
+                  "name": "build-2x7-bookworm-amd64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-2.7-bookworm-arm64": {
-         "name": "build-2.7-bookworm-arm64",
+      "build-2x7-bookworm-arm64": {
+         "name": "build-2x7-bookworm-arm64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -921,15 +921,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-2.7-bookworm-arm64_built-images.json",
+                  "name": "build-2x7-bookworm-arm64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-2.7-bullseye-amd64": {
-         "name": "build-2.7-bullseye-amd64",
+      "build-2x7-bullseye-amd64": {
+         "name": "build-2x7-bullseye-amd64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -979,15 +979,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-2.7-bullseye-amd64_built-images.json",
+                  "name": "build-2x7-bullseye-amd64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-2.7-bullseye-arm64": {
-         "name": "build-2.7-bullseye-arm64",
+      "build-2x7-bullseye-arm64": {
+         "name": "build-2x7-bullseye-arm64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -1037,15 +1037,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-2.7-bullseye-arm64_built-images.json",
+                  "name": "build-2x7-bullseye-arm64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-2.7-buster-amd64": {
-         "name": "build-2.7-buster-amd64",
+      "build-2x7-buster-amd64": {
+         "name": "build-2x7-buster-amd64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -1095,15 +1095,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-2.7-buster-amd64_built-images.json",
+                  "name": "build-2x7-buster-amd64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-2.7-buster-arm64": {
-         "name": "build-2.7-buster-arm64",
+      "build-2x7-buster-arm64": {
+         "name": "build-2x7-buster-arm64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -1153,15 +1153,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-2.7-buster-arm64_built-images.json",
+                  "name": "build-2x7-buster-arm64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-2.7-focal-amd64": {
-         "name": "build-2.7-focal-amd64",
+      "build-2x7-focal-amd64": {
+         "name": "build-2x7-focal-amd64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -1211,15 +1211,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-2.7-focal-amd64_built-images.json",
+                  "name": "build-2x7-focal-amd64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-2.7-focal-arm64": {
-         "name": "build-2.7-focal-arm64",
+      "build-2x7-focal-arm64": {
+         "name": "build-2x7-focal-arm64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -1269,15 +1269,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-2.7-focal-arm64_built-images.json",
+                  "name": "build-2x7-focal-arm64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-2.7-jammy-amd64": {
-         "name": "build-2.7-jammy-amd64",
+      "build-2x7-jammy-amd64": {
+         "name": "build-2x7-jammy-amd64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -1327,15 +1327,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-2.7-jammy-amd64_built-images.json",
+                  "name": "build-2x7-jammy-amd64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-2.7-jammy-arm64": {
-         "name": "build-2.7-jammy-arm64",
+      "build-2x7-jammy-arm64": {
+         "name": "build-2x7-jammy-arm64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -1385,15 +1385,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-2.7-jammy-arm64_built-images.json",
+                  "name": "build-2x7-jammy-arm64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.0-bionic-amd64": {
-         "name": "build-3.0-bionic-amd64",
+      "build-3x0-bionic-amd64": {
+         "name": "build-3x0-bionic-amd64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -1443,15 +1443,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.0-bionic-amd64_built-images.json",
+                  "name": "build-3x0-bionic-amd64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.0-bionic-arm64": {
-         "name": "build-3.0-bionic-arm64",
+      "build-3x0-bionic-arm64": {
+         "name": "build-3x0-bionic-arm64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -1501,15 +1501,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.0-bionic-arm64_built-images.json",
+                  "name": "build-3x0-bionic-arm64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.0-bookworm-amd64": {
-         "name": "build-3.0-bookworm-amd64",
+      "build-3x0-bookworm-amd64": {
+         "name": "build-3x0-bookworm-amd64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -1559,15 +1559,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.0-bookworm-amd64_built-images.json",
+                  "name": "build-3x0-bookworm-amd64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.0-bookworm-arm64": {
-         "name": "build-3.0-bookworm-arm64",
+      "build-3x0-bookworm-arm64": {
+         "name": "build-3x0-bookworm-arm64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -1617,15 +1617,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.0-bookworm-arm64_built-images.json",
+                  "name": "build-3x0-bookworm-arm64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.0-bullseye-amd64": {
-         "name": "build-3.0-bullseye-amd64",
+      "build-3x0-bullseye-amd64": {
+         "name": "build-3x0-bullseye-amd64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -1675,15 +1675,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.0-bullseye-amd64_built-images.json",
+                  "name": "build-3x0-bullseye-amd64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.0-bullseye-arm64": {
-         "name": "build-3.0-bullseye-arm64",
+      "build-3x0-bullseye-arm64": {
+         "name": "build-3x0-bullseye-arm64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -1733,15 +1733,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.0-bullseye-arm64_built-images.json",
+                  "name": "build-3x0-bullseye-arm64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.0-buster-amd64": {
-         "name": "build-3.0-buster-amd64",
+      "build-3x0-buster-amd64": {
+         "name": "build-3x0-buster-amd64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -1791,15 +1791,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.0-buster-amd64_built-images.json",
+                  "name": "build-3x0-buster-amd64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.0-buster-arm64": {
-         "name": "build-3.0-buster-arm64",
+      "build-3x0-buster-arm64": {
+         "name": "build-3x0-buster-arm64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -1849,15 +1849,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.0-buster-arm64_built-images.json",
+                  "name": "build-3x0-buster-arm64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.0-focal-amd64": {
-         "name": "build-3.0-focal-amd64",
+      "build-3x0-focal-amd64": {
+         "name": "build-3x0-focal-amd64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -1907,15 +1907,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.0-focal-amd64_built-images.json",
+                  "name": "build-3x0-focal-amd64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.0-focal-arm64": {
-         "name": "build-3.0-focal-arm64",
+      "build-3x0-focal-arm64": {
+         "name": "build-3x0-focal-arm64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -1965,15 +1965,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.0-focal-arm64_built-images.json",
+                  "name": "build-3x0-focal-arm64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.0-jammy-amd64": {
-         "name": "build-3.0-jammy-amd64",
+      "build-3x0-jammy-amd64": {
+         "name": "build-3x0-jammy-amd64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -2023,15 +2023,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.0-jammy-amd64_built-images.json",
+                  "name": "build-3x0-jammy-amd64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.0-jammy-arm64": {
-         "name": "build-3.0-jammy-arm64",
+      "build-3x0-jammy-arm64": {
+         "name": "build-3x0-jammy-arm64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -2081,15 +2081,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.0-jammy-arm64_built-images.json",
+                  "name": "build-3x0-jammy-arm64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.1-bionic-amd64": {
-         "name": "build-3.1-bionic-amd64",
+      "build-3x1-bionic-amd64": {
+         "name": "build-3x1-bionic-amd64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -2139,15 +2139,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.1-bionic-amd64_built-images.json",
+                  "name": "build-3x1-bionic-amd64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.1-bionic-arm64": {
-         "name": "build-3.1-bionic-arm64",
+      "build-3x1-bionic-arm64": {
+         "name": "build-3x1-bionic-arm64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -2197,15 +2197,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.1-bionic-arm64_built-images.json",
+                  "name": "build-3x1-bionic-arm64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.1-bookworm-amd64": {
-         "name": "build-3.1-bookworm-amd64",
+      "build-3x1-bookworm-amd64": {
+         "name": "build-3x1-bookworm-amd64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -2255,15 +2255,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.1-bookworm-amd64_built-images.json",
+                  "name": "build-3x1-bookworm-amd64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.1-bookworm-arm64": {
-         "name": "build-3.1-bookworm-arm64",
+      "build-3x1-bookworm-arm64": {
+         "name": "build-3x1-bookworm-arm64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -2313,15 +2313,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.1-bookworm-arm64_built-images.json",
+                  "name": "build-3x1-bookworm-arm64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.1-bullseye-amd64": {
-         "name": "build-3.1-bullseye-amd64",
+      "build-3x1-bullseye-amd64": {
+         "name": "build-3x1-bullseye-amd64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -2371,15 +2371,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.1-bullseye-amd64_built-images.json",
+                  "name": "build-3x1-bullseye-amd64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.1-bullseye-arm64": {
-         "name": "build-3.1-bullseye-arm64",
+      "build-3x1-bullseye-arm64": {
+         "name": "build-3x1-bullseye-arm64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -2429,15 +2429,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.1-bullseye-arm64_built-images.json",
+                  "name": "build-3x1-bullseye-arm64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.1-buster-amd64": {
-         "name": "build-3.1-buster-amd64",
+      "build-3x1-buster-amd64": {
+         "name": "build-3x1-buster-amd64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -2487,15 +2487,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.1-buster-amd64_built-images.json",
+                  "name": "build-3x1-buster-amd64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.1-buster-arm64": {
-         "name": "build-3.1-buster-arm64",
+      "build-3x1-buster-arm64": {
+         "name": "build-3x1-buster-arm64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -2545,15 +2545,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.1-buster-arm64_built-images.json",
+                  "name": "build-3x1-buster-arm64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.1-focal-amd64": {
-         "name": "build-3.1-focal-amd64",
+      "build-3x1-focal-amd64": {
+         "name": "build-3x1-focal-amd64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -2603,15 +2603,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.1-focal-amd64_built-images.json",
+                  "name": "build-3x1-focal-amd64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.1-focal-arm64": {
-         "name": "build-3.1-focal-arm64",
+      "build-3x1-focal-arm64": {
+         "name": "build-3x1-focal-arm64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -2661,15 +2661,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.1-focal-arm64_built-images.json",
+                  "name": "build-3x1-focal-arm64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.1-jammy-amd64": {
-         "name": "build-3.1-jammy-amd64",
+      "build-3x1-jammy-amd64": {
+         "name": "build-3x1-jammy-amd64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -2719,15 +2719,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.1-jammy-amd64_built-images.json",
+                  "name": "build-3x1-jammy-amd64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.1-jammy-arm64": {
-         "name": "build-3.1-jammy-arm64",
+      "build-3x1-jammy-arm64": {
+         "name": "build-3x1-jammy-arm64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -2777,15 +2777,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.1-jammy-arm64_built-images.json",
+                  "name": "build-3x1-jammy-arm64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.2-bionic-amd64": {
-         "name": "build-3.2-bionic-amd64",
+      "build-3x2-bionic-amd64": {
+         "name": "build-3x2-bionic-amd64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -2835,15 +2835,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.2-bionic-amd64_built-images.json",
+                  "name": "build-3x2-bionic-amd64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.2-bionic-arm64": {
-         "name": "build-3.2-bionic-arm64",
+      "build-3x2-bionic-arm64": {
+         "name": "build-3x2-bionic-arm64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -2893,15 +2893,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.2-bionic-arm64_built-images.json",
+                  "name": "build-3x2-bionic-arm64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.2-bookworm-amd64": {
-         "name": "build-3.2-bookworm-amd64",
+      "build-3x2-bookworm-amd64": {
+         "name": "build-3x2-bookworm-amd64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -2951,15 +2951,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.2-bookworm-amd64_built-images.json",
+                  "name": "build-3x2-bookworm-amd64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.2-bookworm-arm64": {
-         "name": "build-3.2-bookworm-arm64",
+      "build-3x2-bookworm-arm64": {
+         "name": "build-3x2-bookworm-arm64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -3009,15 +3009,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.2-bookworm-arm64_built-images.json",
+                  "name": "build-3x2-bookworm-arm64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.2-bullseye-amd64": {
-         "name": "build-3.2-bullseye-amd64",
+      "build-3x2-bullseye-amd64": {
+         "name": "build-3x2-bullseye-amd64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -3067,15 +3067,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.2-bullseye-amd64_built-images.json",
+                  "name": "build-3x2-bullseye-amd64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.2-bullseye-arm64": {
-         "name": "build-3.2-bullseye-arm64",
+      "build-3x2-bullseye-arm64": {
+         "name": "build-3x2-bullseye-arm64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -3125,15 +3125,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.2-bullseye-arm64_built-images.json",
+                  "name": "build-3x2-bullseye-arm64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.2-buster-amd64": {
-         "name": "build-3.2-buster-amd64",
+      "build-3x2-buster-amd64": {
+         "name": "build-3x2-buster-amd64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -3183,15 +3183,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.2-buster-amd64_built-images.json",
+                  "name": "build-3x2-buster-amd64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.2-buster-arm64": {
-         "name": "build-3.2-buster-arm64",
+      "build-3x2-buster-arm64": {
+         "name": "build-3x2-buster-arm64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -3241,15 +3241,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.2-buster-arm64_built-images.json",
+                  "name": "build-3x2-buster-arm64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.2-focal-amd64": {
-         "name": "build-3.2-focal-amd64",
+      "build-3x2-focal-amd64": {
+         "name": "build-3x2-focal-amd64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -3299,15 +3299,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.2-focal-amd64_built-images.json",
+                  "name": "build-3x2-focal-amd64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.2-focal-arm64": {
-         "name": "build-3.2-focal-arm64",
+      "build-3x2-focal-arm64": {
+         "name": "build-3x2-focal-arm64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -3357,15 +3357,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.2-focal-arm64_built-images.json",
+                  "name": "build-3x2-focal-arm64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.2-jammy-amd64": {
-         "name": "build-3.2-jammy-amd64",
+      "build-3x2-jammy-amd64": {
+         "name": "build-3x2-jammy-amd64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -3415,15 +3415,15 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.2-jammy-amd64_built-images.json",
+                  "name": "build-3x2-jammy-amd64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "build-3.2-jammy-arm64": {
-         "name": "build-3.2-jammy-arm64",
+      "build-3x2-jammy-arm64": {
+         "name": "build-3x2-jammy-arm64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -3473,18 +3473,18 @@
             {
                "uses": "actions/upload-artifact@v3",
                "with": {
-                  "name": "build-3.2-jammy-arm64_built-images.json",
+                  "name": "build-3x2-jammy-arm64_built-images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
             }
          ]
       },
-      "manifest-2.6-bionic": {
-         "name": "manifest-2.6-bionic",
+      "manifest-2x6-bionic": {
+         "name": "manifest-2x6-bionic",
          "needs": [
-            "build-2.6-bionic-amd64",
-            "build-2.6-bionic-arm64"
+            "build-2x6-bionic-amd64",
+            "build-2x6-bionic-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -3524,15 +3524,15 @@
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.6-bionic-amd64_built_images.json",
-                  "path": "tmp/manifest-2.6-bionic"
+                  "name": "build-2x6-bionic-amd64_built_images.json",
+                  "path": "tmp/build-2x6-bionic-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.6-bionic-arm64_built_images.json",
-                  "path": "tmp/manifest-2.6-bionic"
+                  "name": "build-2x6-bionic-arm64_built_images.json",
+                  "path": "tmp/build-2x6-bionic-arm64_built_images.json"
                }
             },
             {
@@ -3547,11 +3547,11 @@
             }
          ]
       },
-      "manifest-2.6-bookworm": {
-         "name": "manifest-2.6-bookworm",
+      "manifest-2x6-bookworm": {
+         "name": "manifest-2x6-bookworm",
          "needs": [
-            "build-2.6-bookworm-amd64",
-            "build-2.6-bookworm-arm64"
+            "build-2x6-bookworm-amd64",
+            "build-2x6-bookworm-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -3591,15 +3591,15 @@
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.6-bookworm-amd64_built_images.json",
-                  "path": "tmp/manifest-2.6-bookworm"
+                  "name": "build-2x6-bookworm-amd64_built_images.json",
+                  "path": "tmp/build-2x6-bookworm-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.6-bookworm-arm64_built_images.json",
-                  "path": "tmp/manifest-2.6-bookworm"
+                  "name": "build-2x6-bookworm-arm64_built_images.json",
+                  "path": "tmp/build-2x6-bookworm-arm64_built_images.json"
                }
             },
             {
@@ -3614,11 +3614,11 @@
             }
          ]
       },
-      "manifest-2.6-bullseye": {
-         "name": "manifest-2.6-bullseye",
+      "manifest-2x6-bullseye": {
+         "name": "manifest-2x6-bullseye",
          "needs": [
-            "build-2.6-bullseye-amd64",
-            "build-2.6-bullseye-arm64"
+            "build-2x6-bullseye-amd64",
+            "build-2x6-bullseye-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -3658,15 +3658,15 @@
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.6-bullseye-amd64_built_images.json",
-                  "path": "tmp/manifest-2.6-bullseye"
+                  "name": "build-2x6-bullseye-amd64_built_images.json",
+                  "path": "tmp/build-2x6-bullseye-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.6-bullseye-arm64_built_images.json",
-                  "path": "tmp/manifest-2.6-bullseye"
+                  "name": "build-2x6-bullseye-arm64_built_images.json",
+                  "path": "tmp/build-2x6-bullseye-arm64_built_images.json"
                }
             },
             {
@@ -3681,11 +3681,11 @@
             }
          ]
       },
-      "manifest-2.6-buster": {
-         "name": "manifest-2.6-buster",
+      "manifest-2x6-buster": {
+         "name": "manifest-2x6-buster",
          "needs": [
-            "build-2.6-buster-amd64",
-            "build-2.6-buster-arm64"
+            "build-2x6-buster-amd64",
+            "build-2x6-buster-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -3725,15 +3725,15 @@
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.6-buster-amd64_built_images.json",
-                  "path": "tmp/manifest-2.6-buster"
+                  "name": "build-2x6-buster-amd64_built_images.json",
+                  "path": "tmp/build-2x6-buster-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.6-buster-arm64_built_images.json",
-                  "path": "tmp/manifest-2.6-buster"
+                  "name": "build-2x6-buster-arm64_built_images.json",
+                  "path": "tmp/build-2x6-buster-arm64_built_images.json"
                }
             },
             {
@@ -3748,11 +3748,11 @@
             }
          ]
       },
-      "manifest-2.6-focal": {
-         "name": "manifest-2.6-focal",
+      "manifest-2x6-focal": {
+         "name": "manifest-2x6-focal",
          "needs": [
-            "build-2.6-focal-amd64",
-            "build-2.6-focal-arm64"
+            "build-2x6-focal-amd64",
+            "build-2x6-focal-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -3792,15 +3792,15 @@
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.6-focal-amd64_built_images.json",
-                  "path": "tmp/manifest-2.6-focal"
+                  "name": "build-2x6-focal-amd64_built_images.json",
+                  "path": "tmp/build-2x6-focal-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.6-focal-arm64_built_images.json",
-                  "path": "tmp/manifest-2.6-focal"
+                  "name": "build-2x6-focal-arm64_built_images.json",
+                  "path": "tmp/build-2x6-focal-arm64_built_images.json"
                }
             },
             {
@@ -3815,11 +3815,11 @@
             }
          ]
       },
-      "manifest-2.6-jammy": {
-         "name": "manifest-2.6-jammy",
+      "manifest-2x6-jammy": {
+         "name": "manifest-2x6-jammy",
          "needs": [
-            "build-2.6-jammy-amd64",
-            "build-2.6-jammy-arm64"
+            "build-2x6-jammy-amd64",
+            "build-2x6-jammy-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -3859,15 +3859,15 @@
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.6-jammy-amd64_built_images.json",
-                  "path": "tmp/manifest-2.6-jammy"
+                  "name": "build-2x6-jammy-amd64_built_images.json",
+                  "path": "tmp/build-2x6-jammy-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.6-jammy-arm64_built_images.json",
-                  "path": "tmp/manifest-2.6-jammy"
+                  "name": "build-2x6-jammy-arm64_built_images.json",
+                  "path": "tmp/build-2x6-jammy-arm64_built_images.json"
                }
             },
             {
@@ -3882,11 +3882,11 @@
             }
          ]
       },
-      "manifest-2.7-bionic": {
-         "name": "manifest-2.7-bionic",
+      "manifest-2x7-bionic": {
+         "name": "manifest-2x7-bionic",
          "needs": [
-            "build-2.7-bionic-amd64",
-            "build-2.7-bionic-arm64"
+            "build-2x7-bionic-amd64",
+            "build-2x7-bionic-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -3926,15 +3926,15 @@
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.7-bionic-amd64_built_images.json",
-                  "path": "tmp/manifest-2.7-bionic"
+                  "name": "build-2x7-bionic-amd64_built_images.json",
+                  "path": "tmp/build-2x7-bionic-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.7-bionic-arm64_built_images.json",
-                  "path": "tmp/manifest-2.7-bionic"
+                  "name": "build-2x7-bionic-arm64_built_images.json",
+                  "path": "tmp/build-2x7-bionic-arm64_built_images.json"
                }
             },
             {
@@ -3949,11 +3949,11 @@
             }
          ]
       },
-      "manifest-2.7-bookworm": {
-         "name": "manifest-2.7-bookworm",
+      "manifest-2x7-bookworm": {
+         "name": "manifest-2x7-bookworm",
          "needs": [
-            "build-2.7-bookworm-amd64",
-            "build-2.7-bookworm-arm64"
+            "build-2x7-bookworm-amd64",
+            "build-2x7-bookworm-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -3993,15 +3993,15 @@
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.7-bookworm-amd64_built_images.json",
-                  "path": "tmp/manifest-2.7-bookworm"
+                  "name": "build-2x7-bookworm-amd64_built_images.json",
+                  "path": "tmp/build-2x7-bookworm-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.7-bookworm-arm64_built_images.json",
-                  "path": "tmp/manifest-2.7-bookworm"
+                  "name": "build-2x7-bookworm-arm64_built_images.json",
+                  "path": "tmp/build-2x7-bookworm-arm64_built_images.json"
                }
             },
             {
@@ -4016,11 +4016,11 @@
             }
          ]
       },
-      "manifest-2.7-bullseye": {
-         "name": "manifest-2.7-bullseye",
+      "manifest-2x7-bullseye": {
+         "name": "manifest-2x7-bullseye",
          "needs": [
-            "build-2.7-bullseye-amd64",
-            "build-2.7-bullseye-arm64"
+            "build-2x7-bullseye-amd64",
+            "build-2x7-bullseye-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -4060,15 +4060,15 @@
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.7-bullseye-amd64_built_images.json",
-                  "path": "tmp/manifest-2.7-bullseye"
+                  "name": "build-2x7-bullseye-amd64_built_images.json",
+                  "path": "tmp/build-2x7-bullseye-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.7-bullseye-arm64_built_images.json",
-                  "path": "tmp/manifest-2.7-bullseye"
+                  "name": "build-2x7-bullseye-arm64_built_images.json",
+                  "path": "tmp/build-2x7-bullseye-arm64_built_images.json"
                }
             },
             {
@@ -4083,11 +4083,11 @@
             }
          ]
       },
-      "manifest-2.7-buster": {
-         "name": "manifest-2.7-buster",
+      "manifest-2x7-buster": {
+         "name": "manifest-2x7-buster",
          "needs": [
-            "build-2.7-buster-amd64",
-            "build-2.7-buster-arm64"
+            "build-2x7-buster-amd64",
+            "build-2x7-buster-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -4127,15 +4127,15 @@
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.7-buster-amd64_built_images.json",
-                  "path": "tmp/manifest-2.7-buster"
+                  "name": "build-2x7-buster-amd64_built_images.json",
+                  "path": "tmp/build-2x7-buster-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.7-buster-arm64_built_images.json",
-                  "path": "tmp/manifest-2.7-buster"
+                  "name": "build-2x7-buster-arm64_built_images.json",
+                  "path": "tmp/build-2x7-buster-arm64_built_images.json"
                }
             },
             {
@@ -4150,11 +4150,11 @@
             }
          ]
       },
-      "manifest-2.7-focal": {
-         "name": "manifest-2.7-focal",
+      "manifest-2x7-focal": {
+         "name": "manifest-2x7-focal",
          "needs": [
-            "build-2.7-focal-amd64",
-            "build-2.7-focal-arm64"
+            "build-2x7-focal-amd64",
+            "build-2x7-focal-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -4194,15 +4194,15 @@
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.7-focal-amd64_built_images.json",
-                  "path": "tmp/manifest-2.7-focal"
+                  "name": "build-2x7-focal-amd64_built_images.json",
+                  "path": "tmp/build-2x7-focal-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.7-focal-arm64_built_images.json",
-                  "path": "tmp/manifest-2.7-focal"
+                  "name": "build-2x7-focal-arm64_built_images.json",
+                  "path": "tmp/build-2x7-focal-arm64_built_images.json"
                }
             },
             {
@@ -4217,11 +4217,11 @@
             }
          ]
       },
-      "manifest-2.7-jammy": {
-         "name": "manifest-2.7-jammy",
+      "manifest-2x7-jammy": {
+         "name": "manifest-2x7-jammy",
          "needs": [
-            "build-2.7-jammy-amd64",
-            "build-2.7-jammy-arm64"
+            "build-2x7-jammy-amd64",
+            "build-2x7-jammy-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -4261,15 +4261,15 @@
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.7-jammy-amd64_built_images.json",
-                  "path": "tmp/manifest-2.7-jammy"
+                  "name": "build-2x7-jammy-amd64_built_images.json",
+                  "path": "tmp/build-2x7-jammy-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.7-jammy-arm64_built_images.json",
-                  "path": "tmp/manifest-2.7-jammy"
+                  "name": "build-2x7-jammy-arm64_built_images.json",
+                  "path": "tmp/build-2x7-jammy-arm64_built_images.json"
                }
             },
             {
@@ -4284,11 +4284,11 @@
             }
          ]
       },
-      "manifest-3.0-bionic": {
-         "name": "manifest-3.0-bionic",
+      "manifest-3x0-bionic": {
+         "name": "manifest-3x0-bionic",
          "needs": [
-            "build-3.0-bionic-amd64",
-            "build-3.0-bionic-arm64"
+            "build-3x0-bionic-amd64",
+            "build-3x0-bionic-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -4328,15 +4328,15 @@
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.0-bionic-amd64_built_images.json",
-                  "path": "tmp/manifest-3.0-bionic"
+                  "name": "build-3x0-bionic-amd64_built_images.json",
+                  "path": "tmp/build-3x0-bionic-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.0-bionic-arm64_built_images.json",
-                  "path": "tmp/manifest-3.0-bionic"
+                  "name": "build-3x0-bionic-arm64_built_images.json",
+                  "path": "tmp/build-3x0-bionic-arm64_built_images.json"
                }
             },
             {
@@ -4351,11 +4351,11 @@
             }
          ]
       },
-      "manifest-3.0-bookworm": {
-         "name": "manifest-3.0-bookworm",
+      "manifest-3x0-bookworm": {
+         "name": "manifest-3x0-bookworm",
          "needs": [
-            "build-3.0-bookworm-amd64",
-            "build-3.0-bookworm-arm64"
+            "build-3x0-bookworm-amd64",
+            "build-3x0-bookworm-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -4395,15 +4395,15 @@
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.0-bookworm-amd64_built_images.json",
-                  "path": "tmp/manifest-3.0-bookworm"
+                  "name": "build-3x0-bookworm-amd64_built_images.json",
+                  "path": "tmp/build-3x0-bookworm-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.0-bookworm-arm64_built_images.json",
-                  "path": "tmp/manifest-3.0-bookworm"
+                  "name": "build-3x0-bookworm-arm64_built_images.json",
+                  "path": "tmp/build-3x0-bookworm-arm64_built_images.json"
                }
             },
             {
@@ -4418,11 +4418,11 @@
             }
          ]
       },
-      "manifest-3.0-bullseye": {
-         "name": "manifest-3.0-bullseye",
+      "manifest-3x0-bullseye": {
+         "name": "manifest-3x0-bullseye",
          "needs": [
-            "build-3.0-bullseye-amd64",
-            "build-3.0-bullseye-arm64"
+            "build-3x0-bullseye-amd64",
+            "build-3x0-bullseye-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -4462,15 +4462,15 @@
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.0-bullseye-amd64_built_images.json",
-                  "path": "tmp/manifest-3.0-bullseye"
+                  "name": "build-3x0-bullseye-amd64_built_images.json",
+                  "path": "tmp/build-3x0-bullseye-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.0-bullseye-arm64_built_images.json",
-                  "path": "tmp/manifest-3.0-bullseye"
+                  "name": "build-3x0-bullseye-arm64_built_images.json",
+                  "path": "tmp/build-3x0-bullseye-arm64_built_images.json"
                }
             },
             {
@@ -4485,11 +4485,11 @@
             }
          ]
       },
-      "manifest-3.0-buster": {
-         "name": "manifest-3.0-buster",
+      "manifest-3x0-buster": {
+         "name": "manifest-3x0-buster",
          "needs": [
-            "build-3.0-buster-amd64",
-            "build-3.0-buster-arm64"
+            "build-3x0-buster-amd64",
+            "build-3x0-buster-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -4529,15 +4529,15 @@
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.0-buster-amd64_built_images.json",
-                  "path": "tmp/manifest-3.0-buster"
+                  "name": "build-3x0-buster-amd64_built_images.json",
+                  "path": "tmp/build-3x0-buster-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.0-buster-arm64_built_images.json",
-                  "path": "tmp/manifest-3.0-buster"
+                  "name": "build-3x0-buster-arm64_built_images.json",
+                  "path": "tmp/build-3x0-buster-arm64_built_images.json"
                }
             },
             {
@@ -4552,11 +4552,11 @@
             }
          ]
       },
-      "manifest-3.0-focal": {
-         "name": "manifest-3.0-focal",
+      "manifest-3x0-focal": {
+         "name": "manifest-3x0-focal",
          "needs": [
-            "build-3.0-focal-amd64",
-            "build-3.0-focal-arm64"
+            "build-3x0-focal-amd64",
+            "build-3x0-focal-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -4596,15 +4596,15 @@
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.0-focal-amd64_built_images.json",
-                  "path": "tmp/manifest-3.0-focal"
+                  "name": "build-3x0-focal-amd64_built_images.json",
+                  "path": "tmp/build-3x0-focal-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.0-focal-arm64_built_images.json",
-                  "path": "tmp/manifest-3.0-focal"
+                  "name": "build-3x0-focal-arm64_built_images.json",
+                  "path": "tmp/build-3x0-focal-arm64_built_images.json"
                }
             },
             {
@@ -4619,11 +4619,11 @@
             }
          ]
       },
-      "manifest-3.0-jammy": {
-         "name": "manifest-3.0-jammy",
+      "manifest-3x0-jammy": {
+         "name": "manifest-3x0-jammy",
          "needs": [
-            "build-3.0-jammy-amd64",
-            "build-3.0-jammy-arm64"
+            "build-3x0-jammy-amd64",
+            "build-3x0-jammy-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -4663,15 +4663,15 @@
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.0-jammy-amd64_built_images.json",
-                  "path": "tmp/manifest-3.0-jammy"
+                  "name": "build-3x0-jammy-amd64_built_images.json",
+                  "path": "tmp/build-3x0-jammy-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.0-jammy-arm64_built_images.json",
-                  "path": "tmp/manifest-3.0-jammy"
+                  "name": "build-3x0-jammy-arm64_built_images.json",
+                  "path": "tmp/build-3x0-jammy-arm64_built_images.json"
                }
             },
             {
@@ -4686,11 +4686,11 @@
             }
          ]
       },
-      "manifest-3.1-bionic": {
-         "name": "manifest-3.1-bionic",
+      "manifest-3x1-bionic": {
+         "name": "manifest-3x1-bionic",
          "needs": [
-            "build-3.1-bionic-amd64",
-            "build-3.1-bionic-arm64"
+            "build-3x1-bionic-amd64",
+            "build-3x1-bionic-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -4730,15 +4730,15 @@
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.1-bionic-amd64_built_images.json",
-                  "path": "tmp/manifest-3.1-bionic"
+                  "name": "build-3x1-bionic-amd64_built_images.json",
+                  "path": "tmp/build-3x1-bionic-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.1-bionic-arm64_built_images.json",
-                  "path": "tmp/manifest-3.1-bionic"
+                  "name": "build-3x1-bionic-arm64_built_images.json",
+                  "path": "tmp/build-3x1-bionic-arm64_built_images.json"
                }
             },
             {
@@ -4753,11 +4753,11 @@
             }
          ]
       },
-      "manifest-3.1-bookworm": {
-         "name": "manifest-3.1-bookworm",
+      "manifest-3x1-bookworm": {
+         "name": "manifest-3x1-bookworm",
          "needs": [
-            "build-3.1-bookworm-amd64",
-            "build-3.1-bookworm-arm64"
+            "build-3x1-bookworm-amd64",
+            "build-3x1-bookworm-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -4797,15 +4797,15 @@
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.1-bookworm-amd64_built_images.json",
-                  "path": "tmp/manifest-3.1-bookworm"
+                  "name": "build-3x1-bookworm-amd64_built_images.json",
+                  "path": "tmp/build-3x1-bookworm-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.1-bookworm-arm64_built_images.json",
-                  "path": "tmp/manifest-3.1-bookworm"
+                  "name": "build-3x1-bookworm-arm64_built_images.json",
+                  "path": "tmp/build-3x1-bookworm-arm64_built_images.json"
                }
             },
             {
@@ -4820,11 +4820,11 @@
             }
          ]
       },
-      "manifest-3.1-bullseye": {
-         "name": "manifest-3.1-bullseye",
+      "manifest-3x1-bullseye": {
+         "name": "manifest-3x1-bullseye",
          "needs": [
-            "build-3.1-bullseye-amd64",
-            "build-3.1-bullseye-arm64"
+            "build-3x1-bullseye-amd64",
+            "build-3x1-bullseye-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -4864,15 +4864,15 @@
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.1-bullseye-amd64_built_images.json",
-                  "path": "tmp/manifest-3.1-bullseye"
+                  "name": "build-3x1-bullseye-amd64_built_images.json",
+                  "path": "tmp/build-3x1-bullseye-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.1-bullseye-arm64_built_images.json",
-                  "path": "tmp/manifest-3.1-bullseye"
+                  "name": "build-3x1-bullseye-arm64_built_images.json",
+                  "path": "tmp/build-3x1-bullseye-arm64_built_images.json"
                }
             },
             {
@@ -4887,11 +4887,11 @@
             }
          ]
       },
-      "manifest-3.1-buster": {
-         "name": "manifest-3.1-buster",
+      "manifest-3x1-buster": {
+         "name": "manifest-3x1-buster",
          "needs": [
-            "build-3.1-buster-amd64",
-            "build-3.1-buster-arm64"
+            "build-3x1-buster-amd64",
+            "build-3x1-buster-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -4931,15 +4931,15 @@
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.1-buster-amd64_built_images.json",
-                  "path": "tmp/manifest-3.1-buster"
+                  "name": "build-3x1-buster-amd64_built_images.json",
+                  "path": "tmp/build-3x1-buster-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.1-buster-arm64_built_images.json",
-                  "path": "tmp/manifest-3.1-buster"
+                  "name": "build-3x1-buster-arm64_built_images.json",
+                  "path": "tmp/build-3x1-buster-arm64_built_images.json"
                }
             },
             {
@@ -4954,11 +4954,11 @@
             }
          ]
       },
-      "manifest-3.1-focal": {
-         "name": "manifest-3.1-focal",
+      "manifest-3x1-focal": {
+         "name": "manifest-3x1-focal",
          "needs": [
-            "build-3.1-focal-amd64",
-            "build-3.1-focal-arm64"
+            "build-3x1-focal-amd64",
+            "build-3x1-focal-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -4998,15 +4998,15 @@
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.1-focal-amd64_built_images.json",
-                  "path": "tmp/manifest-3.1-focal"
+                  "name": "build-3x1-focal-amd64_built_images.json",
+                  "path": "tmp/build-3x1-focal-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.1-focal-arm64_built_images.json",
-                  "path": "tmp/manifest-3.1-focal"
+                  "name": "build-3x1-focal-arm64_built_images.json",
+                  "path": "tmp/build-3x1-focal-arm64_built_images.json"
                }
             },
             {
@@ -5021,11 +5021,11 @@
             }
          ]
       },
-      "manifest-3.1-jammy": {
-         "name": "manifest-3.1-jammy",
+      "manifest-3x1-jammy": {
+         "name": "manifest-3x1-jammy",
          "needs": [
-            "build-3.1-jammy-amd64",
-            "build-3.1-jammy-arm64"
+            "build-3x1-jammy-amd64",
+            "build-3x1-jammy-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -5065,15 +5065,15 @@
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.1-jammy-amd64_built_images.json",
-                  "path": "tmp/manifest-3.1-jammy"
+                  "name": "build-3x1-jammy-amd64_built_images.json",
+                  "path": "tmp/build-3x1-jammy-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.1-jammy-arm64_built_images.json",
-                  "path": "tmp/manifest-3.1-jammy"
+                  "name": "build-3x1-jammy-arm64_built_images.json",
+                  "path": "tmp/build-3x1-jammy-arm64_built_images.json"
                }
             },
             {
@@ -5088,11 +5088,11 @@
             }
          ]
       },
-      "manifest-3.2-bionic": {
-         "name": "manifest-3.2-bionic",
+      "manifest-3x2-bionic": {
+         "name": "manifest-3x2-bionic",
          "needs": [
-            "build-3.2-bionic-amd64",
-            "build-3.2-bionic-arm64"
+            "build-3x2-bionic-amd64",
+            "build-3x2-bionic-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -5132,15 +5132,15 @@
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.2-bionic-amd64_built_images.json",
-                  "path": "tmp/manifest-3.2-bionic"
+                  "name": "build-3x2-bionic-amd64_built_images.json",
+                  "path": "tmp/build-3x2-bionic-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.2-bionic-arm64_built_images.json",
-                  "path": "tmp/manifest-3.2-bionic"
+                  "name": "build-3x2-bionic-arm64_built_images.json",
+                  "path": "tmp/build-3x2-bionic-arm64_built_images.json"
                }
             },
             {
@@ -5155,11 +5155,11 @@
             }
          ]
       },
-      "manifest-3.2-bookworm": {
-         "name": "manifest-3.2-bookworm",
+      "manifest-3x2-bookworm": {
+         "name": "manifest-3x2-bookworm",
          "needs": [
-            "build-3.2-bookworm-amd64",
-            "build-3.2-bookworm-arm64"
+            "build-3x2-bookworm-amd64",
+            "build-3x2-bookworm-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -5199,15 +5199,15 @@
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.2-bookworm-amd64_built_images.json",
-                  "path": "tmp/manifest-3.2-bookworm"
+                  "name": "build-3x2-bookworm-amd64_built_images.json",
+                  "path": "tmp/build-3x2-bookworm-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.2-bookworm-arm64_built_images.json",
-                  "path": "tmp/manifest-3.2-bookworm"
+                  "name": "build-3x2-bookworm-arm64_built_images.json",
+                  "path": "tmp/build-3x2-bookworm-arm64_built_images.json"
                }
             },
             {
@@ -5222,11 +5222,11 @@
             }
          ]
       },
-      "manifest-3.2-bullseye": {
-         "name": "manifest-3.2-bullseye",
+      "manifest-3x2-bullseye": {
+         "name": "manifest-3x2-bullseye",
          "needs": [
-            "build-3.2-bullseye-amd64",
-            "build-3.2-bullseye-arm64"
+            "build-3x2-bullseye-amd64",
+            "build-3x2-bullseye-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -5266,15 +5266,15 @@
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.2-bullseye-amd64_built_images.json",
-                  "path": "tmp/manifest-3.2-bullseye"
+                  "name": "build-3x2-bullseye-amd64_built_images.json",
+                  "path": "tmp/build-3x2-bullseye-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.2-bullseye-arm64_built_images.json",
-                  "path": "tmp/manifest-3.2-bullseye"
+                  "name": "build-3x2-bullseye-arm64_built_images.json",
+                  "path": "tmp/build-3x2-bullseye-arm64_built_images.json"
                }
             },
             {
@@ -5289,11 +5289,11 @@
             }
          ]
       },
-      "manifest-3.2-buster": {
-         "name": "manifest-3.2-buster",
+      "manifest-3x2-buster": {
+         "name": "manifest-3x2-buster",
          "needs": [
-            "build-3.2-buster-amd64",
-            "build-3.2-buster-arm64"
+            "build-3x2-buster-amd64",
+            "build-3x2-buster-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -5333,15 +5333,15 @@
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.2-buster-amd64_built_images.json",
-                  "path": "tmp/manifest-3.2-buster"
+                  "name": "build-3x2-buster-amd64_built_images.json",
+                  "path": "tmp/build-3x2-buster-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.2-buster-arm64_built_images.json",
-                  "path": "tmp/manifest-3.2-buster"
+                  "name": "build-3x2-buster-arm64_built_images.json",
+                  "path": "tmp/build-3x2-buster-arm64_built_images.json"
                }
             },
             {
@@ -5356,11 +5356,11 @@
             }
          ]
       },
-      "manifest-3.2-focal": {
-         "name": "manifest-3.2-focal",
+      "manifest-3x2-focal": {
+         "name": "manifest-3x2-focal",
          "needs": [
-            "build-3.2-focal-amd64",
-            "build-3.2-focal-arm64"
+            "build-3x2-focal-amd64",
+            "build-3x2-focal-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -5400,15 +5400,15 @@
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.2-focal-amd64_built_images.json",
-                  "path": "tmp/manifest-3.2-focal"
+                  "name": "build-3x2-focal-amd64_built_images.json",
+                  "path": "tmp/build-3x2-focal-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.2-focal-arm64_built_images.json",
-                  "path": "tmp/manifest-3.2-focal"
+                  "name": "build-3x2-focal-arm64_built_images.json",
+                  "path": "tmp/build-3x2-focal-arm64_built_images.json"
                }
             },
             {
@@ -5423,11 +5423,11 @@
             }
          ]
       },
-      "manifest-3.2-jammy": {
-         "name": "manifest-3.2-jammy",
+      "manifest-3x2-jammy": {
+         "name": "manifest-3x2-jammy",
          "needs": [
-            "build-3.2-jammy-amd64",
-            "build-3.2-jammy-arm64"
+            "build-3x2-jammy-amd64",
+            "build-3x2-jammy-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -5467,15 +5467,15 @@
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.2-jammy-amd64_built_images.json",
-                  "path": "tmp/manifest-3.2-jammy"
+                  "name": "build-3x2-jammy-amd64_built_images.json",
+                  "path": "tmp/build-3x2-jammy-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.2-jammy-arm64_built_images.json",
-                  "path": "tmp/manifest-3.2-jammy"
+                  "name": "build-3x2-jammy-arm64_built_images.json",
+                  "path": "tmp/build-3x2-jammy-arm64_built_images.json"
                }
             },
             {
@@ -5493,66 +5493,66 @@
       "manifest-latest": {
          "name": "manifest-latest",
          "needs": [
-            "build-2.6-bionic-amd64",
-            "build-2.7-bionic-amd64",
-            "build-3.0-bionic-amd64",
-            "build-3.1-bionic-amd64",
-            "build-3.2-bionic-amd64",
-            "build-2.6-focal-amd64",
-            "build-2.7-focal-amd64",
-            "build-3.0-focal-amd64",
-            "build-3.1-focal-amd64",
-            "build-3.2-focal-amd64",
-            "build-2.6-jammy-amd64",
-            "build-2.7-jammy-amd64",
-            "build-3.0-jammy-amd64",
-            "build-3.1-jammy-amd64",
-            "build-3.2-jammy-amd64",
-            "build-2.6-bullseye-amd64",
-            "build-2.7-bullseye-amd64",
-            "build-3.0-bullseye-amd64",
-            "build-3.1-bullseye-amd64",
-            "build-3.2-bullseye-amd64",
-            "build-2.6-buster-amd64",
-            "build-2.7-buster-amd64",
-            "build-3.0-buster-amd64",
-            "build-3.1-buster-amd64",
-            "build-3.2-buster-amd64",
-            "build-2.6-bookworm-amd64",
-            "build-2.7-bookworm-amd64",
-            "build-3.0-bookworm-amd64",
-            "build-3.1-bookworm-amd64",
-            "build-3.2-bookworm-amd64",
-            "build-2.6-bionic-arm64",
-            "build-2.7-bionic-arm64",
-            "build-3.0-bionic-arm64",
-            "build-3.1-bionic-arm64",
-            "build-3.2-bionic-arm64",
-            "build-2.6-focal-arm64",
-            "build-2.7-focal-arm64",
-            "build-3.0-focal-arm64",
-            "build-3.1-focal-arm64",
-            "build-3.2-focal-arm64",
-            "build-2.6-jammy-arm64",
-            "build-2.7-jammy-arm64",
-            "build-3.0-jammy-arm64",
-            "build-3.1-jammy-arm64",
-            "build-3.2-jammy-arm64",
-            "build-2.6-bullseye-arm64",
-            "build-2.7-bullseye-arm64",
-            "build-3.0-bullseye-arm64",
-            "build-3.1-bullseye-arm64",
-            "build-3.2-bullseye-arm64",
-            "build-2.6-buster-arm64",
-            "build-2.7-buster-arm64",
-            "build-3.0-buster-arm64",
-            "build-3.1-buster-arm64",
-            "build-3.2-buster-arm64",
-            "build-2.6-bookworm-arm64",
-            "build-2.7-bookworm-arm64",
-            "build-3.0-bookworm-arm64",
-            "build-3.1-bookworm-arm64",
-            "build-3.2-bookworm-arm64"
+            "build-2x6-bionic-amd64",
+            "build-2x7-bionic-amd64",
+            "build-3x0-bionic-amd64",
+            "build-3x1-bionic-amd64",
+            "build-3x2-bionic-amd64",
+            "build-2x6-focal-amd64",
+            "build-2x7-focal-amd64",
+            "build-3x0-focal-amd64",
+            "build-3x1-focal-amd64",
+            "build-3x2-focal-amd64",
+            "build-2x6-jammy-amd64",
+            "build-2x7-jammy-amd64",
+            "build-3x0-jammy-amd64",
+            "build-3x1-jammy-amd64",
+            "build-3x2-jammy-amd64",
+            "build-2x6-bullseye-amd64",
+            "build-2x7-bullseye-amd64",
+            "build-3x0-bullseye-amd64",
+            "build-3x1-bullseye-amd64",
+            "build-3x2-bullseye-amd64",
+            "build-2x6-buster-amd64",
+            "build-2x7-buster-amd64",
+            "build-3x0-buster-amd64",
+            "build-3x1-buster-amd64",
+            "build-3x2-buster-amd64",
+            "build-2x6-bookworm-amd64",
+            "build-2x7-bookworm-amd64",
+            "build-3x0-bookworm-amd64",
+            "build-3x1-bookworm-amd64",
+            "build-3x2-bookworm-amd64",
+            "build-2x6-bionic-arm64",
+            "build-2x7-bionic-arm64",
+            "build-3x0-bionic-arm64",
+            "build-3x1-bionic-arm64",
+            "build-3x2-bionic-arm64",
+            "build-2x6-focal-arm64",
+            "build-2x7-focal-arm64",
+            "build-3x0-focal-arm64",
+            "build-3x1-focal-arm64",
+            "build-3x2-focal-arm64",
+            "build-2x6-jammy-arm64",
+            "build-2x7-jammy-arm64",
+            "build-3x0-jammy-arm64",
+            "build-3x1-jammy-arm64",
+            "build-3x2-jammy-arm64",
+            "build-2x6-bullseye-arm64",
+            "build-2x7-bullseye-arm64",
+            "build-3x0-bullseye-arm64",
+            "build-3x1-bullseye-arm64",
+            "build-3x2-bullseye-arm64",
+            "build-2x6-buster-arm64",
+            "build-2x7-buster-arm64",
+            "build-3x0-buster-arm64",
+            "build-3x1-buster-arm64",
+            "build-3x2-buster-arm64",
+            "build-2x6-bookworm-arm64",
+            "build-2x7-bookworm-arm64",
+            "build-3x0-bookworm-arm64",
+            "build-3x1-bookworm-arm64",
+            "build-3x2-bookworm-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -5592,421 +5592,421 @@
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.6-bionic-amd64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-2x6-bionic-amd64_built_images.json",
+                  "path": "tmp/build-2x6-bionic-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.7-bionic-amd64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-2x7-bionic-amd64_built_images.json",
+                  "path": "tmp/build-2x7-bionic-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.0-bionic-amd64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x0-bionic-amd64_built_images.json",
+                  "path": "tmp/build-3x0-bionic-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.1-bionic-amd64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x1-bionic-amd64_built_images.json",
+                  "path": "tmp/build-3x1-bionic-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.2-bionic-amd64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x2-bionic-amd64_built_images.json",
+                  "path": "tmp/build-3x2-bionic-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.6-focal-amd64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-2x6-focal-amd64_built_images.json",
+                  "path": "tmp/build-2x6-focal-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.7-focal-amd64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-2x7-focal-amd64_built_images.json",
+                  "path": "tmp/build-2x7-focal-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.0-focal-amd64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x0-focal-amd64_built_images.json",
+                  "path": "tmp/build-3x0-focal-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.1-focal-amd64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x1-focal-amd64_built_images.json",
+                  "path": "tmp/build-3x1-focal-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.2-focal-amd64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x2-focal-amd64_built_images.json",
+                  "path": "tmp/build-3x2-focal-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.6-jammy-amd64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-2x6-jammy-amd64_built_images.json",
+                  "path": "tmp/build-2x6-jammy-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.7-jammy-amd64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-2x7-jammy-amd64_built_images.json",
+                  "path": "tmp/build-2x7-jammy-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.0-jammy-amd64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x0-jammy-amd64_built_images.json",
+                  "path": "tmp/build-3x0-jammy-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.1-jammy-amd64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x1-jammy-amd64_built_images.json",
+                  "path": "tmp/build-3x1-jammy-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.2-jammy-amd64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x2-jammy-amd64_built_images.json",
+                  "path": "tmp/build-3x2-jammy-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.6-bullseye-amd64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-2x6-bullseye-amd64_built_images.json",
+                  "path": "tmp/build-2x6-bullseye-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.7-bullseye-amd64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-2x7-bullseye-amd64_built_images.json",
+                  "path": "tmp/build-2x7-bullseye-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.0-bullseye-amd64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x0-bullseye-amd64_built_images.json",
+                  "path": "tmp/build-3x0-bullseye-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.1-bullseye-amd64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x1-bullseye-amd64_built_images.json",
+                  "path": "tmp/build-3x1-bullseye-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.2-bullseye-amd64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x2-bullseye-amd64_built_images.json",
+                  "path": "tmp/build-3x2-bullseye-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.6-buster-amd64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-2x6-buster-amd64_built_images.json",
+                  "path": "tmp/build-2x6-buster-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.7-buster-amd64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-2x7-buster-amd64_built_images.json",
+                  "path": "tmp/build-2x7-buster-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.0-buster-amd64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x0-buster-amd64_built_images.json",
+                  "path": "tmp/build-3x0-buster-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.1-buster-amd64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x1-buster-amd64_built_images.json",
+                  "path": "tmp/build-3x1-buster-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.2-buster-amd64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x2-buster-amd64_built_images.json",
+                  "path": "tmp/build-3x2-buster-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.6-bookworm-amd64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-2x6-bookworm-amd64_built_images.json",
+                  "path": "tmp/build-2x6-bookworm-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.7-bookworm-amd64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-2x7-bookworm-amd64_built_images.json",
+                  "path": "tmp/build-2x7-bookworm-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.0-bookworm-amd64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x0-bookworm-amd64_built_images.json",
+                  "path": "tmp/build-3x0-bookworm-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.1-bookworm-amd64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x1-bookworm-amd64_built_images.json",
+                  "path": "tmp/build-3x1-bookworm-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.2-bookworm-amd64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x2-bookworm-amd64_built_images.json",
+                  "path": "tmp/build-3x2-bookworm-amd64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.6-bionic-arm64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-2x6-bionic-arm64_built_images.json",
+                  "path": "tmp/build-2x6-bionic-arm64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.7-bionic-arm64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-2x7-bionic-arm64_built_images.json",
+                  "path": "tmp/build-2x7-bionic-arm64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.0-bionic-arm64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x0-bionic-arm64_built_images.json",
+                  "path": "tmp/build-3x0-bionic-arm64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.1-bionic-arm64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x1-bionic-arm64_built_images.json",
+                  "path": "tmp/build-3x1-bionic-arm64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.2-bionic-arm64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x2-bionic-arm64_built_images.json",
+                  "path": "tmp/build-3x2-bionic-arm64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.6-focal-arm64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-2x6-focal-arm64_built_images.json",
+                  "path": "tmp/build-2x6-focal-arm64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.7-focal-arm64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-2x7-focal-arm64_built_images.json",
+                  "path": "tmp/build-2x7-focal-arm64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.0-focal-arm64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x0-focal-arm64_built_images.json",
+                  "path": "tmp/build-3x0-focal-arm64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.1-focal-arm64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x1-focal-arm64_built_images.json",
+                  "path": "tmp/build-3x1-focal-arm64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.2-focal-arm64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x2-focal-arm64_built_images.json",
+                  "path": "tmp/build-3x2-focal-arm64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.6-jammy-arm64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-2x6-jammy-arm64_built_images.json",
+                  "path": "tmp/build-2x6-jammy-arm64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.7-jammy-arm64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-2x7-jammy-arm64_built_images.json",
+                  "path": "tmp/build-2x7-jammy-arm64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.0-jammy-arm64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x0-jammy-arm64_built_images.json",
+                  "path": "tmp/build-3x0-jammy-arm64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.1-jammy-arm64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x1-jammy-arm64_built_images.json",
+                  "path": "tmp/build-3x1-jammy-arm64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.2-jammy-arm64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x2-jammy-arm64_built_images.json",
+                  "path": "tmp/build-3x2-jammy-arm64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.6-bullseye-arm64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-2x6-bullseye-arm64_built_images.json",
+                  "path": "tmp/build-2x6-bullseye-arm64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.7-bullseye-arm64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-2x7-bullseye-arm64_built_images.json",
+                  "path": "tmp/build-2x7-bullseye-arm64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.0-bullseye-arm64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x0-bullseye-arm64_built_images.json",
+                  "path": "tmp/build-3x0-bullseye-arm64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.1-bullseye-arm64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x1-bullseye-arm64_built_images.json",
+                  "path": "tmp/build-3x1-bullseye-arm64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.2-bullseye-arm64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x2-bullseye-arm64_built_images.json",
+                  "path": "tmp/build-3x2-bullseye-arm64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.6-buster-arm64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-2x6-buster-arm64_built_images.json",
+                  "path": "tmp/build-2x6-buster-arm64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.7-buster-arm64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-2x7-buster-arm64_built_images.json",
+                  "path": "tmp/build-2x7-buster-arm64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.0-buster-arm64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x0-buster-arm64_built_images.json",
+                  "path": "tmp/build-3x0-buster-arm64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.1-buster-arm64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x1-buster-arm64_built_images.json",
+                  "path": "tmp/build-3x1-buster-arm64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.2-buster-arm64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x2-buster-arm64_built_images.json",
+                  "path": "tmp/build-3x2-buster-arm64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.6-bookworm-arm64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-2x6-bookworm-arm64_built_images.json",
+                  "path": "tmp/build-2x6-bookworm-arm64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2.7-bookworm-arm64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-2x7-bookworm-arm64_built_images.json",
+                  "path": "tmp/build-2x7-bookworm-arm64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.0-bookworm-arm64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x0-bookworm-arm64_built_images.json",
+                  "path": "tmp/build-3x0-bookworm-arm64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.1-bookworm-arm64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x1-bookworm-arm64_built_images.json",
+                  "path": "tmp/build-3x1-bookworm-arm64_built_images.json"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3.2-bookworm-arm64_built_images.json",
-                  "path": "tmp/manifest-latest"
+                  "name": "build-3x2-bookworm-arm64_built_images.json",
+                  "path": "tmp/build-3x2-bookworm-arm64_built_images.json"
                }
             },
             {
