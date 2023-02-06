@@ -1,8 +1,3 @@
-local matrix = {
-  distro: ['bionic', 'focal', 'jammy', 'bullseye', 'buster', 'bookworm'],
-  series: ['2.6', '2.7', '3.0', '3.1', '3.2'],
-};
-
 local common_steps = [
   {
     run: |||
@@ -35,18 +30,27 @@ local common_steps = [
   { uses: 'actions/checkout@v3' },
 ];
 
-local build_job_matrix = matrix { arch: ['amd64', 'arm64'] };
+local splitWithSpace = function(s) [token for token in std.split(s, ' ') if token != ''];
+local matrix = [
+  { series: '2.6', distro: splitWithSpace('bionic focal          buster                  ') },
+  { series: '2.7', distro: splitWithSpace('bionic focal          buster                  ') },
+  { series: '3.0', distro: splitWithSpace('bionic focal jammy    buster bullseye         ') },
+  { series: '3.1', distro: splitWithSpace('bionic focal jammy           bullseye         ') },
+  { series: '3.2', distro: splitWithSpace('       focal jammy           bullseye bookworm') },
+];
+local archs = ['amd64', 'arm64'];
+
 local build_job_patterns = [
-  { series: series, distro: distro, arch: arch }
-  for arch in build_job_matrix.arch
-  for distro in build_job_matrix.distro
-  for series in build_job_matrix.series
+  { series: series_and_distro.series, distro: distro, arch: arch }
+  for series_and_distro in matrix
+  for distro in series_and_distro.distro
+  for arch in archs
 ];
 
 local manifest_subtag_job_patterns = [
-  { series: series, distro: distro }
-  for distro in build_job_matrix.distro
-  for series in build_job_matrix.series
+  { series: series_and_distro.series, distro: distro }
+  for series_and_distro in matrix
+  for distro in series_and_distro.distro
 ];
 
 local pattern_to_job_name(prefix, pattern) =
@@ -74,7 +78,7 @@ local build_job(pattern) =
         {
           uses: 'actions/upload-artifact@v3',
           with: {
-            name: name + '_built-images.json',
+            name: name + '_built_images.json',
             path: 'tmp/built_images.json',
             'retention-days': 1,
           },
@@ -112,7 +116,7 @@ local manifest_job(name, kind, env, parents) = {
 
 local manifest_subtag_job(pattern) = {
   local name = pattern_to_job_name('manifest', pattern),
-  local parents = [pattern_to_job_name('build', pattern { arch: arch }) for arch in build_job_matrix.arch],
+  local parents = [pattern_to_job_name('build', pattern { arch: arch }) for arch in archs],
   local env = {
     DIST_FILTER: pattern.distro,
     SERIES_FILTER: pattern.series,

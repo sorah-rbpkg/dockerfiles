@@ -115,6 +115,7 @@ DISTROS = [
     arm: true,
   ),
 ]
+# NOTE: Make sure build.jsonnet is updated as well
 ARCHS = %w(arm64 amd64)
 SERIES = [
   Release.new(version: '2.6', default_distro: 'focal'),
