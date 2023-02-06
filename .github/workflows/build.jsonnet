@@ -32,11 +32,11 @@ local common_steps = [
 
 local splitWithSpace = function(s) [token for token in std.split(s, ' ') if token != ''];
 local matrix = [
-  { series: '2.6', distro: splitWithSpace('bionic focal          buster                  ') },
-  { series: '2.7', distro: splitWithSpace('bionic focal          buster                  ') },
-  { series: '3.0', distro: splitWithSpace('bionic focal jammy    buster bullseye         ') },
-  { series: '3.1', distro: splitWithSpace('bionic focal jammy           bullseye         ') },
-  { series: '3.2', distro: splitWithSpace('       focal jammy           bullseye bookworm') },
+  { series: '2.6', distro: splitWithSpace('bionic focal          buster                  '), arm: false },
+  { series: '2.7', distro: splitWithSpace('bionic focal          buster                  '), arm: true },
+  { series: '3.0', distro: splitWithSpace('bionic focal jammy    buster bullseye         '), arm: true },
+  { series: '3.1', distro: splitWithSpace('bionic focal jammy           bullseye         '), arm: true },
+  { series: '3.2', distro: splitWithSpace('       focal jammy           bullseye bookworm'), arm: true },
 ];
 local archs = ['amd64', 'arm64'];
 
@@ -45,6 +45,7 @@ local build_job_patterns = [
   for series_and_distro in matrix
   for distro in series_and_distro.distro
   for arch in archs
+  if arch == 'amd64' || (arch == 'arm64' && series_and_distro.series != '2.6')
 ];
 
 local manifest_subtag_job_patterns = [
@@ -116,7 +117,11 @@ local manifest_job(name, kind, env, parents) = {
 
 local manifest_subtag_job(pattern) = {
   local name = pattern_to_job_name('manifest', pattern),
-  local parents = [pattern_to_job_name('build', pattern { arch: arch }) for arch in archs],
+  local parents = [
+    pattern_to_job_name('build', pattern { arch: arch })
+    for arch in archs
+    if arch == 'amd64' || (arch == 'arm64' && pattern.series != '2.6')
+  ],
   local env = {
     DIST_FILTER: pattern.distro,
     SERIES_FILTER: pattern.series,

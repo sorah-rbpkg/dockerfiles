@@ -58,64 +58,6 @@
             }
          ]
       },
-      "build-2x6-bionic-arm64": {
-         "name": "build-2x6-bionic-arm64",
-         "permissions": {
-            "contents": "read",
-            "id-token": "write"
-         },
-         "runs-on": "ubuntu-latest",
-         "steps": [
-            {
-               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
-            },
-            {
-               "uses": "ruby/setup-ruby@v1",
-               "with": {
-                  "ruby-version": "3.1"
-               }
-            },
-            {
-               "name": "login-dockerhub",
-               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
-            },
-            {
-               "uses": "aws-actions/configure-aws-credentials@v1",
-               "with": {
-                  "aws-region": "us-east-1",
-                  "role-duration-seconds": 14400,
-                  "role-skip-session-tagging": "true",
-                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
-               }
-            },
-            {
-               "name": "Login to ECR Public",
-               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
-            },
-            {
-               "uses": "actions/checkout@v3"
-            },
-            {
-               "uses": "docker/setup-qemu-action@v2"
-            },
-            {
-               "env": {
-                  "ARCH_FILTER": "arm64",
-                  "DIST_FILTER": "bionic",
-                  "SERIES_FILTER": "2.6"
-               },
-               "run": "ruby build.rb --pull --push"
-            },
-            {
-               "uses": "actions/upload-artifact@v3",
-               "with": {
-                  "name": "build-2x6-bionic-arm64_built_images.json",
-                  "path": "tmp/built_images.json",
-                  "retention-days": 1
-               }
-            }
-         ]
-      },
       "build-2x6-buster-amd64": {
          "name": "build-2x6-buster-amd64",
          "permissions": {
@@ -174,64 +116,6 @@
             }
          ]
       },
-      "build-2x6-buster-arm64": {
-         "name": "build-2x6-buster-arm64",
-         "permissions": {
-            "contents": "read",
-            "id-token": "write"
-         },
-         "runs-on": "ubuntu-latest",
-         "steps": [
-            {
-               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
-            },
-            {
-               "uses": "ruby/setup-ruby@v1",
-               "with": {
-                  "ruby-version": "3.1"
-               }
-            },
-            {
-               "name": "login-dockerhub",
-               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
-            },
-            {
-               "uses": "aws-actions/configure-aws-credentials@v1",
-               "with": {
-                  "aws-region": "us-east-1",
-                  "role-duration-seconds": 14400,
-                  "role-skip-session-tagging": "true",
-                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
-               }
-            },
-            {
-               "name": "Login to ECR Public",
-               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
-            },
-            {
-               "uses": "actions/checkout@v3"
-            },
-            {
-               "uses": "docker/setup-qemu-action@v2"
-            },
-            {
-               "env": {
-                  "ARCH_FILTER": "arm64",
-                  "DIST_FILTER": "buster",
-                  "SERIES_FILTER": "2.6"
-               },
-               "run": "ruby build.rb --pull --push"
-            },
-            {
-               "uses": "actions/upload-artifact@v3",
-               "with": {
-                  "name": "build-2x6-buster-arm64_built_images.json",
-                  "path": "tmp/built_images.json",
-                  "retention-days": 1
-               }
-            }
-         ]
-      },
       "build-2x6-focal-amd64": {
          "name": "build-2x6-focal-amd64",
          "permissions": {
@@ -284,64 +168,6 @@
                "uses": "actions/upload-artifact@v3",
                "with": {
                   "name": "build-2x6-focal-amd64_built_images.json",
-                  "path": "tmp/built_images.json",
-                  "retention-days": 1
-               }
-            }
-         ]
-      },
-      "build-2x6-focal-arm64": {
-         "name": "build-2x6-focal-arm64",
-         "permissions": {
-            "contents": "read",
-            "id-token": "write"
-         },
-         "runs-on": "ubuntu-latest",
-         "steps": [
-            {
-               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
-            },
-            {
-               "uses": "ruby/setup-ruby@v1",
-               "with": {
-                  "ruby-version": "3.1"
-               }
-            },
-            {
-               "name": "login-dockerhub",
-               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
-            },
-            {
-               "uses": "aws-actions/configure-aws-credentials@v1",
-               "with": {
-                  "aws-region": "us-east-1",
-                  "role-duration-seconds": 14400,
-                  "role-skip-session-tagging": "true",
-                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
-               }
-            },
-            {
-               "name": "Login to ECR Public",
-               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
-            },
-            {
-               "uses": "actions/checkout@v3"
-            },
-            {
-               "uses": "docker/setup-qemu-action@v2"
-            },
-            {
-               "env": {
-                  "ARCH_FILTER": "arm64",
-                  "DIST_FILTER": "focal",
-                  "SERIES_FILTER": "2.6"
-               },
-               "run": "ruby build.rb --pull --push"
-            },
-            {
-               "uses": "actions/upload-artifact@v3",
-               "with": {
-                  "name": "build-2x6-focal-arm64_built_images.json",
                   "path": "tmp/built_images.json",
                   "retention-days": 1
                }
@@ -2207,8 +2033,7 @@
       "manifest-2x6-bionic": {
          "name": "manifest-2x6-bionic",
          "needs": [
-            "build-2x6-bionic-amd64",
-            "build-2x6-bionic-arm64"
+            "build-2x6-bionic-amd64"
          ],
          "permissions": {
             "contents": "read",
@@ -2253,13 +2078,6 @@
                }
             },
             {
-               "uses": "actions/download-artifact@v3",
-               "with": {
-                  "name": "build-2x6-bionic-arm64_built_images.json",
-                  "path": "tmp/build-2x6-bionic-arm64_built_images.json"
-               }
-            },
-            {
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/build-*_built_images.json > tmp/built_images.json"
             },
             {
@@ -2274,8 +2092,7 @@
       "manifest-2x6-buster": {
          "name": "manifest-2x6-buster",
          "needs": [
-            "build-2x6-buster-amd64",
-            "build-2x6-buster-arm64"
+            "build-2x6-buster-amd64"
          ],
          "permissions": {
             "contents": "read",
@@ -2320,13 +2137,6 @@
                }
             },
             {
-               "uses": "actions/download-artifact@v3",
-               "with": {
-                  "name": "build-2x6-buster-arm64_built_images.json",
-                  "path": "tmp/build-2x6-buster-arm64_built_images.json"
-               }
-            },
-            {
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/build-*_built_images.json > tmp/built_images.json"
             },
             {
@@ -2341,8 +2151,7 @@
       "manifest-2x6-focal": {
          "name": "manifest-2x6-focal",
          "needs": [
-            "build-2x6-focal-amd64",
-            "build-2x6-focal-arm64"
+            "build-2x6-focal-amd64"
          ],
          "permissions": {
             "contents": "read",
@@ -2384,13 +2193,6 @@
                "with": {
                   "name": "build-2x6-focal-amd64_built_images.json",
                   "path": "tmp/build-2x6-focal-amd64_built_images.json"
-               }
-            },
-            {
-               "uses": "actions/download-artifact@v3",
-               "with": {
-                  "name": "build-2x6-focal-arm64_built_images.json",
-                  "path": "tmp/build-2x6-focal-arm64_built_images.json"
                }
             },
             {
@@ -3481,11 +3283,8 @@
          "name": "manifest-latest",
          "needs": [
             "build-2x6-bionic-amd64",
-            "build-2x6-bionic-arm64",
             "build-2x6-focal-amd64",
-            "build-2x6-focal-arm64",
             "build-2x6-buster-amd64",
-            "build-2x6-buster-arm64",
             "build-2x7-bionic-amd64",
             "build-2x7-bionic-arm64",
             "build-2x7-focal-amd64",
@@ -3564,13 +3363,6 @@
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2x6-bionic-arm64_built_images.json",
-                  "path": "tmp/build-2x6-bionic-arm64_built_images.json"
-               }
-            },
-            {
-               "uses": "actions/download-artifact@v3",
-               "with": {
                   "name": "build-2x6-focal-amd64_built_images.json",
                   "path": "tmp/build-2x6-focal-amd64_built_images.json"
                }
@@ -3578,22 +3370,8 @@
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-2x6-focal-arm64_built_images.json",
-                  "path": "tmp/build-2x6-focal-arm64_built_images.json"
-               }
-            },
-            {
-               "uses": "actions/download-artifact@v3",
-               "with": {
                   "name": "build-2x6-buster-amd64_built_images.json",
                   "path": "tmp/build-2x6-buster-amd64_built_images.json"
-               }
-            },
-            {
-               "uses": "actions/download-artifact@v3",
-               "with": {
-                  "name": "build-2x6-buster-arm64_built_images.json",
-                  "path": "tmp/build-2x6-buster-arm64_built_images.json"
                }
             },
             {
