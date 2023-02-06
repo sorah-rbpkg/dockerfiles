@@ -77,8 +77,9 @@ def create_manifest(manifests)
           cmd('docker', 'pull', "#{repo}:#{image.canonical_tag}")
         end
       end
-      cmd('docker', 'manifest', 'create', '--amend', manifest.name, *(manifest.images.map { "#{repo}:#{_1.canonical_tag}" }))
-      cmd('docker', 'manifest', 'push', manifest.name)
+      name = "#{repo}:#{manifest.name}"
+      cmd('docker', 'manifest', 'create', '--amend', name, *(manifest.images.map { "#{repo}:#{_1.canonical_tag}" }))
+      cmd('docker', 'manifest', 'push', name)
     end
   end
 end
