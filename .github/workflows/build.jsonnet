@@ -79,7 +79,7 @@ local build_job(pattern) =
         {
           uses: 'actions/upload-artifact@v3',
           with: {
-            name: name + '_built_images.json',
+            name: name + '-artifacts',
             path: 'tmp/built_images.json',
             'retention-days': 1,
           },
@@ -98,14 +98,17 @@ local manifest_job(name, kind, env, parents) = {
       {
         uses: 'actions/download-artifact@v3',
         with: {
-          name: parent + '_built_images.json',
-          path: 'tmp/' + self.name,
+          name: parent + '-artifacts',
+          path: 'tmp/' + parent + '-artifacts',
         },
       }
       for parent in parents
     ] + [
       {
-        run: 'ruby -rjson -e "puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))" tmp/build-*_built_images.json > tmp/built_images.json',
+        run: 'find tmp',
+      },
+      {
+        run: 'ruby -rjson -e "puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))" tmp/*-artifacts/built_images.json > tmp/built_images.json',
       },
       {
         run: 'ruby manifest.rb --pull --' + kind,
