@@ -15,7 +15,7 @@ if PULL
     DISTROS.each do |distro|
       next if DISTRO_FILTER && !DISTRO_FILTER.include?(distro.name)
 
-      pulled_image = PUSH_REPOS.flat_map do |repo|
+      pulled_image = [PUSH_REPOS[0]].flat_map do |repo|
         [
           "#{repo}:#{series.version}-#{distro.name}-amd64",
           "#{repo}:#{series.version}-#{distro.name}-arm64",
@@ -74,9 +74,9 @@ SERIES.each do |series|
       File.write(dev_dockerfile_path, dev_dockerfile)
       built_dev_image = BuiltImage.new(series: series.version, version: version, distro: distro.name, dev: true, arch: arch)
 
-      cmd('docker', 'build', '--pull', '--platform', built_image.platform, '--cache-from', "#{built_image.repo}:#{built_image.canonical_tag}", '-t',  "#{built_image.repo}:#{built_image.canonical_tag}", '-f', dockerfile_path, __dir__)
+      cmd('docker', 'build', '--pull', '--platform', built_image.platform, '--cache-from', "#{PUSH_REPOS[0]}:#{built_image.canonical_tag}", '-t',  "#{built_image.repo}:#{built_image.canonical_tag}", '-f', dockerfile_path, __dir__)
       @built_images << built_image
-      cmd('docker', 'build', '--platform', built_dev_image.platform, '--cache-from', "#{built_image.repo}:#{built_dev_image.canonical_tag}", '-t',  "#{built_image.repo}:#{built_dev_image.canonical_tag}", '-f', dev_dockerfile_path, __dir__)
+      cmd('docker', 'build', '--platform', built_dev_image.platform, '--cache-from', "#{PUSH_REPOS[0]}:#{built_dev_image.canonical_tag}", '-t',  "#{built_image.repo}:#{built_dev_image.canonical_tag}", '-f', dev_dockerfile_path, __dir__)
       @built_images << built_dev_image
     end
   end
