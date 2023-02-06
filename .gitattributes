@@ -1,1 +1,2 @@
 files/apt-preference-* linguist-language=Debian-Package-Control-File
+.github/workflows/*.yml linguist-generated
