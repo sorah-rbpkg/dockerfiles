@@ -129,12 +129,11 @@ local jobs = build_jobs + [
   manifest_job('manifest-latest', 'latest', {}, [job._name for job in build_jobs]),
 ];
 
-jobs
-//{
-//  name: 'docker-build',
-//  on: {
-//    schedule: [{ cron: '18 7 2,12,22 * *' }],
-//    push: { branches: ['master'] },
-//  },
-//  jobs: std.foldl(function(r, i) r + i, jobs, {}),
-//}
+{
+  name: 'docker-build',
+  on: {
+    schedule: [{ cron: '18 7 2,12,22 * *' }],
+    push: { branches: ['master'] },
+  },
+  jobs: std.foldl(function(r, i) r + i, jobs, {}),
+}
