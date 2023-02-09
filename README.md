@@ -30,7 +30,7 @@ where,
 - 2.7: `2.7`, `2.7-dev` (dist= __`focal`__, `bionic`, `bullseye`, `buster`)
 - 3.0: `3.0`, `3.0-dev` (dist= `jammy`, __`focal`__, `bionic`, `bullseye`, `buster`)
 - 3.1: `3.1`, `3.1-dev` (dist= __`jammy`__, `focal`, `bionic`, `bullseye`)
-- 3.2: `3.1`, `3.1-dev` (dist= __`jammy`__, `focal`, `bionic`, `bookworm`)
+- 3.2: `3.2`, `3.2-dev` (dist= __`jammy`__, `focal`, `bionic`, `bookworm`)
 
 _distro in bold is default_
 
