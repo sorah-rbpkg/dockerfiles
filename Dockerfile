@@ -31,10 +31,10 @@ RUN apt-get update \
 RUN gem install bundler --no-doc -v "${BUNDLER1_VERSION}"
 RUN gem install bundler --no-doc -v "${BUNDLER2_VERSION}"
 
-<%- if distro == 'jammy' && distro == 'bookworm' -%>
+<% if distro == 'jammy' && distro == 'bookworm' %>
 # (/root/.bundle/config) https://github.com/protocolbuffers/protobuf/issues/11935
 RUN bundle config set --global build.google-protobuf --with-cflags=-fno-lto
-<%- end -%>
+<% end %>
 
 COPY files/unicorn.conf.rb /etc/unicorn.conf
 COPY files/puma.rb /etc/puma.rb
