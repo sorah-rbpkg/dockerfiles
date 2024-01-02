@@ -123,6 +123,7 @@ SERIES = [
   Release.new(version: '3.0', default_distro: 'focal', arm: true),
   Release.new(version: '3.1', default_distro: 'jammy', arm: true),
   Release.new(version: '3.2', default_distro: 'jammy', arm: true),
+  Release.new(version: '3.3', default_distro: 'jammy', arm: true),
 ]
 
 def find_series(version)
