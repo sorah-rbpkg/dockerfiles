@@ -28,7 +28,7 @@ RUN apt-get update \
   tzdata \
   && rm -rf /var/lib/apt/lists/*
 
-RUN gem install bundler --no-doc -v "${BUNDLER1_VERSION}"
+RUN if dpkg --compare-versions "${RUBY}" '<=' '3.3'; then gem install bundler --no-doc -v "${BUNDLER1_VERSION}"; fi
 RUN if dpkg --compare-versions "${RUBY}" '<=' '2.7'; then gem install bundler --no-doc -v "2.4.22"; else gem install bundler --no-doc -v "${BUNDLER2_VERSION}"; fi
 
 <% if distro == 'jammy' && distro == 'bookworm' %>
