@@ -1,179 +1,5 @@
 {
    "jobs": {
-      "build-2x6-bionic-amd64": {
-         "name": "build-2x6-bionic-amd64",
-         "permissions": {
-            "contents": "read",
-            "id-token": "write"
-         },
-         "runs-on": "ubuntu-latest",
-         "steps": [
-            {
-               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
-            },
-            {
-               "uses": "ruby/setup-ruby@v1",
-               "with": {
-                  "ruby-version": "3.1"
-               }
-            },
-            {
-               "name": "login-dockerhub",
-               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
-            },
-            {
-               "uses": "aws-actions/configure-aws-credentials@v1",
-               "with": {
-                  "aws-region": "us-east-1",
-                  "role-duration-seconds": 14400,
-                  "role-skip-session-tagging": "true",
-                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
-               }
-            },
-            {
-               "name": "Login to ECR Public",
-               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
-            },
-            {
-               "uses": "actions/checkout@v3"
-            },
-            {
-               "uses": "docker/setup-qemu-action@v2"
-            },
-            {
-               "env": {
-                  "ARCH_FILTER": "amd64",
-                  "DIST_FILTER": "bionic",
-                  "SERIES_FILTER": "2.6"
-               },
-               "run": "ruby build.rb --pull --push"
-            },
-            {
-               "uses": "actions/upload-artifact@v3",
-               "with": {
-                  "name": "build-2x6-bionic-amd64-artifacts",
-                  "path": "tmp/built_images.json",
-                  "retention-days": 1
-               }
-            }
-         ]
-      },
-      "build-2x6-buster-amd64": {
-         "name": "build-2x6-buster-amd64",
-         "permissions": {
-            "contents": "read",
-            "id-token": "write"
-         },
-         "runs-on": "ubuntu-latest",
-         "steps": [
-            {
-               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
-            },
-            {
-               "uses": "ruby/setup-ruby@v1",
-               "with": {
-                  "ruby-version": "3.1"
-               }
-            },
-            {
-               "name": "login-dockerhub",
-               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
-            },
-            {
-               "uses": "aws-actions/configure-aws-credentials@v1",
-               "with": {
-                  "aws-region": "us-east-1",
-                  "role-duration-seconds": 14400,
-                  "role-skip-session-tagging": "true",
-                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
-               }
-            },
-            {
-               "name": "Login to ECR Public",
-               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
-            },
-            {
-               "uses": "actions/checkout@v3"
-            },
-            {
-               "uses": "docker/setup-qemu-action@v2"
-            },
-            {
-               "env": {
-                  "ARCH_FILTER": "amd64",
-                  "DIST_FILTER": "buster",
-                  "SERIES_FILTER": "2.6"
-               },
-               "run": "ruby build.rb --pull --push"
-            },
-            {
-               "uses": "actions/upload-artifact@v3",
-               "with": {
-                  "name": "build-2x6-buster-amd64-artifacts",
-                  "path": "tmp/built_images.json",
-                  "retention-days": 1
-               }
-            }
-         ]
-      },
-      "build-2x6-focal-amd64": {
-         "name": "build-2x6-focal-amd64",
-         "permissions": {
-            "contents": "read",
-            "id-token": "write"
-         },
-         "runs-on": "ubuntu-latest",
-         "steps": [
-            {
-               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
-            },
-            {
-               "uses": "ruby/setup-ruby@v1",
-               "with": {
-                  "ruby-version": "3.1"
-               }
-            },
-            {
-               "name": "login-dockerhub",
-               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
-            },
-            {
-               "uses": "aws-actions/configure-aws-credentials@v1",
-               "with": {
-                  "aws-region": "us-east-1",
-                  "role-duration-seconds": 14400,
-                  "role-skip-session-tagging": "true",
-                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
-               }
-            },
-            {
-               "name": "Login to ECR Public",
-               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
-            },
-            {
-               "uses": "actions/checkout@v3"
-            },
-            {
-               "uses": "docker/setup-qemu-action@v2"
-            },
-            {
-               "env": {
-                  "ARCH_FILTER": "amd64",
-                  "DIST_FILTER": "focal",
-                  "SERIES_FILTER": "2.6"
-               },
-               "run": "ruby build.rb --pull --push"
-            },
-            {
-               "uses": "actions/upload-artifact@v3",
-               "with": {
-                  "name": "build-2x6-focal-amd64-artifacts",
-                  "path": "tmp/built_images.json",
-                  "retention-days": 1
-               }
-            }
-         ]
-      },
       "build-2x7-bionic-amd64": {
          "name": "build-2x7-bionic-amd64",
          "permissions": {
@@ -188,7 +14,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -246,7 +72,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -304,7 +130,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -362,7 +188,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -420,7 +246,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -478,7 +304,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -536,7 +362,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -594,7 +420,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -652,7 +478,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -710,7 +536,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -768,7 +594,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -826,7 +652,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -884,7 +710,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -942,7 +768,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -1000,7 +826,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -1058,7 +884,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -1116,7 +942,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -1174,7 +1000,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -1232,7 +1058,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -1290,7 +1116,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -1348,7 +1174,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -1406,7 +1232,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -1464,7 +1290,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -1522,7 +1348,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -1580,7 +1406,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -1638,7 +1464,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -1696,7 +1522,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -1754,7 +1580,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -1812,7 +1638,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -1870,7 +1696,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -1928,7 +1754,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -1986,7 +1812,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -2030,11 +1856,8 @@
             }
          ]
       },
-      "manifest-2x6-bionic": {
-         "name": "manifest-2x6-bionic",
-         "needs": [
-            "build-2x6-bionic-amd64"
-         ],
+      "build-3x3-bookworm-amd64": {
+         "name": "build-3x3-bookworm-amd64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -2047,7 +1870,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -2071,32 +1894,28 @@
                "uses": "actions/checkout@v3"
             },
             {
-               "uses": "actions/download-artifact@v3",
-               "with": {
-                  "name": "build-2x6-bionic-amd64-artifacts",
-                  "path": "tmp/build-2x6-bionic-amd64-artifacts"
-               }
-            },
-            {
-               "run": "find tmp"
-            },
-            {
-               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+               "uses": "docker/setup-qemu-action@v2"
             },
             {
                "env": {
-                  "DIST_FILTER": "bionic",
-                  "SERIES_FILTER": "2.6"
+                  "ARCH_FILTER": "amd64",
+                  "DIST_FILTER": "bookworm",
+                  "SERIES_FILTER": "3.3"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "run": "ruby build.rb --pull --push"
+            },
+            {
+               "uses": "actions/upload-artifact@v3",
+               "with": {
+                  "name": "build-3x3-bookworm-amd64-artifacts",
+                  "path": "tmp/built_images.json",
+                  "retention-days": 1
+               }
             }
          ]
       },
-      "manifest-2x6-buster": {
-         "name": "manifest-2x6-buster",
-         "needs": [
-            "build-2x6-buster-amd64"
-         ],
+      "build-3x3-bookworm-arm64": {
+         "name": "build-3x3-bookworm-arm64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -2109,7 +1928,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -2133,32 +1952,28 @@
                "uses": "actions/checkout@v3"
             },
             {
-               "uses": "actions/download-artifact@v3",
-               "with": {
-                  "name": "build-2x6-buster-amd64-artifacts",
-                  "path": "tmp/build-2x6-buster-amd64-artifacts"
-               }
-            },
-            {
-               "run": "find tmp"
-            },
-            {
-               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+               "uses": "docker/setup-qemu-action@v2"
             },
             {
                "env": {
-                  "DIST_FILTER": "buster",
-                  "SERIES_FILTER": "2.6"
+                  "ARCH_FILTER": "arm64",
+                  "DIST_FILTER": "bookworm",
+                  "SERIES_FILTER": "3.3"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "run": "ruby build.rb --pull --push"
+            },
+            {
+               "uses": "actions/upload-artifact@v3",
+               "with": {
+                  "name": "build-3x3-bookworm-arm64-artifacts",
+                  "path": "tmp/built_images.json",
+                  "retention-days": 1
+               }
             }
          ]
       },
-      "manifest-2x6-focal": {
-         "name": "manifest-2x6-focal",
-         "needs": [
-            "build-2x6-focal-amd64"
-         ],
+      "build-3x3-bullseye-amd64": {
+         "name": "build-3x3-bullseye-amd64",
          "permissions": {
             "contents": "read",
             "id-token": "write"
@@ -2171,7 +1986,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -2195,24 +2010,313 @@
                "uses": "actions/checkout@v3"
             },
             {
-               "uses": "actions/download-artifact@v3",
-               "with": {
-                  "name": "build-2x6-focal-amd64-artifacts",
-                  "path": "tmp/build-2x6-focal-amd64-artifacts"
-               }
-            },
-            {
-               "run": "find tmp"
-            },
-            {
-               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+               "uses": "docker/setup-qemu-action@v2"
             },
             {
                "env": {
+                  "ARCH_FILTER": "amd64",
+                  "DIST_FILTER": "bullseye",
+                  "SERIES_FILTER": "3.3"
+               },
+               "run": "ruby build.rb --pull --push"
+            },
+            {
+               "uses": "actions/upload-artifact@v3",
+               "with": {
+                  "name": "build-3x3-bullseye-amd64-artifacts",
+                  "path": "tmp/built_images.json",
+                  "retention-days": 1
+               }
+            }
+         ]
+      },
+      "build-3x3-bullseye-arm64": {
+         "name": "build-3x3-bullseye-arm64",
+         "permissions": {
+            "contents": "read",
+            "id-token": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "docker/setup-qemu-action@v2"
+            },
+            {
+               "env": {
+                  "ARCH_FILTER": "arm64",
+                  "DIST_FILTER": "bullseye",
+                  "SERIES_FILTER": "3.3"
+               },
+               "run": "ruby build.rb --pull --push"
+            },
+            {
+               "uses": "actions/upload-artifact@v3",
+               "with": {
+                  "name": "build-3x3-bullseye-arm64-artifacts",
+                  "path": "tmp/built_images.json",
+                  "retention-days": 1
+               }
+            }
+         ]
+      },
+      "build-3x3-focal-amd64": {
+         "name": "build-3x3-focal-amd64",
+         "permissions": {
+            "contents": "read",
+            "id-token": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "docker/setup-qemu-action@v2"
+            },
+            {
+               "env": {
+                  "ARCH_FILTER": "amd64",
                   "DIST_FILTER": "focal",
-                  "SERIES_FILTER": "2.6"
+                  "SERIES_FILTER": "3.3"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "run": "ruby build.rb --pull --push"
+            },
+            {
+               "uses": "actions/upload-artifact@v3",
+               "with": {
+                  "name": "build-3x3-focal-amd64-artifacts",
+                  "path": "tmp/built_images.json",
+                  "retention-days": 1
+               }
+            }
+         ]
+      },
+      "build-3x3-focal-arm64": {
+         "name": "build-3x3-focal-arm64",
+         "permissions": {
+            "contents": "read",
+            "id-token": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "docker/setup-qemu-action@v2"
+            },
+            {
+               "env": {
+                  "ARCH_FILTER": "arm64",
+                  "DIST_FILTER": "focal",
+                  "SERIES_FILTER": "3.3"
+               },
+               "run": "ruby build.rb --pull --push"
+            },
+            {
+               "uses": "actions/upload-artifact@v3",
+               "with": {
+                  "name": "build-3x3-focal-arm64-artifacts",
+                  "path": "tmp/built_images.json",
+                  "retention-days": 1
+               }
+            }
+         ]
+      },
+      "build-3x3-jammy-amd64": {
+         "name": "build-3x3-jammy-amd64",
+         "permissions": {
+            "contents": "read",
+            "id-token": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "docker/setup-qemu-action@v2"
+            },
+            {
+               "env": {
+                  "ARCH_FILTER": "amd64",
+                  "DIST_FILTER": "jammy",
+                  "SERIES_FILTER": "3.3"
+               },
+               "run": "ruby build.rb --pull --push"
+            },
+            {
+               "uses": "actions/upload-artifact@v3",
+               "with": {
+                  "name": "build-3x3-jammy-amd64-artifacts",
+                  "path": "tmp/built_images.json",
+                  "retention-days": 1
+               }
+            }
+         ]
+      },
+      "build-3x3-jammy-arm64": {
+         "name": "build-3x3-jammy-arm64",
+         "permissions": {
+            "contents": "read",
+            "id-token": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "docker/setup-qemu-action@v2"
+            },
+            {
+               "env": {
+                  "ARCH_FILTER": "arm64",
+                  "DIST_FILTER": "jammy",
+                  "SERIES_FILTER": "3.3"
+               },
+               "run": "ruby build.rb --pull --push"
+            },
+            {
+               "uses": "actions/upload-artifact@v3",
+               "with": {
+                  "name": "build-3x3-jammy-arm64-artifacts",
+                  "path": "tmp/built_images.json",
+                  "retention-days": 1
+               }
             }
          ]
       },
@@ -2234,7 +2338,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -2304,7 +2408,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -2374,7 +2478,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -2444,7 +2548,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -2514,7 +2618,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -2584,7 +2688,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -2654,7 +2758,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -2724,7 +2828,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -2794,7 +2898,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -2864,7 +2968,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -2934,7 +3038,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -3004,7 +3108,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -3074,7 +3178,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -3144,7 +3248,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -3214,7 +3318,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -3284,7 +3388,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -3336,17 +3440,11 @@
             }
          ]
       },
-      "manifest-latest": {
-         "name": "manifest-latest",
+      "manifest-3x3-bookworm": {
+         "name": "manifest-3x3-bookworm",
          "needs": [
-            "build-3x2-focal-amd64",
-            "build-3x2-focal-arm64",
-            "build-3x2-jammy-amd64",
-            "build-3x2-jammy-arm64",
-            "build-3x2-bullseye-amd64",
-            "build-3x2-bullseye-arm64",
-            "build-3x2-bookworm-amd64",
-            "build-3x2-bookworm-arm64"
+            "build-3x3-bookworm-amd64",
+            "build-3x3-bookworm-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -3360,7 +3458,7 @@
             {
                "uses": "ruby/setup-ruby@v1",
                "with": {
-                  "ruby-version": "3.1"
+                  "ruby-version": "3.3"
                }
             },
             {
@@ -3386,57 +3484,343 @@
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3x2-focal-amd64-artifacts",
-                  "path": "tmp/build-3x2-focal-amd64-artifacts"
+                  "name": "build-3x3-bookworm-amd64-artifacts",
+                  "path": "tmp/build-3x3-bookworm-amd64-artifacts"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3x2-focal-arm64-artifacts",
-                  "path": "tmp/build-3x2-focal-arm64-artifacts"
+                  "name": "build-3x3-bookworm-arm64-artifacts",
+                  "path": "tmp/build-3x3-bookworm-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "env": {
+                  "DIST_FILTER": "bookworm",
+                  "SERIES_FILTER": "3.3"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
+      "manifest-3x3-bullseye": {
+         "name": "manifest-3x3-bullseye",
+         "needs": [
+            "build-3x3-bullseye-amd64",
+            "build-3x3-bullseye-arm64"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v3",
+               "with": {
+                  "name": "build-3x3-bullseye-amd64-artifacts",
+                  "path": "tmp/build-3x3-bullseye-amd64-artifacts"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3x2-jammy-amd64-artifacts",
-                  "path": "tmp/build-3x2-jammy-amd64-artifacts"
+                  "name": "build-3x3-bullseye-arm64-artifacts",
+                  "path": "tmp/build-3x3-bullseye-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "env": {
+                  "DIST_FILTER": "bullseye",
+                  "SERIES_FILTER": "3.3"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
+      "manifest-3x3-focal": {
+         "name": "manifest-3x3-focal",
+         "needs": [
+            "build-3x3-focal-amd64",
+            "build-3x3-focal-arm64"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v3",
+               "with": {
+                  "name": "build-3x3-focal-amd64-artifacts",
+                  "path": "tmp/build-3x3-focal-amd64-artifacts"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3x2-jammy-arm64-artifacts",
-                  "path": "tmp/build-3x2-jammy-arm64-artifacts"
+                  "name": "build-3x3-focal-arm64-artifacts",
+                  "path": "tmp/build-3x3-focal-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "env": {
+                  "DIST_FILTER": "focal",
+                  "SERIES_FILTER": "3.3"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
+      "manifest-3x3-jammy": {
+         "name": "manifest-3x3-jammy",
+         "needs": [
+            "build-3x3-jammy-amd64",
+            "build-3x3-jammy-arm64"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v3",
+               "with": {
+                  "name": "build-3x3-jammy-amd64-artifacts",
+                  "path": "tmp/build-3x3-jammy-amd64-artifacts"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3x2-bullseye-amd64-artifacts",
-                  "path": "tmp/build-3x2-bullseye-amd64-artifacts"
+                  "name": "build-3x3-jammy-arm64-artifacts",
+                  "path": "tmp/build-3x3-jammy-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "env": {
+                  "DIST_FILTER": "jammy",
+                  "SERIES_FILTER": "3.3"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
+      "manifest-latest": {
+         "name": "manifest-latest",
+         "needs": [
+            "build-3x3-focal-amd64",
+            "build-3x3-focal-arm64",
+            "build-3x3-jammy-amd64",
+            "build-3x3-jammy-arm64",
+            "build-3x3-bullseye-amd64",
+            "build-3x3-bullseye-arm64",
+            "build-3x3-bookworm-amd64",
+            "build-3x3-bookworm-arm64"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v3",
+               "with": {
+                  "name": "build-3x3-focal-amd64-artifacts",
+                  "path": "tmp/build-3x3-focal-amd64-artifacts"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3x2-bullseye-arm64-artifacts",
-                  "path": "tmp/build-3x2-bullseye-arm64-artifacts"
+                  "name": "build-3x3-focal-arm64-artifacts",
+                  "path": "tmp/build-3x3-focal-arm64-artifacts"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3x2-bookworm-amd64-artifacts",
-                  "path": "tmp/build-3x2-bookworm-amd64-artifacts"
+                  "name": "build-3x3-jammy-amd64-artifacts",
+                  "path": "tmp/build-3x3-jammy-amd64-artifacts"
                }
             },
             {
                "uses": "actions/download-artifact@v3",
                "with": {
-                  "name": "build-3x2-bookworm-arm64-artifacts",
-                  "path": "tmp/build-3x2-bookworm-arm64-artifacts"
+                  "name": "build-3x3-jammy-arm64-artifacts",
+                  "path": "tmp/build-3x3-jammy-arm64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v3",
+               "with": {
+                  "name": "build-3x3-bullseye-amd64-artifacts",
+                  "path": "tmp/build-3x3-bullseye-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v3",
+               "with": {
+                  "name": "build-3x3-bullseye-arm64-artifacts",
+                  "path": "tmp/build-3x3-bullseye-arm64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v3",
+               "with": {
+                  "name": "build-3x3-bookworm-amd64-artifacts",
+                  "path": "tmp/build-3x3-bookworm-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v3",
+               "with": {
+                  "name": "build-3x3-bookworm-arm64-artifacts",
+                  "path": "tmp/build-3x3-bookworm-arm64-artifacts"
                }
             },
             {
