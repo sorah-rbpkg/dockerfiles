@@ -7,7 +7,7 @@ local common_steps = [
   },
   {
     uses: 'ruby/setup-ruby@v1',
-    with: { 'ruby-version': '3.1' },
+    with: { 'ruby-version': '3.3' },
   },
   {
     name: 'login-dockerhub',
@@ -32,11 +32,11 @@ local common_steps = [
 
 local splitWithSpace = function(s) [token for token in std.split(s, ' ') if token != ''];
 local matrix = [
-  { series: '2.6', distro: splitWithSpace('bionic focal          buster                  '), arm: false },
   { series: '2.7', distro: splitWithSpace('bionic focal          buster                  '), arm: true },
   { series: '3.0', distro: splitWithSpace('bionic focal jammy    buster bullseye         '), arm: true },
   { series: '3.1', distro: splitWithSpace('bionic focal jammy           bullseye         '), arm: true },
   { series: '3.2', distro: splitWithSpace('       focal jammy           bullseye bookworm'), arm: true },
+  { series: '3.3', distro: splitWithSpace('       focal jammy           bullseye bookworm'), arm: true },
 ];
 local archs = ['amd64', 'arm64'];
 
