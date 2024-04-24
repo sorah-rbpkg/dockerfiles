@@ -97,6 +97,12 @@ DISTROS = [
     arm: true,
   ),
   Distro.new(
+    family: 'ubuntu',
+    name: 'noble',
+    apt_url: 'https://cache.ruby-lang.org/lab/sorah/deb/dists/noble/main/binary-amd64/Packages',
+    arm: true,
+  ),
+  Distro.new(
     family: 'debian',
     name: 'bullseye',
     apt_url: 'https://cache.ruby-lang.org/lab/sorah/deb/dists/bullseye/main/binary-amd64/Packages',
