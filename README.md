@@ -22,7 +22,7 @@ where,
 
 - SERIES is like `2.6`, `2.7`, `3.0`, `3.1`, `3.2`
   - Starting Ruby 3.2.0, 3.1.3, 3.0.5, 2.7.7, you can specify full version number as SERIES as well
-- DISTRO is like `bionic`, `focal`, `jammy`, `buster`, `bullseye`, `bookworm`
+- DISTRO is like `bionic`, `focal`, `jammy`, `noble`, `buster`, `bullseye`, `bookworm`
 
 ### List
 
@@ -30,8 +30,8 @@ where,
 - 2.7: `2.7`, `2.7-dev` (dist= __`focal`__, `bionic`, `bullseye`, `buster`)
 - 3.0: `3.0`, `3.0-dev` (dist= `jammy`, __`focal`__, `bionic`, `bullseye`, `buster`)
 - 3.1: `3.1`, `3.1-dev` (dist= __`jammy`__, `focal`, `bionic`, `bullseye`)
-- 3.2: `3.2`, `3.2-dev` (dist= __`jammy`__, `focal`, `bionic`, `bookworm`)
-- 3.3: `3.3`, `3.3-dev` (dist= __`jammy`__, `focal`, `bionic`, `bookworm`)
+- 3.2: `3.2`, `3.2-dev` (dist= `noble`, __`jammy`__, `focal`, `bionic`, `bookworm`)
+- 3.3: `3.3`, `3.3-dev` (dist= `noble`, __`jammy`__, `focal`, `bionic`, `bookworm`)
 
 _distro in bold is default_
 
