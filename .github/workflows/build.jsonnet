@@ -37,6 +37,7 @@ local matrix = [
   { series: '3.1', distro: splitWithSpace('bionic focal jammy                bullseye         '), arm: true },
   { series: '3.2', distro: splitWithSpace('       focal jammy noble          bullseye bookworm'), arm: true },
   { series: '3.3', distro: splitWithSpace('       focal jammy noble          bullseye bookworm'), arm: true },
+  { series: '3.4', distro: splitWithSpace('             jammy noble                   bookworm'), arm: true },
 ];
 local archs = ['amd64', 'arm64'];
 
