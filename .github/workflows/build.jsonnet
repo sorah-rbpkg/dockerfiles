@@ -142,6 +142,8 @@ local build_jobs = [
 local manifest_jobs = [
   manifest_subtag_job(pattern)
   for pattern in manifest_subtag_job_patterns
+] + [
+  manifest_job('manifest-latest', 'latest', {}, [pattern_to_job_name('build', pattern) for pattern in build_job_patterns if pattern.series == matrix[std.length(matrix) - 1].series]),
 ];
 
 local cleanup_job = {
@@ -163,7 +165,6 @@ local cleanup_job = {
 
 
 local jobs = build_jobs + manifest_jobs + [
-  manifest_job('manifest-latest', 'latest', {}, [pattern_to_job_name('build', pattern) for pattern in build_job_patterns if pattern.series == matrix[std.length(matrix) - 1].series]),
   cleanup_job,
 ];
 

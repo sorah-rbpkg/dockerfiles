@@ -2927,7 +2927,8 @@
             "manifest-3x3-bookworm",
             "manifest-3x4-jammy",
             "manifest-3x4-noble",
-            "manifest-3x4-bookworm"
+            "manifest-3x4-bookworm",
+            "manifest-latest"
          ],
          "permissions": {
             "contents": "read",
