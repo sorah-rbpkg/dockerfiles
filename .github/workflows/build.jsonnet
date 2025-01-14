@@ -139,11 +139,32 @@ local build_jobs = [
   for pattern in build_job_patterns
 ];
 
-local jobs = build_jobs + [
+local manifest_jobs = [
   manifest_subtag_job(pattern)
   for pattern in manifest_subtag_job_patterns
-] + [
+];
+
+local cleanup_job = {
+  cleanup: {
+    name: 'cleanup',
+    'runs-on': 'ubuntu-latest',
+    permissions: { 'id-token': 'write', contents: 'read' },
+    needs: std.flattenArrays([[y.name for y in std.objectValues(x)] for x in manifest_jobs]),
+    steps: common_steps + [
+      {
+        run: 'curl -Ssfo cleanup.rb https://raw.githubusercontent.com/sorah/config/1a4323466aa3c554dd53b70a17fe36fb4c8c87fd/bin/sorah-aws-ecr-public-cleanup',
+      },
+      {
+        run: 'ruby cleanup.rb ruby',
+      },
+    ],
+  },
+};
+
+
+local jobs = build_jobs + manifest_jobs + [
   manifest_job('manifest-latest', 'latest', {}, [pattern_to_job_name('build', pattern) for pattern in build_job_patterns if pattern.series == matrix[std.length(matrix) - 1].series]),
+  cleanup_job,
 ];
 
 {

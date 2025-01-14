@@ -2900,6 +2900,78 @@
             }
          ]
       },
+      "cleanup": {
+         "name": "cleanup",
+         "needs": [
+            "manifest-2x7-bionic",
+            "manifest-2x7-focal",
+            "manifest-2x7-buster",
+            "manifest-3x0-bionic",
+            "manifest-3x0-focal",
+            "manifest-3x0-jammy",
+            "manifest-3x0-buster",
+            "manifest-3x0-bullseye",
+            "manifest-3x1-bionic",
+            "manifest-3x1-focal",
+            "manifest-3x1-jammy",
+            "manifest-3x1-bullseye",
+            "manifest-3x2-focal",
+            "manifest-3x2-jammy",
+            "manifest-3x2-noble",
+            "manifest-3x2-bullseye",
+            "manifest-3x2-bookworm",
+            "manifest-3x3-focal",
+            "manifest-3x3-jammy",
+            "manifest-3x3-noble",
+            "manifest-3x3-bullseye",
+            "manifest-3x3-bookworm",
+            "manifest-3x4-jammy",
+            "manifest-3x4-noble",
+            "manifest-3x4-bookworm"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "run": "curl -Ssfo cleanup.rb https://raw.githubusercontent.com/sorah/config/1a4323466aa3c554dd53b70a17fe36fb4c8c87fd/bin/sorah-aws-ecr-public-cleanup"
+            },
+            {
+               "run": "ruby cleanup.rb ruby"
+            }
+         ]
+      },
       "manifest-2x7-bionic": {
          "name": "manifest-2x7-bionic",
          "needs": [
