@@ -2969,6 +2969,9 @@
                "run": "curl -Ssfo cleanup.rb https://raw.githubusercontent.com/sorah/config/1a4323466aa3c554dd53b70a17fe36fb4c8c87fd/bin/sorah-aws-ecr-public-cleanup"
             },
             {
+               "run": "gem i aws-sdk-ecrpublic"
+            },
+            {
                "run": "ruby cleanup.rb ruby"
             }
          ]
