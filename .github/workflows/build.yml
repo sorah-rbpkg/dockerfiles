@@ -49,7 +49,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-2x7-bionic-amd64-artifacts",
                   "path": "tmp/built_images.json",
@@ -107,7 +107,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-2x7-bionic-arm64-artifacts",
                   "path": "tmp/built_images.json",
@@ -165,7 +165,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-2x7-buster-amd64-artifacts",
                   "path": "tmp/built_images.json",
@@ -223,7 +223,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-2x7-buster-arm64-artifacts",
                   "path": "tmp/built_images.json",
@@ -281,7 +281,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-2x7-focal-amd64-artifacts",
                   "path": "tmp/built_images.json",
@@ -339,7 +339,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-2x7-focal-arm64-artifacts",
                   "path": "tmp/built_images.json",
@@ -397,7 +397,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x0-bionic-amd64-artifacts",
                   "path": "tmp/built_images.json",
@@ -455,7 +455,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x0-bionic-arm64-artifacts",
                   "path": "tmp/built_images.json",
@@ -513,7 +513,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x0-bullseye-amd64-artifacts",
                   "path": "tmp/built_images.json",
@@ -571,7 +571,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x0-bullseye-arm64-artifacts",
                   "path": "tmp/built_images.json",
@@ -629,7 +629,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x0-buster-amd64-artifacts",
                   "path": "tmp/built_images.json",
@@ -687,7 +687,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x0-buster-arm64-artifacts",
                   "path": "tmp/built_images.json",
@@ -745,7 +745,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x0-focal-amd64-artifacts",
                   "path": "tmp/built_images.json",
@@ -803,7 +803,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x0-focal-arm64-artifacts",
                   "path": "tmp/built_images.json",
@@ -861,7 +861,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x0-jammy-amd64-artifacts",
                   "path": "tmp/built_images.json",
@@ -919,7 +919,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x0-jammy-arm64-artifacts",
                   "path": "tmp/built_images.json",
@@ -977,7 +977,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x1-bionic-amd64-artifacts",
                   "path": "tmp/built_images.json",
@@ -1035,7 +1035,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x1-bionic-arm64-artifacts",
                   "path": "tmp/built_images.json",
@@ -1093,7 +1093,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x1-bullseye-amd64-artifacts",
                   "path": "tmp/built_images.json",
@@ -1151,7 +1151,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x1-bullseye-arm64-artifacts",
                   "path": "tmp/built_images.json",
@@ -1209,7 +1209,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x1-focal-amd64-artifacts",
                   "path": "tmp/built_images.json",
@@ -1267,7 +1267,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x1-focal-arm64-artifacts",
                   "path": "tmp/built_images.json",
@@ -1325,7 +1325,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x1-jammy-amd64-artifacts",
                   "path": "tmp/built_images.json",
@@ -1383,7 +1383,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x1-jammy-arm64-artifacts",
                   "path": "tmp/built_images.json",
@@ -1441,7 +1441,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x2-bookworm-amd64-artifacts",
                   "path": "tmp/built_images.json",
@@ -1499,7 +1499,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x2-bookworm-arm64-artifacts",
                   "path": "tmp/built_images.json",
@@ -1557,7 +1557,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x2-bullseye-amd64-artifacts",
                   "path": "tmp/built_images.json",
@@ -1615,7 +1615,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x2-bullseye-arm64-artifacts",
                   "path": "tmp/built_images.json",
@@ -1673,7 +1673,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x2-focal-amd64-artifacts",
                   "path": "tmp/built_images.json",
@@ -1731,7 +1731,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x2-focal-arm64-artifacts",
                   "path": "tmp/built_images.json",
@@ -1789,7 +1789,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x2-jammy-amd64-artifacts",
                   "path": "tmp/built_images.json",
@@ -1847,7 +1847,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x2-jammy-arm64-artifacts",
                   "path": "tmp/built_images.json",
@@ -1905,7 +1905,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x2-noble-amd64-artifacts",
                   "path": "tmp/built_images.json",
@@ -1963,7 +1963,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x2-noble-arm64-artifacts",
                   "path": "tmp/built_images.json",
@@ -2021,7 +2021,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x3-bookworm-amd64-artifacts",
                   "path": "tmp/built_images.json",
@@ -2079,7 +2079,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x3-bookworm-arm64-artifacts",
                   "path": "tmp/built_images.json",
@@ -2137,7 +2137,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x3-bullseye-amd64-artifacts",
                   "path": "tmp/built_images.json",
@@ -2195,7 +2195,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x3-bullseye-arm64-artifacts",
                   "path": "tmp/built_images.json",
@@ -2253,7 +2253,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x3-focal-amd64-artifacts",
                   "path": "tmp/built_images.json",
@@ -2311,7 +2311,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x3-focal-arm64-artifacts",
                   "path": "tmp/built_images.json",
@@ -2369,7 +2369,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x3-jammy-amd64-artifacts",
                   "path": "tmp/built_images.json",
@@ -2427,7 +2427,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x3-jammy-arm64-artifacts",
                   "path": "tmp/built_images.json",
@@ -2485,7 +2485,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x3-noble-amd64-artifacts",
                   "path": "tmp/built_images.json",
@@ -2543,7 +2543,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x3-noble-arm64-artifacts",
                   "path": "tmp/built_images.json",
@@ -2601,7 +2601,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x4-bookworm-amd64-artifacts",
                   "path": "tmp/built_images.json",
@@ -2659,7 +2659,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x4-bookworm-arm64-artifacts",
                   "path": "tmp/built_images.json",
@@ -2717,7 +2717,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x4-jammy-amd64-artifacts",
                   "path": "tmp/built_images.json",
@@ -2775,7 +2775,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x4-jammy-arm64-artifacts",
                   "path": "tmp/built_images.json",
@@ -2833,7 +2833,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x4-noble-amd64-artifacts",
                   "path": "tmp/built_images.json",
@@ -2891,7 +2891,7 @@
                "run": "ruby build.rb --pull --push"
             },
             {
-               "uses": "actions/upload-artifact@v3",
+               "uses": "actions/upload-artifact@v4",
                "with": {
                   "name": "build-3x4-noble-arm64-artifacts",
                   "path": "tmp/built_images.json",
@@ -3018,14 +3018,14 @@
                "uses": "actions/checkout@v3"
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-2x7-bionic-amd64-artifacts",
                   "path": "tmp/build-2x7-bionic-amd64-artifacts"
                }
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-2x7-bionic-arm64-artifacts",
                   "path": "tmp/build-2x7-bionic-arm64-artifacts"
@@ -3088,14 +3088,14 @@
                "uses": "actions/checkout@v3"
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-2x7-buster-amd64-artifacts",
                   "path": "tmp/build-2x7-buster-amd64-artifacts"
                }
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-2x7-buster-arm64-artifacts",
                   "path": "tmp/build-2x7-buster-arm64-artifacts"
@@ -3158,14 +3158,14 @@
                "uses": "actions/checkout@v3"
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-2x7-focal-amd64-artifacts",
                   "path": "tmp/build-2x7-focal-amd64-artifacts"
                }
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-2x7-focal-arm64-artifacts",
                   "path": "tmp/build-2x7-focal-arm64-artifacts"
@@ -3228,14 +3228,14 @@
                "uses": "actions/checkout@v3"
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x0-bionic-amd64-artifacts",
                   "path": "tmp/build-3x0-bionic-amd64-artifacts"
                }
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x0-bionic-arm64-artifacts",
                   "path": "tmp/build-3x0-bionic-arm64-artifacts"
@@ -3298,14 +3298,14 @@
                "uses": "actions/checkout@v3"
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x0-bullseye-amd64-artifacts",
                   "path": "tmp/build-3x0-bullseye-amd64-artifacts"
                }
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x0-bullseye-arm64-artifacts",
                   "path": "tmp/build-3x0-bullseye-arm64-artifacts"
@@ -3368,14 +3368,14 @@
                "uses": "actions/checkout@v3"
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x0-buster-amd64-artifacts",
                   "path": "tmp/build-3x0-buster-amd64-artifacts"
                }
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x0-buster-arm64-artifacts",
                   "path": "tmp/build-3x0-buster-arm64-artifacts"
@@ -3438,14 +3438,14 @@
                "uses": "actions/checkout@v3"
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x0-focal-amd64-artifacts",
                   "path": "tmp/build-3x0-focal-amd64-artifacts"
                }
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x0-focal-arm64-artifacts",
                   "path": "tmp/build-3x0-focal-arm64-artifacts"
@@ -3508,14 +3508,14 @@
                "uses": "actions/checkout@v3"
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x0-jammy-amd64-artifacts",
                   "path": "tmp/build-3x0-jammy-amd64-artifacts"
                }
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x0-jammy-arm64-artifacts",
                   "path": "tmp/build-3x0-jammy-arm64-artifacts"
@@ -3578,14 +3578,14 @@
                "uses": "actions/checkout@v3"
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x1-bionic-amd64-artifacts",
                   "path": "tmp/build-3x1-bionic-amd64-artifacts"
                }
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x1-bionic-arm64-artifacts",
                   "path": "tmp/build-3x1-bionic-arm64-artifacts"
@@ -3648,14 +3648,14 @@
                "uses": "actions/checkout@v3"
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x1-bullseye-amd64-artifacts",
                   "path": "tmp/build-3x1-bullseye-amd64-artifacts"
                }
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x1-bullseye-arm64-artifacts",
                   "path": "tmp/build-3x1-bullseye-arm64-artifacts"
@@ -3718,14 +3718,14 @@
                "uses": "actions/checkout@v3"
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x1-focal-amd64-artifacts",
                   "path": "tmp/build-3x1-focal-amd64-artifacts"
                }
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x1-focal-arm64-artifacts",
                   "path": "tmp/build-3x1-focal-arm64-artifacts"
@@ -3788,14 +3788,14 @@
                "uses": "actions/checkout@v3"
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x1-jammy-amd64-artifacts",
                   "path": "tmp/build-3x1-jammy-amd64-artifacts"
                }
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x1-jammy-arm64-artifacts",
                   "path": "tmp/build-3x1-jammy-arm64-artifacts"
@@ -3858,14 +3858,14 @@
                "uses": "actions/checkout@v3"
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x2-bookworm-amd64-artifacts",
                   "path": "tmp/build-3x2-bookworm-amd64-artifacts"
                }
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x2-bookworm-arm64-artifacts",
                   "path": "tmp/build-3x2-bookworm-arm64-artifacts"
@@ -3928,14 +3928,14 @@
                "uses": "actions/checkout@v3"
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x2-bullseye-amd64-artifacts",
                   "path": "tmp/build-3x2-bullseye-amd64-artifacts"
                }
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x2-bullseye-arm64-artifacts",
                   "path": "tmp/build-3x2-bullseye-arm64-artifacts"
@@ -3998,14 +3998,14 @@
                "uses": "actions/checkout@v3"
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x2-focal-amd64-artifacts",
                   "path": "tmp/build-3x2-focal-amd64-artifacts"
                }
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x2-focal-arm64-artifacts",
                   "path": "tmp/build-3x2-focal-arm64-artifacts"
@@ -4068,14 +4068,14 @@
                "uses": "actions/checkout@v3"
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x2-jammy-amd64-artifacts",
                   "path": "tmp/build-3x2-jammy-amd64-artifacts"
                }
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x2-jammy-arm64-artifacts",
                   "path": "tmp/build-3x2-jammy-arm64-artifacts"
@@ -4138,14 +4138,14 @@
                "uses": "actions/checkout@v3"
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x2-noble-amd64-artifacts",
                   "path": "tmp/build-3x2-noble-amd64-artifacts"
                }
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x2-noble-arm64-artifacts",
                   "path": "tmp/build-3x2-noble-arm64-artifacts"
@@ -4208,14 +4208,14 @@
                "uses": "actions/checkout@v3"
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x3-bookworm-amd64-artifacts",
                   "path": "tmp/build-3x3-bookworm-amd64-artifacts"
                }
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x3-bookworm-arm64-artifacts",
                   "path": "tmp/build-3x3-bookworm-arm64-artifacts"
@@ -4278,14 +4278,14 @@
                "uses": "actions/checkout@v3"
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x3-bullseye-amd64-artifacts",
                   "path": "tmp/build-3x3-bullseye-amd64-artifacts"
                }
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x3-bullseye-arm64-artifacts",
                   "path": "tmp/build-3x3-bullseye-arm64-artifacts"
@@ -4348,14 +4348,14 @@
                "uses": "actions/checkout@v3"
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x3-focal-amd64-artifacts",
                   "path": "tmp/build-3x3-focal-amd64-artifacts"
                }
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x3-focal-arm64-artifacts",
                   "path": "tmp/build-3x3-focal-arm64-artifacts"
@@ -4418,14 +4418,14 @@
                "uses": "actions/checkout@v3"
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x3-jammy-amd64-artifacts",
                   "path": "tmp/build-3x3-jammy-amd64-artifacts"
                }
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x3-jammy-arm64-artifacts",
                   "path": "tmp/build-3x3-jammy-arm64-artifacts"
@@ -4488,14 +4488,14 @@
                "uses": "actions/checkout@v3"
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x3-noble-amd64-artifacts",
                   "path": "tmp/build-3x3-noble-amd64-artifacts"
                }
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x3-noble-arm64-artifacts",
                   "path": "tmp/build-3x3-noble-arm64-artifacts"
@@ -4558,14 +4558,14 @@
                "uses": "actions/checkout@v3"
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x4-bookworm-amd64-artifacts",
                   "path": "tmp/build-3x4-bookworm-amd64-artifacts"
                }
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x4-bookworm-arm64-artifacts",
                   "path": "tmp/build-3x4-bookworm-arm64-artifacts"
@@ -4628,14 +4628,14 @@
                "uses": "actions/checkout@v3"
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x4-jammy-amd64-artifacts",
                   "path": "tmp/build-3x4-jammy-amd64-artifacts"
                }
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x4-jammy-arm64-artifacts",
                   "path": "tmp/build-3x4-jammy-arm64-artifacts"
@@ -4698,14 +4698,14 @@
                "uses": "actions/checkout@v3"
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x4-noble-amd64-artifacts",
                   "path": "tmp/build-3x4-noble-amd64-artifacts"
                }
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x4-noble-arm64-artifacts",
                   "path": "tmp/build-3x4-noble-arm64-artifacts"
@@ -4772,42 +4772,42 @@
                "uses": "actions/checkout@v3"
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x4-jammy-amd64-artifacts",
                   "path": "tmp/build-3x4-jammy-amd64-artifacts"
                }
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x4-jammy-arm64-artifacts",
                   "path": "tmp/build-3x4-jammy-arm64-artifacts"
                }
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x4-noble-amd64-artifacts",
                   "path": "tmp/build-3x4-noble-amd64-artifacts"
                }
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x4-noble-arm64-artifacts",
                   "path": "tmp/build-3x4-noble-arm64-artifacts"
                }
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x4-bookworm-amd64-artifacts",
                   "path": "tmp/build-3x4-bookworm-amd64-artifacts"
                }
             },
             {
-               "uses": "actions/download-artifact@v3",
+               "uses": "actions/download-artifact@v4",
                "with": {
                   "name": "build-3x4-bookworm-arm64-artifacts",
                   "path": "tmp/build-3x4-bookworm-arm64-artifacts"

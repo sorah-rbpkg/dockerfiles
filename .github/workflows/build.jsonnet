@@ -78,7 +78,7 @@ local build_job(pattern) =
           },
         },
         {
-          uses: 'actions/upload-artifact@v3',
+          uses: 'actions/upload-artifact@v4',
           with: {
             name: name + '-artifacts',
             path: 'tmp/built_images.json',
@@ -97,7 +97,7 @@ local manifest_job(name, kind, env, parents) = {
     needs: parents,
     steps: common_steps + [
       {
-        uses: 'actions/download-artifact@v3',
+        uses: 'actions/download-artifact@v4',
         with: {
           name: parent + '-artifacts',
           path: 'tmp/' + parent + '-artifacts',
