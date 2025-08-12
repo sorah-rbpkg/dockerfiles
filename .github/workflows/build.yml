@@ -6,7 +6,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest",
+         "runs-on": "ubuntu-24.04",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -61,7 +61,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest-arm64",
+         "runs-on": "ubuntu-24.04-arm",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -116,7 +116,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest",
+         "runs-on": "ubuntu-24.04",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -171,7 +171,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest-arm64",
+         "runs-on": "ubuntu-24.04-arm",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -226,7 +226,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest",
+         "runs-on": "ubuntu-24.04",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -281,7 +281,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest-arm64",
+         "runs-on": "ubuntu-24.04-arm",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -336,7 +336,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest",
+         "runs-on": "ubuntu-24.04",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -391,7 +391,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest-arm64",
+         "runs-on": "ubuntu-24.04-arm",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -446,7 +446,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest",
+         "runs-on": "ubuntu-24.04",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -501,7 +501,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest-arm64",
+         "runs-on": "ubuntu-24.04-arm",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -556,7 +556,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest",
+         "runs-on": "ubuntu-24.04",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -611,7 +611,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest-arm64",
+         "runs-on": "ubuntu-24.04-arm",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -666,7 +666,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest",
+         "runs-on": "ubuntu-24.04",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -721,7 +721,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest-arm64",
+         "runs-on": "ubuntu-24.04-arm",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -776,7 +776,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest",
+         "runs-on": "ubuntu-24.04",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -831,7 +831,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest-arm64",
+         "runs-on": "ubuntu-24.04-arm",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -886,7 +886,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest",
+         "runs-on": "ubuntu-24.04",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -941,7 +941,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest-arm64",
+         "runs-on": "ubuntu-24.04-arm",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -996,7 +996,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest",
+         "runs-on": "ubuntu-24.04",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -1051,7 +1051,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest-arm64",
+         "runs-on": "ubuntu-24.04-arm",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -1106,7 +1106,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest",
+         "runs-on": "ubuntu-24.04",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -1161,7 +1161,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest-arm64",
+         "runs-on": "ubuntu-24.04-arm",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -1216,7 +1216,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest",
+         "runs-on": "ubuntu-24.04",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -1271,7 +1271,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest-arm64",
+         "runs-on": "ubuntu-24.04-arm",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -1326,7 +1326,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest",
+         "runs-on": "ubuntu-24.04",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -1381,7 +1381,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest-arm64",
+         "runs-on": "ubuntu-24.04-arm",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -1436,7 +1436,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest",
+         "runs-on": "ubuntu-24.04",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -1491,7 +1491,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest-arm64",
+         "runs-on": "ubuntu-24.04-arm",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -1546,7 +1546,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest",
+         "runs-on": "ubuntu-24.04",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -1601,7 +1601,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest-arm64",
+         "runs-on": "ubuntu-24.04-arm",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -1656,7 +1656,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest",
+         "runs-on": "ubuntu-24.04",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -1711,7 +1711,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest-arm64",
+         "runs-on": "ubuntu-24.04-arm",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -1766,7 +1766,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest",
+         "runs-on": "ubuntu-24.04",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -1821,7 +1821,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest-arm64",
+         "runs-on": "ubuntu-24.04-arm",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -1876,7 +1876,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest",
+         "runs-on": "ubuntu-24.04",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -1931,7 +1931,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest-arm64",
+         "runs-on": "ubuntu-24.04-arm",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -1986,7 +1986,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest",
+         "runs-on": "ubuntu-24.04",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -2041,7 +2041,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest-arm64",
+         "runs-on": "ubuntu-24.04-arm",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -2096,7 +2096,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest",
+         "runs-on": "ubuntu-24.04",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -2151,7 +2151,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest-arm64",
+         "runs-on": "ubuntu-24.04-arm",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -2206,7 +2206,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest",
+         "runs-on": "ubuntu-24.04",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -2261,7 +2261,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest-arm64",
+         "runs-on": "ubuntu-24.04-arm",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -2316,7 +2316,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest",
+         "runs-on": "ubuntu-24.04",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -2371,7 +2371,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest-arm64",
+         "runs-on": "ubuntu-24.04-arm",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -2426,7 +2426,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest",
+         "runs-on": "ubuntu-24.04",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -2481,7 +2481,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest-arm64",
+         "runs-on": "ubuntu-24.04-arm",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -2536,7 +2536,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest",
+         "runs-on": "ubuntu-24.04",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -2591,7 +2591,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest-arm64",
+         "runs-on": "ubuntu-24.04-arm",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -2646,7 +2646,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest",
+         "runs-on": "ubuntu-24.04",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
@@ -2701,7 +2701,7 @@
             "contents": "read",
             "id-token": "write"
          },
-         "runs-on": "ubuntu-latest-arm64",
+         "runs-on": "ubuntu-24.04-arm",
          "steps": [
             {
                "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
