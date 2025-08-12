@@ -4,25 +4,28 @@
 
 <a href='https://ko-fi.com/J3J8CKMUU' target='_blank'><img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi3.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' /></a>
 
-## Public repository
+## Public repositories
 
-- https://gallery.ecr.aws/sorah/ruby
-- https://hub.docker.com/r/sorah/ruby
+- [ghcr.io/sorah-rbpkg/ruby](https://github.com/sorah-rbpkg/dockerfiles/pkgs/container/ruby)
+- [public.ecr.aws/sorah/ruby](https://gallery.ecr.aws/sorah/ruby)
+- [sorah/ruby](https://hub.docker.com/r/sorah/ruby) _(deprecated)_
 
 ## Image tag
 
 - base
-  - `public.ecr.aws/sorah/ruby:{SERIES}`
-  - `public.ecr.aws/sorah/ruby:{SERIES}-{DISTRO}`
+  - `{SERIES}`
+  - `{SERIES}-{DISTRO}`
 - with build-essential
-  - `public.ecr.aws/sorah/ruby:{SERIES}-dev`
-  - `public.ecr.aws/sorah/ruby:{SERIES}-dev-{DISTRO}`
+  - `{SERIES}-dev`
+  - `{SERIES}-dev-{DISTRO}`
 
 where,
 
 - SERIES is like `2.6`, `2.7`, `3.0`, `3.1`, `3.2`
   - Starting Ruby 3.2.0, 3.1.3, 3.0.5, 2.7.7, you can specify full version number as SERIES as well
-- DISTRO is like `bionic`, `focal`, `jammy`, `noble`, `buster`, `bullseye`, `bookworm`
+- DISTRO is like `focal`, `jammy`, `noble`, `bookworm`, `trixie`
+
+for instance: `public.ecr.aws/sorah/ruby:3.2-dev-noble`, `public.ecr.aws/sorah/ruby:3.4-trixie`, `public.ecr.aws/sorah/ruby:3.3`
 
 ### List
 
@@ -48,3 +51,7 @@ The image has the following pinning with apt_preferences(5):
 
 - `src:rubygems-integration`, `src:ruby2.*`, `src:ruby3.*` (specified individually) has pin-priority of 600.
 - `src:ruby-defaults` has pin-priority of 999 with the latest version installed on build.
+
+### CI
+
+The images is built using GitHub Actions. Some older distros/series have been stopped building: `bionic` and earlier, `bullseye` and earlier, and Ruby 2.7 and earlier.
