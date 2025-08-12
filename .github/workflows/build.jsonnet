@@ -42,6 +42,7 @@ local permissions = {
 
 local splitWithSpace = function(s) [token for token in std.split(s, ' ') if token != ''];
 local matrix = [
+  // NOTE: also update config.rb when adding new distro
   { series: '2.7', distro: splitWithSpace('bionic focal                                       '), arm: true },
   { series: '3.0', distro: splitWithSpace('bionic focal jammy         bullseye                '), arm: true },
   { series: '3.1', distro: splitWithSpace('bionic focal jammy         bullseye                '), arm: true },
