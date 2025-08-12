@@ -65,10 +65,9 @@ local build_job(pattern) =
     _name:: name,
     [name]: {
       name: name,
-      'runs-on': 'ubuntu-latest',
+      'runs-on': (if pattern.arch == 'arm64' then 'ubuntu-latest-arm64' else 'ubuntu-latest'),
       permissions: { 'id-token': 'write', contents: 'read' },
       steps: common_steps + [
-        { uses: 'docker/setup-qemu-action@v2' },
         {
           run: 'ruby build.rb --pull --push',
           env: {
