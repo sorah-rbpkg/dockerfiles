@@ -8,7 +8,7 @@
 
 - [ghcr.io/sorah-rbpkg/ruby](https://github.com/sorah-rbpkg/dockerfiles/pkgs/container/ruby)
 - [public.ecr.aws/sorah/ruby](https://gallery.ecr.aws/sorah/ruby)
-- [sorah/ruby](https://hub.docker.com/r/sorah/ruby) _(deprecated)_
+- [sorah/ruby](https://hub.docker.com/r/sorah/ruby) _(deprecated, no longer guaranteed to be updated)_
 
 ## Image tag
 
@@ -29,15 +29,15 @@ for instance: `public.ecr.aws/sorah/ruby:3.2-dev-noble`, `public.ecr.aws/sorah/r
 
 ### List
 
-- 2.6: `2.6`, `2.6-dev` (dist= __`focal`__, `bionic`, `buster`)
-- 2.7: `2.7`, `2.7-dev` (dist= __`focal`__, `bionic`, `bullseye`, `buster`)
-- 3.0: `3.0`, `3.0-dev` (dist= `jammy`, __`focal`__, `bionic`, `bullseye`, `buster`)
-- 3.1: `3.1`, `3.1-dev` (dist= __`jammy`__, `focal`, `bionic`, `bullseye`)
-- 3.2: `3.2`, `3.2-dev` (dist= `noble`, __`jammy`__, `focal`, `bullseye`, `bookworm`)
-- 3.3: `3.3`, `3.3-dev` (dist= `noble`, __`jammy`__, `focal`, `bullseye`, `bookworm`)
-- 3.4: `3.4`, `3.4-dev` (dist= __`noble`__, `jammy`, `bookworm`)
+- `2.6`, `2.6-dev` distro= `bionic`, __`focal`__, `buster`
+- `2.7`, `2.7-dev` distro= `bionic`, __`focal`__, `bullseye`, `buster`
+- `3.0`, `3.0-dev` distro= `bionic`, __`focal`__, `jammy`, `bullseye`, `buster`
+- `3.1`, `3.1-dev` distro= `bionic`, `focal`, __`jammy`__, `bullseye`
+- `3.2`, `3.2-dev` distro= `focal`, __`jammy`__, `noble`, `bullseye`, `bookworm`
+- `3.3`, `3.3-dev` distro= `focal`, __`jammy`__, `noble`, `bullseye`, `bookworm`, `trixie`
+- `3.4`, `3.4-dev` distro= `jammy`, __`noble`__, `bookworm`, `trixie`
 
-_distro in bold is default_
+_a distro marked bold is default - used on tags which omits DISTRO_
 
 ## Misc
 
