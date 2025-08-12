@@ -143,7 +143,9 @@ local manifest_subtag_job(pattern) = {
   },
   inner: [
     manifest_job(pattern_to_job_name('manifest-main', pattern), 'subtag', env, parents),
-    manifest_job(pattern_to_job_name('manifest-hub', pattern), 'subtag', env { DOCKERHUB: '1' }, parents),
+
+    // For $DOCKERHUB, and schedule it after main manifest job by requiring cleanup job to prioritize main job first.
+    manifest_job(pattern_to_job_name('manifest-hub', pattern), 'subtag', env { DOCKERHUB: '1' }, parents + ['cleanup']),
   ],
 }.inner;
 
