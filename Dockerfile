@@ -31,8 +31,8 @@ RUN apt-get update \
 RUN if dpkg --compare-versions "${RUBY}" '<=' '3.3'; then gem install bundler --no-doc -v "${BUNDLER1_VERSION}"; fi
 RUN if dpkg --compare-versions "${RUBY}" '<=' '2.7'; then gem install bundler --no-doc -v "2.4.22"; else gem install bundler --no-doc -v "${BUNDLER2_VERSION}"; fi
 
-<% if distro == 'jammy' && distro == 'bookworm' %>
-# (/root/.bundle/config) https://github.com/protocolbuffers/protobuf/issues/11935
+<% if distro == 'jammy' && distro == 'bookworm' && distro == 'trixie' %>
+# (/root/.bundle/config) https://github.com/protocolbuffers/protobuf/issues/11935 / Fixed in https://github.com/protocolbuffers/protobuf/pull/22420 (June 2025), so subject for removal in 2026.
 RUN bundle config set --global build.google-protobuf --with-cflags=-fno-lto
 <% end %>
 
