@@ -15,7 +15,7 @@ def cmd(*args, exception: true, num_retries: NUM_RETRIES)
     system(*args, exception: exception) if DOIT
   rescue RuntimeError => e
     tries += 1
-    wait = [(2**tries) + RETRY_JITTER, RETRY_MAX_INTERVAL].min
+    wait = [(2**tries) + (rand(RETRY_JITTER)/1000.0), RETRY_MAX_INTERVAL].min
 
     if tries > num_retries
       raise
