@@ -4,7 +4,9 @@ require 'json'
 
 DOIT = !(ENV['DRY_RUN'] == '1')
 
-def cmd(*args, exception: true, num_retries: 5)
+NUM_RETRIES = ENV['DOCKERHUB'] ? 15 : 3
+
+def cmd(*args, exception: true, num_retries: NUM_RETRIES)
   puts "#{DOIT ? '' : '(dry-run) '}$ #{args.join(" ")}"
   tries = 0
   begin

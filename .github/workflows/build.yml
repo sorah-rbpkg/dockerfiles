@@ -2179,6 +2179,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": true,
                "env": {
                   "DIST_FILTER": "focal",
                   "DOCKERHUB": "1",
@@ -2255,6 +2256,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": true,
                "env": {
                   "DIST_FILTER": "jammy",
                   "DOCKERHUB": "1",
@@ -2331,6 +2333,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": true,
                "env": {
                   "DIST_FILTER": "focal",
                   "DOCKERHUB": "1",
@@ -2407,6 +2410,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": true,
                "env": {
                   "DIST_FILTER": "jammy",
                   "DOCKERHUB": "1",
@@ -2483,6 +2487,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": true,
                "env": {
                   "DIST_FILTER": "bookworm",
                   "DOCKERHUB": "1",
@@ -2559,6 +2564,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": true,
                "env": {
                   "DIST_FILTER": "focal",
                   "DOCKERHUB": "1",
@@ -2635,6 +2641,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": true,
                "env": {
                   "DIST_FILTER": "jammy",
                   "DOCKERHUB": "1",
@@ -2711,6 +2718,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": true,
                "env": {
                   "DIST_FILTER": "noble",
                   "DOCKERHUB": "1",
@@ -2787,6 +2795,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": true,
                "env": {
                   "DIST_FILTER": "bookworm",
                   "DOCKERHUB": "1",
@@ -2863,6 +2872,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": true,
                "env": {
                   "DIST_FILTER": "focal",
                   "DOCKERHUB": "1",
@@ -2939,6 +2949,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": true,
                "env": {
                   "DIST_FILTER": "jammy",
                   "DOCKERHUB": "1",
@@ -3015,6 +3026,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": true,
                "env": {
                   "DIST_FILTER": "noble",
                   "DOCKERHUB": "1",
@@ -3091,6 +3103,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": true,
                "env": {
                   "DIST_FILTER": "trixie",
                   "DOCKERHUB": "1",
@@ -3167,6 +3180,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": true,
                "env": {
                   "DIST_FILTER": "bookworm",
                   "DOCKERHUB": "1",
@@ -3243,6 +3257,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": true,
                "env": {
                   "DIST_FILTER": "jammy",
                   "DOCKERHUB": "1",
@@ -3319,6 +3334,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": true,
                "env": {
                   "DIST_FILTER": "noble",
                   "DOCKERHUB": "1",
@@ -3395,6 +3411,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": true,
                "env": {
                   "DIST_FILTER": "trixie",
                   "DOCKERHUB": "1",
@@ -3519,6 +3536,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": true,
                "env": {
                   "DOCKERHUB": "1"
                },
@@ -3593,6 +3611,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": false,
                "env": {
                   "DIST_FILTER": "focal",
                   "SERIES_FILTER": "3.0"
@@ -3668,6 +3687,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": false,
                "env": {
                   "DIST_FILTER": "jammy",
                   "SERIES_FILTER": "3.0"
@@ -3743,6 +3763,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": false,
                "env": {
                   "DIST_FILTER": "focal",
                   "SERIES_FILTER": "3.1"
@@ -3818,6 +3839,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": false,
                "env": {
                   "DIST_FILTER": "jammy",
                   "SERIES_FILTER": "3.1"
@@ -3893,6 +3915,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": false,
                "env": {
                   "DIST_FILTER": "bookworm",
                   "SERIES_FILTER": "3.2"
@@ -3968,6 +3991,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": false,
                "env": {
                   "DIST_FILTER": "focal",
                   "SERIES_FILTER": "3.2"
@@ -4043,6 +4067,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": false,
                "env": {
                   "DIST_FILTER": "jammy",
                   "SERIES_FILTER": "3.2"
@@ -4118,6 +4143,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": false,
                "env": {
                   "DIST_FILTER": "noble",
                   "SERIES_FILTER": "3.2"
@@ -4193,6 +4219,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": false,
                "env": {
                   "DIST_FILTER": "bookworm",
                   "SERIES_FILTER": "3.3"
@@ -4268,6 +4295,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": false,
                "env": {
                   "DIST_FILTER": "focal",
                   "SERIES_FILTER": "3.3"
@@ -4343,6 +4371,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": false,
                "env": {
                   "DIST_FILTER": "jammy",
                   "SERIES_FILTER": "3.3"
@@ -4418,6 +4447,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": false,
                "env": {
                   "DIST_FILTER": "noble",
                   "SERIES_FILTER": "3.3"
@@ -4493,6 +4523,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": false,
                "env": {
                   "DIST_FILTER": "trixie",
                   "SERIES_FILTER": "3.3"
@@ -4568,6 +4599,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": false,
                "env": {
                   "DIST_FILTER": "bookworm",
                   "SERIES_FILTER": "3.4"
@@ -4643,6 +4675,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": false,
                "env": {
                   "DIST_FILTER": "jammy",
                   "SERIES_FILTER": "3.4"
@@ -4718,6 +4751,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": false,
                "env": {
                   "DIST_FILTER": "noble",
                   "SERIES_FILTER": "3.4"
@@ -4793,6 +4827,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": false,
                "env": {
                   "DIST_FILTER": "trixie",
                   "SERIES_FILTER": "3.4"
@@ -4916,6 +4951,7 @@
                "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
             },
             {
+               "continue-on-error": false,
                "env": { },
                "run": "ruby manifest.rb --pull --latest"
             }

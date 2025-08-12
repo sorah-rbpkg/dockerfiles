@@ -125,6 +125,7 @@ local manifest_job(name, kind, env, parents) = {
       {
         run: 'ruby manifest.rb --pull --' + kind,
         env: env,
+        'continue-on-error': std.objectHas(env, 'DOCKERHUB'),
       },
     ],
   },
