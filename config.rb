@@ -120,6 +120,12 @@ DISTROS = [
     apt_url: 'https://cache.ruby-lang.org/lab/sorah/deb/dists/bookworm/main/binary-amd64/Packages',
     arm: true,
   ),
+  Distro.new(
+    family: 'debian',
+    name: 'trixie',
+    apt_url: 'https://cache.ruby-lang.org/lab/sorah/deb/dists/trixie/main/binary-amd64/Packages',
+    arm: true,
+  ),
 ]
 # NOTE: Make sure build.jsonnet is updated as well
 ARCHS = %w(arm64 amd64)
