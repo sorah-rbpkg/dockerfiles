@@ -2116,7 +2116,8 @@
          "name": "manifest-hub-3x0-focal",
          "needs": [
             "build-3x0-focal-amd64",
-            "build-3x0-focal-arm64"
+            "build-3x0-focal-arm64",
+            "cleanup"
          ],
          "permissions": {
             "contents": "read",
@@ -2193,7 +2194,8 @@
          "name": "manifest-hub-3x0-jammy",
          "needs": [
             "build-3x0-jammy-amd64",
-            "build-3x0-jammy-arm64"
+            "build-3x0-jammy-arm64",
+            "cleanup"
          ],
          "permissions": {
             "contents": "read",
@@ -2270,7 +2272,8 @@
          "name": "manifest-hub-3x1-focal",
          "needs": [
             "build-3x1-focal-amd64",
-            "build-3x1-focal-arm64"
+            "build-3x1-focal-arm64",
+            "cleanup"
          ],
          "permissions": {
             "contents": "read",
@@ -2347,7 +2350,8 @@
          "name": "manifest-hub-3x1-jammy",
          "needs": [
             "build-3x1-jammy-amd64",
-            "build-3x1-jammy-arm64"
+            "build-3x1-jammy-arm64",
+            "cleanup"
          ],
          "permissions": {
             "contents": "read",
@@ -2424,7 +2428,8 @@
          "name": "manifest-hub-3x2-bookworm",
          "needs": [
             "build-3x2-bookworm-amd64",
-            "build-3x2-bookworm-arm64"
+            "build-3x2-bookworm-arm64",
+            "cleanup"
          ],
          "permissions": {
             "contents": "read",
@@ -2501,7 +2506,8 @@
          "name": "manifest-hub-3x2-focal",
          "needs": [
             "build-3x2-focal-amd64",
-            "build-3x2-focal-arm64"
+            "build-3x2-focal-arm64",
+            "cleanup"
          ],
          "permissions": {
             "contents": "read",
@@ -2578,7 +2584,8 @@
          "name": "manifest-hub-3x2-jammy",
          "needs": [
             "build-3x2-jammy-amd64",
-            "build-3x2-jammy-arm64"
+            "build-3x2-jammy-arm64",
+            "cleanup"
          ],
          "permissions": {
             "contents": "read",
@@ -2655,7 +2662,8 @@
          "name": "manifest-hub-3x2-noble",
          "needs": [
             "build-3x2-noble-amd64",
-            "build-3x2-noble-arm64"
+            "build-3x2-noble-arm64",
+            "cleanup"
          ],
          "permissions": {
             "contents": "read",
@@ -2732,7 +2740,8 @@
          "name": "manifest-hub-3x3-bookworm",
          "needs": [
             "build-3x3-bookworm-amd64",
-            "build-3x3-bookworm-arm64"
+            "build-3x3-bookworm-arm64",
+            "cleanup"
          ],
          "permissions": {
             "contents": "read",
@@ -2809,7 +2818,8 @@
          "name": "manifest-hub-3x3-focal",
          "needs": [
             "build-3x3-focal-amd64",
-            "build-3x3-focal-arm64"
+            "build-3x3-focal-arm64",
+            "cleanup"
          ],
          "permissions": {
             "contents": "read",
@@ -2886,7 +2896,8 @@
          "name": "manifest-hub-3x3-jammy",
          "needs": [
             "build-3x3-jammy-amd64",
-            "build-3x3-jammy-arm64"
+            "build-3x3-jammy-arm64",
+            "cleanup"
          ],
          "permissions": {
             "contents": "read",
@@ -2963,7 +2974,8 @@
          "name": "manifest-hub-3x3-noble",
          "needs": [
             "build-3x3-noble-amd64",
-            "build-3x3-noble-arm64"
+            "build-3x3-noble-arm64",
+            "cleanup"
          ],
          "permissions": {
             "contents": "read",
@@ -3040,7 +3052,8 @@
          "name": "manifest-hub-3x3-trixie",
          "needs": [
             "build-3x3-trixie-amd64",
-            "build-3x3-trixie-arm64"
+            "build-3x3-trixie-arm64",
+            "cleanup"
          ],
          "permissions": {
             "contents": "read",
@@ -3117,7 +3130,8 @@
          "name": "manifest-hub-3x4-bookworm",
          "needs": [
             "build-3x4-bookworm-amd64",
-            "build-3x4-bookworm-arm64"
+            "build-3x4-bookworm-arm64",
+            "cleanup"
          ],
          "permissions": {
             "contents": "read",
@@ -3194,7 +3208,8 @@
          "name": "manifest-hub-3x4-jammy",
          "needs": [
             "build-3x4-jammy-amd64",
-            "build-3x4-jammy-arm64"
+            "build-3x4-jammy-arm64",
+            "cleanup"
          ],
          "permissions": {
             "contents": "read",
@@ -3271,7 +3286,8 @@
          "name": "manifest-hub-3x4-noble",
          "needs": [
             "build-3x4-noble-amd64",
-            "build-3x4-noble-arm64"
+            "build-3x4-noble-arm64",
+            "cleanup"
          ],
          "permissions": {
             "contents": "read",
@@ -3348,7 +3364,8 @@
          "name": "manifest-hub-3x4-trixie",
          "needs": [
             "build-3x4-trixie-amd64",
-            "build-3x4-trixie-arm64"
+            "build-3x4-trixie-arm64",
+            "cleanup"
          ],
          "permissions": {
             "contents": "read",

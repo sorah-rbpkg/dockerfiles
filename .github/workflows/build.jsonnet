@@ -115,6 +115,7 @@ local manifest_job(name, kind, env, parents) = {
         },
       }
       for parent in parents
+      if parent != 'cleanup'  // XXX:
     ] + [
       {
         run: 'find tmp',
