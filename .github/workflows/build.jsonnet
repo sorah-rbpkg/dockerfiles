@@ -14,6 +14,10 @@ local common_steps = [
     run: 'echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin',
   },
   {
+    name: 'login-ghcr',
+    run: 'echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin',
+  },
+  {
     uses: 'aws-actions/configure-aws-credentials@v1',
     with: {
       'aws-region': 'us-east-1',
@@ -29,6 +33,12 @@ local common_steps = [
   },
   { uses: 'actions/checkout@v3' },
 ];
+
+local permissions = {
+  'id-token': 'write',
+  contents: 'read',
+  packages: 'write',
+};
 
 local splitWithSpace = function(s) [token for token in std.split(s, ' ') if token != ''];
 local matrix = [
@@ -59,6 +69,7 @@ local pattern_to_job_name(prefix, pattern) =
   std.format('%s-%s-%s', [prefix, std.strReplace(pattern.series, '.', 'x'), pattern.distro]) +
   (if std.objectHas(pattern, 'arch') then std.format('-%s', [pattern.arch]) else '');
 
+
 local build_job(pattern) =
   local name = pattern_to_job_name('build', pattern);
   {
@@ -66,7 +77,7 @@ local build_job(pattern) =
     [name]: {
       name: name,
       'runs-on': (if pattern.arch == 'arm64' then 'ubuntu-24.04-arm' else 'ubuntu-24.04'),
-      permissions: { 'id-token': 'write', contents: 'read' },
+      permissions: permissions,
       steps: common_steps + [
         {
           run: 'ruby build.rb --pull --push',
@@ -88,11 +99,12 @@ local build_job(pattern) =
     },
   };
 
+
 local manifest_job(name, kind, env, parents) = {
   [name]: {
     name: name,
     'runs-on': 'ubuntu-latest',
-    permissions: { 'id-token': 'write', contents: 'read' },
+    permissions: permissions,
     needs: parents,
     steps: common_steps + [
       {
@@ -119,7 +131,6 @@ local manifest_job(name, kind, env, parents) = {
 };
 
 local manifest_subtag_job(pattern) = {
-  local name = pattern_to_job_name('manifest', pattern),
   local parents = [
     pattern_to_job_name('build', pattern { arch: arch })
     for arch in archs
@@ -129,7 +140,10 @@ local manifest_subtag_job(pattern) = {
     DIST_FILTER: pattern.distro,
     SERIES_FILTER: pattern.series,
   },
-  inner: manifest_job(name, 'subtag', env, parents),
+  inner: [
+    manifest_job(pattern_to_job_name('manifest-main', pattern), 'subtag', env, parents),
+    manifest_job(pattern_to_job_name('manifest-hub', pattern), 'subtag', env { DOCKERHUB: '1' }, parents),
+  ],
 }.inner;
 
 
@@ -138,11 +152,13 @@ local build_jobs = [
   for pattern in build_job_patterns
 ];
 
-local manifest_jobs = [
+local latest_manifest_parents = [pattern_to_job_name('build', pattern) for pattern in build_job_patterns if pattern.series == matrix[std.length(matrix) - 1].series];
+local manifest_jobs = std.flattenArrays([
   manifest_subtag_job(pattern)
   for pattern in manifest_subtag_job_patterns
-] + [
-  manifest_job('manifest-latest', 'latest', {}, [pattern_to_job_name('build', pattern) for pattern in build_job_patterns if pattern.series == matrix[std.length(matrix) - 1].series]),
+]) + [
+  manifest_job('manifest-main-latest', 'latest', {}, latest_manifest_parents),
+  manifest_job('manifest-hub-latest', 'latest', { DOCKERHUB: '1' }, latest_manifest_parents),
 ];
 
 local cleanup_job = {
@@ -150,7 +166,7 @@ local cleanup_job = {
     name: 'cleanup',
     'runs-on': 'ubuntu-latest',
     permissions: { 'id-token': 'write', contents: 'read' },
-    needs: std.flattenArrays([[y.name for y in std.objectValues(x)] for x in manifest_jobs]),
+    needs: std.flattenArrays([[y.name for y in std.objectValues(x) if std.startsWith(y.name, 'manifest-main-')] for x in manifest_jobs]),
     steps: common_steps + [
       {
         run: 'curl -Ssfo cleanup.rb https://raw.githubusercontent.com/sorah/config/1a4323466aa3c554dd53b70a17fe36fb4c8c87fd/bin/sorah-aws-ecr-public-cleanup',

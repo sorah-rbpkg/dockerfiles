@@ -4,7 +4,8 @@
          "name": "build-2x7-bionic-amd64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04",
          "steps": [
@@ -20,6 +21,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -59,7 +64,8 @@
          "name": "build-2x7-bionic-arm64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04-arm",
          "steps": [
@@ -75,6 +81,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -114,7 +124,8 @@
          "name": "build-2x7-focal-amd64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04",
          "steps": [
@@ -130,6 +141,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -169,7 +184,8 @@
          "name": "build-2x7-focal-arm64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04-arm",
          "steps": [
@@ -185,6 +201,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -224,7 +244,8 @@
          "name": "build-3x0-bionic-amd64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04",
          "steps": [
@@ -240,6 +261,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -279,7 +304,8 @@
          "name": "build-3x0-bionic-arm64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04-arm",
          "steps": [
@@ -295,6 +321,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -334,7 +364,8 @@
          "name": "build-3x0-bullseye-amd64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04",
          "steps": [
@@ -350,6 +381,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -389,7 +424,8 @@
          "name": "build-3x0-bullseye-arm64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04-arm",
          "steps": [
@@ -405,6 +441,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -444,7 +484,8 @@
          "name": "build-3x0-focal-amd64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04",
          "steps": [
@@ -460,6 +501,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -499,7 +544,8 @@
          "name": "build-3x0-focal-arm64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04-arm",
          "steps": [
@@ -515,6 +561,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -554,7 +604,8 @@
          "name": "build-3x0-jammy-amd64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04",
          "steps": [
@@ -570,6 +621,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -609,7 +664,8 @@
          "name": "build-3x0-jammy-arm64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04-arm",
          "steps": [
@@ -625,6 +681,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -664,7 +724,8 @@
          "name": "build-3x1-bionic-amd64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04",
          "steps": [
@@ -680,6 +741,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -719,7 +784,8 @@
          "name": "build-3x1-bionic-arm64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04-arm",
          "steps": [
@@ -735,6 +801,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -774,7 +844,8 @@
          "name": "build-3x1-bullseye-amd64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04",
          "steps": [
@@ -790,6 +861,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -829,7 +904,8 @@
          "name": "build-3x1-bullseye-arm64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04-arm",
          "steps": [
@@ -845,6 +921,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -884,7 +964,8 @@
          "name": "build-3x1-focal-amd64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04",
          "steps": [
@@ -900,6 +981,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -939,7 +1024,8 @@
          "name": "build-3x1-focal-arm64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04-arm",
          "steps": [
@@ -955,6 +1041,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -994,7 +1084,8 @@
          "name": "build-3x1-jammy-amd64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04",
          "steps": [
@@ -1010,6 +1101,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -1049,7 +1144,8 @@
          "name": "build-3x1-jammy-arm64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04-arm",
          "steps": [
@@ -1065,6 +1161,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -1104,7 +1204,8 @@
          "name": "build-3x2-bookworm-amd64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04",
          "steps": [
@@ -1120,6 +1221,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -1159,7 +1264,8 @@
          "name": "build-3x2-bookworm-arm64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04-arm",
          "steps": [
@@ -1175,6 +1281,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -1214,7 +1324,8 @@
          "name": "build-3x2-bullseye-amd64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04",
          "steps": [
@@ -1230,6 +1341,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -1269,7 +1384,8 @@
          "name": "build-3x2-bullseye-arm64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04-arm",
          "steps": [
@@ -1285,6 +1401,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -1324,7 +1444,8 @@
          "name": "build-3x2-focal-amd64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04",
          "steps": [
@@ -1340,6 +1461,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -1379,7 +1504,8 @@
          "name": "build-3x2-focal-arm64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04-arm",
          "steps": [
@@ -1395,6 +1521,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -1434,7 +1564,8 @@
          "name": "build-3x2-jammy-amd64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04",
          "steps": [
@@ -1450,6 +1581,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -1489,7 +1624,8 @@
          "name": "build-3x2-jammy-arm64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04-arm",
          "steps": [
@@ -1505,6 +1641,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -1544,7 +1684,8 @@
          "name": "build-3x2-noble-amd64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04",
          "steps": [
@@ -1560,6 +1701,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -1599,7 +1744,8 @@
          "name": "build-3x2-noble-arm64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04-arm",
          "steps": [
@@ -1615,6 +1761,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -1654,7 +1804,8 @@
          "name": "build-3x3-bookworm-amd64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04",
          "steps": [
@@ -1670,6 +1821,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -1709,7 +1864,8 @@
          "name": "build-3x3-bookworm-arm64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04-arm",
          "steps": [
@@ -1725,6 +1881,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -1764,7 +1924,8 @@
          "name": "build-3x3-bullseye-amd64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04",
          "steps": [
@@ -1780,6 +1941,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -1819,7 +1984,8 @@
          "name": "build-3x3-bullseye-arm64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04-arm",
          "steps": [
@@ -1835,6 +2001,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -1874,7 +2044,8 @@
          "name": "build-3x3-focal-amd64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04",
          "steps": [
@@ -1890,6 +2061,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -1929,7 +2104,8 @@
          "name": "build-3x3-focal-arm64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04-arm",
          "steps": [
@@ -1945,6 +2121,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -1984,7 +2164,8 @@
          "name": "build-3x3-jammy-amd64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04",
          "steps": [
@@ -2000,6 +2181,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -2039,7 +2224,8 @@
          "name": "build-3x3-jammy-arm64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04-arm",
          "steps": [
@@ -2055,6 +2241,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -2094,7 +2284,8 @@
          "name": "build-3x3-noble-amd64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04",
          "steps": [
@@ -2110,6 +2301,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -2149,7 +2344,8 @@
          "name": "build-3x3-noble-arm64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04-arm",
          "steps": [
@@ -2165,6 +2361,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -2204,7 +2404,8 @@
          "name": "build-3x3-trixie-amd64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04",
          "steps": [
@@ -2220,6 +2421,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -2259,7 +2464,8 @@
          "name": "build-3x3-trixie-arm64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04-arm",
          "steps": [
@@ -2275,6 +2481,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -2314,7 +2524,8 @@
          "name": "build-3x4-bookworm-amd64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04",
          "steps": [
@@ -2330,6 +2541,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -2369,7 +2584,8 @@
          "name": "build-3x4-bookworm-arm64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04-arm",
          "steps": [
@@ -2385,6 +2601,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -2424,7 +2644,8 @@
          "name": "build-3x4-jammy-amd64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04",
          "steps": [
@@ -2440,6 +2661,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -2479,7 +2704,8 @@
          "name": "build-3x4-jammy-arm64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04-arm",
          "steps": [
@@ -2495,6 +2721,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -2534,7 +2764,8 @@
          "name": "build-3x4-noble-amd64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04",
          "steps": [
@@ -2550,6 +2781,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -2589,7 +2824,8 @@
          "name": "build-3x4-noble-arm64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04-arm",
          "steps": [
@@ -2605,6 +2841,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -2644,7 +2884,8 @@
          "name": "build-3x4-trixie-amd64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04",
          "steps": [
@@ -2660,6 +2901,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -2699,7 +2944,8 @@
          "name": "build-3x4-trixie-arm64",
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-24.04-arm",
          "steps": [
@@ -2715,6 +2961,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -2753,32 +3003,32 @@
       "cleanup": {
          "name": "cleanup",
          "needs": [
-            "manifest-2x7-bionic",
-            "manifest-2x7-focal",
-            "manifest-3x0-bionic",
-            "manifest-3x0-focal",
-            "manifest-3x0-jammy",
-            "manifest-3x0-bullseye",
-            "manifest-3x1-bionic",
-            "manifest-3x1-focal",
-            "manifest-3x1-jammy",
-            "manifest-3x1-bullseye",
-            "manifest-3x2-focal",
-            "manifest-3x2-jammy",
-            "manifest-3x2-noble",
-            "manifest-3x2-bullseye",
-            "manifest-3x2-bookworm",
-            "manifest-3x3-focal",
-            "manifest-3x3-jammy",
-            "manifest-3x3-noble",
-            "manifest-3x3-bullseye",
-            "manifest-3x3-bookworm",
-            "manifest-3x3-trixie",
-            "manifest-3x4-jammy",
-            "manifest-3x4-noble",
-            "manifest-3x4-bookworm",
-            "manifest-3x4-trixie",
-            "manifest-latest"
+            "manifest-main-2x7-bionic",
+            "manifest-main-2x7-focal",
+            "manifest-main-3x0-bionic",
+            "manifest-main-3x0-focal",
+            "manifest-main-3x0-jammy",
+            "manifest-main-3x0-bullseye",
+            "manifest-main-3x1-bionic",
+            "manifest-main-3x1-focal",
+            "manifest-main-3x1-jammy",
+            "manifest-main-3x1-bullseye",
+            "manifest-main-3x2-focal",
+            "manifest-main-3x2-jammy",
+            "manifest-main-3x2-noble",
+            "manifest-main-3x2-bullseye",
+            "manifest-main-3x2-bookworm",
+            "manifest-main-3x3-focal",
+            "manifest-main-3x3-jammy",
+            "manifest-main-3x3-noble",
+            "manifest-main-3x3-bullseye",
+            "manifest-main-3x3-bookworm",
+            "manifest-main-3x3-trixie",
+            "manifest-main-3x4-jammy",
+            "manifest-main-3x4-noble",
+            "manifest-main-3x4-bookworm",
+            "manifest-main-3x4-trixie",
+            "manifest-main-latest"
          ],
          "permissions": {
             "contents": "read",
@@ -2798,6 +3048,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -2826,15 +3080,16 @@
             }
          ]
       },
-      "manifest-2x7-bionic": {
-         "name": "manifest-2x7-bionic",
+      "manifest-hub-2x7-bionic": {
+         "name": "manifest-hub-2x7-bionic",
          "needs": [
             "build-2x7-bionic-amd64",
             "build-2x7-bionic-arm64"
          ],
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-latest",
          "steps": [
@@ -2850,6 +3105,2032 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-2x7-bionic-amd64-artifacts",
+                  "path": "tmp/build-2x7-bionic-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-2x7-bionic-arm64-artifacts",
+                  "path": "tmp/build-2x7-bionic-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "env": {
+                  "DIST_FILTER": "bionic",
+                  "DOCKERHUB": "1",
+                  "SERIES_FILTER": "2.7"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
+      "manifest-hub-2x7-focal": {
+         "name": "manifest-hub-2x7-focal",
+         "needs": [
+            "build-2x7-focal-amd64",
+            "build-2x7-focal-arm64"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write",
+            "packages": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-2x7-focal-amd64-artifacts",
+                  "path": "tmp/build-2x7-focal-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-2x7-focal-arm64-artifacts",
+                  "path": "tmp/build-2x7-focal-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "env": {
+                  "DIST_FILTER": "focal",
+                  "DOCKERHUB": "1",
+                  "SERIES_FILTER": "2.7"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
+      "manifest-hub-3x0-bionic": {
+         "name": "manifest-hub-3x0-bionic",
+         "needs": [
+            "build-3x0-bionic-amd64",
+            "build-3x0-bionic-arm64"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write",
+            "packages": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x0-bionic-amd64-artifacts",
+                  "path": "tmp/build-3x0-bionic-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x0-bionic-arm64-artifacts",
+                  "path": "tmp/build-3x0-bionic-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "env": {
+                  "DIST_FILTER": "bionic",
+                  "DOCKERHUB": "1",
+                  "SERIES_FILTER": "3.0"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
+      "manifest-hub-3x0-bullseye": {
+         "name": "manifest-hub-3x0-bullseye",
+         "needs": [
+            "build-3x0-bullseye-amd64",
+            "build-3x0-bullseye-arm64"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write",
+            "packages": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x0-bullseye-amd64-artifacts",
+                  "path": "tmp/build-3x0-bullseye-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x0-bullseye-arm64-artifacts",
+                  "path": "tmp/build-3x0-bullseye-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "env": {
+                  "DIST_FILTER": "bullseye",
+                  "DOCKERHUB": "1",
+                  "SERIES_FILTER": "3.0"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
+      "manifest-hub-3x0-focal": {
+         "name": "manifest-hub-3x0-focal",
+         "needs": [
+            "build-3x0-focal-amd64",
+            "build-3x0-focal-arm64"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write",
+            "packages": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x0-focal-amd64-artifacts",
+                  "path": "tmp/build-3x0-focal-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x0-focal-arm64-artifacts",
+                  "path": "tmp/build-3x0-focal-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "env": {
+                  "DIST_FILTER": "focal",
+                  "DOCKERHUB": "1",
+                  "SERIES_FILTER": "3.0"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
+      "manifest-hub-3x0-jammy": {
+         "name": "manifest-hub-3x0-jammy",
+         "needs": [
+            "build-3x0-jammy-amd64",
+            "build-3x0-jammy-arm64"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write",
+            "packages": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x0-jammy-amd64-artifacts",
+                  "path": "tmp/build-3x0-jammy-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x0-jammy-arm64-artifacts",
+                  "path": "tmp/build-3x0-jammy-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "env": {
+                  "DIST_FILTER": "jammy",
+                  "DOCKERHUB": "1",
+                  "SERIES_FILTER": "3.0"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
+      "manifest-hub-3x1-bionic": {
+         "name": "manifest-hub-3x1-bionic",
+         "needs": [
+            "build-3x1-bionic-amd64",
+            "build-3x1-bionic-arm64"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write",
+            "packages": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x1-bionic-amd64-artifacts",
+                  "path": "tmp/build-3x1-bionic-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x1-bionic-arm64-artifacts",
+                  "path": "tmp/build-3x1-bionic-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "env": {
+                  "DIST_FILTER": "bionic",
+                  "DOCKERHUB": "1",
+                  "SERIES_FILTER": "3.1"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
+      "manifest-hub-3x1-bullseye": {
+         "name": "manifest-hub-3x1-bullseye",
+         "needs": [
+            "build-3x1-bullseye-amd64",
+            "build-3x1-bullseye-arm64"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write",
+            "packages": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x1-bullseye-amd64-artifacts",
+                  "path": "tmp/build-3x1-bullseye-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x1-bullseye-arm64-artifacts",
+                  "path": "tmp/build-3x1-bullseye-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "env": {
+                  "DIST_FILTER": "bullseye",
+                  "DOCKERHUB": "1",
+                  "SERIES_FILTER": "3.1"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
+      "manifest-hub-3x1-focal": {
+         "name": "manifest-hub-3x1-focal",
+         "needs": [
+            "build-3x1-focal-amd64",
+            "build-3x1-focal-arm64"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write",
+            "packages": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x1-focal-amd64-artifacts",
+                  "path": "tmp/build-3x1-focal-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x1-focal-arm64-artifacts",
+                  "path": "tmp/build-3x1-focal-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "env": {
+                  "DIST_FILTER": "focal",
+                  "DOCKERHUB": "1",
+                  "SERIES_FILTER": "3.1"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
+      "manifest-hub-3x1-jammy": {
+         "name": "manifest-hub-3x1-jammy",
+         "needs": [
+            "build-3x1-jammy-amd64",
+            "build-3x1-jammy-arm64"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write",
+            "packages": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x1-jammy-amd64-artifacts",
+                  "path": "tmp/build-3x1-jammy-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x1-jammy-arm64-artifacts",
+                  "path": "tmp/build-3x1-jammy-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "env": {
+                  "DIST_FILTER": "jammy",
+                  "DOCKERHUB": "1",
+                  "SERIES_FILTER": "3.1"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
+      "manifest-hub-3x2-bookworm": {
+         "name": "manifest-hub-3x2-bookworm",
+         "needs": [
+            "build-3x2-bookworm-amd64",
+            "build-3x2-bookworm-arm64"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write",
+            "packages": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x2-bookworm-amd64-artifacts",
+                  "path": "tmp/build-3x2-bookworm-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x2-bookworm-arm64-artifacts",
+                  "path": "tmp/build-3x2-bookworm-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "env": {
+                  "DIST_FILTER": "bookworm",
+                  "DOCKERHUB": "1",
+                  "SERIES_FILTER": "3.2"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
+      "manifest-hub-3x2-bullseye": {
+         "name": "manifest-hub-3x2-bullseye",
+         "needs": [
+            "build-3x2-bullseye-amd64",
+            "build-3x2-bullseye-arm64"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write",
+            "packages": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x2-bullseye-amd64-artifacts",
+                  "path": "tmp/build-3x2-bullseye-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x2-bullseye-arm64-artifacts",
+                  "path": "tmp/build-3x2-bullseye-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "env": {
+                  "DIST_FILTER": "bullseye",
+                  "DOCKERHUB": "1",
+                  "SERIES_FILTER": "3.2"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
+      "manifest-hub-3x2-focal": {
+         "name": "manifest-hub-3x2-focal",
+         "needs": [
+            "build-3x2-focal-amd64",
+            "build-3x2-focal-arm64"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write",
+            "packages": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x2-focal-amd64-artifacts",
+                  "path": "tmp/build-3x2-focal-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x2-focal-arm64-artifacts",
+                  "path": "tmp/build-3x2-focal-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "env": {
+                  "DIST_FILTER": "focal",
+                  "DOCKERHUB": "1",
+                  "SERIES_FILTER": "3.2"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
+      "manifest-hub-3x2-jammy": {
+         "name": "manifest-hub-3x2-jammy",
+         "needs": [
+            "build-3x2-jammy-amd64",
+            "build-3x2-jammy-arm64"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write",
+            "packages": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x2-jammy-amd64-artifacts",
+                  "path": "tmp/build-3x2-jammy-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x2-jammy-arm64-artifacts",
+                  "path": "tmp/build-3x2-jammy-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "env": {
+                  "DIST_FILTER": "jammy",
+                  "DOCKERHUB": "1",
+                  "SERIES_FILTER": "3.2"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
+      "manifest-hub-3x2-noble": {
+         "name": "manifest-hub-3x2-noble",
+         "needs": [
+            "build-3x2-noble-amd64",
+            "build-3x2-noble-arm64"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write",
+            "packages": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x2-noble-amd64-artifacts",
+                  "path": "tmp/build-3x2-noble-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x2-noble-arm64-artifacts",
+                  "path": "tmp/build-3x2-noble-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "env": {
+                  "DIST_FILTER": "noble",
+                  "DOCKERHUB": "1",
+                  "SERIES_FILTER": "3.2"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
+      "manifest-hub-3x3-bookworm": {
+         "name": "manifest-hub-3x3-bookworm",
+         "needs": [
+            "build-3x3-bookworm-amd64",
+            "build-3x3-bookworm-arm64"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write",
+            "packages": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x3-bookworm-amd64-artifacts",
+                  "path": "tmp/build-3x3-bookworm-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x3-bookworm-arm64-artifacts",
+                  "path": "tmp/build-3x3-bookworm-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "env": {
+                  "DIST_FILTER": "bookworm",
+                  "DOCKERHUB": "1",
+                  "SERIES_FILTER": "3.3"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
+      "manifest-hub-3x3-bullseye": {
+         "name": "manifest-hub-3x3-bullseye",
+         "needs": [
+            "build-3x3-bullseye-amd64",
+            "build-3x3-bullseye-arm64"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write",
+            "packages": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x3-bullseye-amd64-artifacts",
+                  "path": "tmp/build-3x3-bullseye-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x3-bullseye-arm64-artifacts",
+                  "path": "tmp/build-3x3-bullseye-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "env": {
+                  "DIST_FILTER": "bullseye",
+                  "DOCKERHUB": "1",
+                  "SERIES_FILTER": "3.3"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
+      "manifest-hub-3x3-focal": {
+         "name": "manifest-hub-3x3-focal",
+         "needs": [
+            "build-3x3-focal-amd64",
+            "build-3x3-focal-arm64"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write",
+            "packages": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x3-focal-amd64-artifacts",
+                  "path": "tmp/build-3x3-focal-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x3-focal-arm64-artifacts",
+                  "path": "tmp/build-3x3-focal-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "env": {
+                  "DIST_FILTER": "focal",
+                  "DOCKERHUB": "1",
+                  "SERIES_FILTER": "3.3"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
+      "manifest-hub-3x3-jammy": {
+         "name": "manifest-hub-3x3-jammy",
+         "needs": [
+            "build-3x3-jammy-amd64",
+            "build-3x3-jammy-arm64"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write",
+            "packages": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x3-jammy-amd64-artifacts",
+                  "path": "tmp/build-3x3-jammy-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x3-jammy-arm64-artifacts",
+                  "path": "tmp/build-3x3-jammy-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "env": {
+                  "DIST_FILTER": "jammy",
+                  "DOCKERHUB": "1",
+                  "SERIES_FILTER": "3.3"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
+      "manifest-hub-3x3-noble": {
+         "name": "manifest-hub-3x3-noble",
+         "needs": [
+            "build-3x3-noble-amd64",
+            "build-3x3-noble-arm64"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write",
+            "packages": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x3-noble-amd64-artifacts",
+                  "path": "tmp/build-3x3-noble-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x3-noble-arm64-artifacts",
+                  "path": "tmp/build-3x3-noble-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "env": {
+                  "DIST_FILTER": "noble",
+                  "DOCKERHUB": "1",
+                  "SERIES_FILTER": "3.3"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
+      "manifest-hub-3x3-trixie": {
+         "name": "manifest-hub-3x3-trixie",
+         "needs": [
+            "build-3x3-trixie-amd64",
+            "build-3x3-trixie-arm64"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write",
+            "packages": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x3-trixie-amd64-artifacts",
+                  "path": "tmp/build-3x3-trixie-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x3-trixie-arm64-artifacts",
+                  "path": "tmp/build-3x3-trixie-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "env": {
+                  "DIST_FILTER": "trixie",
+                  "DOCKERHUB": "1",
+                  "SERIES_FILTER": "3.3"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
+      "manifest-hub-3x4-bookworm": {
+         "name": "manifest-hub-3x4-bookworm",
+         "needs": [
+            "build-3x4-bookworm-amd64",
+            "build-3x4-bookworm-arm64"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write",
+            "packages": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x4-bookworm-amd64-artifacts",
+                  "path": "tmp/build-3x4-bookworm-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x4-bookworm-arm64-artifacts",
+                  "path": "tmp/build-3x4-bookworm-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "env": {
+                  "DIST_FILTER": "bookworm",
+                  "DOCKERHUB": "1",
+                  "SERIES_FILTER": "3.4"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
+      "manifest-hub-3x4-jammy": {
+         "name": "manifest-hub-3x4-jammy",
+         "needs": [
+            "build-3x4-jammy-amd64",
+            "build-3x4-jammy-arm64"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write",
+            "packages": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x4-jammy-amd64-artifacts",
+                  "path": "tmp/build-3x4-jammy-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x4-jammy-arm64-artifacts",
+                  "path": "tmp/build-3x4-jammy-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "env": {
+                  "DIST_FILTER": "jammy",
+                  "DOCKERHUB": "1",
+                  "SERIES_FILTER": "3.4"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
+      "manifest-hub-3x4-noble": {
+         "name": "manifest-hub-3x4-noble",
+         "needs": [
+            "build-3x4-noble-amd64",
+            "build-3x4-noble-arm64"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write",
+            "packages": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x4-noble-amd64-artifacts",
+                  "path": "tmp/build-3x4-noble-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x4-noble-arm64-artifacts",
+                  "path": "tmp/build-3x4-noble-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "env": {
+                  "DIST_FILTER": "noble",
+                  "DOCKERHUB": "1",
+                  "SERIES_FILTER": "3.4"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
+      "manifest-hub-3x4-trixie": {
+         "name": "manifest-hub-3x4-trixie",
+         "needs": [
+            "build-3x4-trixie-amd64",
+            "build-3x4-trixie-arm64"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write",
+            "packages": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x4-trixie-amd64-artifacts",
+                  "path": "tmp/build-3x4-trixie-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x4-trixie-arm64-artifacts",
+                  "path": "tmp/build-3x4-trixie-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "env": {
+                  "DIST_FILTER": "trixie",
+                  "DOCKERHUB": "1",
+                  "SERIES_FILTER": "3.4"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
+      "manifest-hub-latest": {
+         "name": "manifest-hub-latest",
+         "needs": [
+            "build-3x4-jammy-amd64",
+            "build-3x4-jammy-arm64",
+            "build-3x4-noble-amd64",
+            "build-3x4-noble-arm64",
+            "build-3x4-bookworm-amd64",
+            "build-3x4-bookworm-arm64",
+            "build-3x4-trixie-amd64",
+            "build-3x4-trixie-arm64"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write",
+            "packages": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x4-jammy-amd64-artifacts",
+                  "path": "tmp/build-3x4-jammy-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x4-jammy-arm64-artifacts",
+                  "path": "tmp/build-3x4-jammy-arm64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x4-noble-amd64-artifacts",
+                  "path": "tmp/build-3x4-noble-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x4-noble-arm64-artifacts",
+                  "path": "tmp/build-3x4-noble-arm64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x4-bookworm-amd64-artifacts",
+                  "path": "tmp/build-3x4-bookworm-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x4-bookworm-arm64-artifacts",
+                  "path": "tmp/build-3x4-bookworm-arm64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x4-trixie-amd64-artifacts",
+                  "path": "tmp/build-3x4-trixie-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x4-trixie-arm64-artifacts",
+                  "path": "tmp/build-3x4-trixie-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "env": {
+                  "DOCKERHUB": "1"
+               },
+               "run": "ruby manifest.rb --pull --latest"
+            }
+         ]
+      },
+      "manifest-main-2x7-bionic": {
+         "name": "manifest-main-2x7-bionic",
+         "needs": [
+            "build-2x7-bionic-amd64",
+            "build-2x7-bionic-arm64"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write",
+            "packages": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -2896,15 +5177,16 @@
             }
          ]
       },
-      "manifest-2x7-focal": {
-         "name": "manifest-2x7-focal",
+      "manifest-main-2x7-focal": {
+         "name": "manifest-main-2x7-focal",
          "needs": [
             "build-2x7-focal-amd64",
             "build-2x7-focal-arm64"
          ],
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-latest",
          "steps": [
@@ -2920,6 +5202,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -2966,15 +5252,16 @@
             }
          ]
       },
-      "manifest-3x0-bionic": {
-         "name": "manifest-3x0-bionic",
+      "manifest-main-3x0-bionic": {
+         "name": "manifest-main-3x0-bionic",
          "needs": [
             "build-3x0-bionic-amd64",
             "build-3x0-bionic-arm64"
          ],
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-latest",
          "steps": [
@@ -2990,6 +5277,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -3036,15 +5327,16 @@
             }
          ]
       },
-      "manifest-3x0-bullseye": {
-         "name": "manifest-3x0-bullseye",
+      "manifest-main-3x0-bullseye": {
+         "name": "manifest-main-3x0-bullseye",
          "needs": [
             "build-3x0-bullseye-amd64",
             "build-3x0-bullseye-arm64"
          ],
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-latest",
          "steps": [
@@ -3060,6 +5352,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -3106,15 +5402,16 @@
             }
          ]
       },
-      "manifest-3x0-focal": {
-         "name": "manifest-3x0-focal",
+      "manifest-main-3x0-focal": {
+         "name": "manifest-main-3x0-focal",
          "needs": [
             "build-3x0-focal-amd64",
             "build-3x0-focal-arm64"
          ],
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-latest",
          "steps": [
@@ -3130,6 +5427,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -3176,15 +5477,16 @@
             }
          ]
       },
-      "manifest-3x0-jammy": {
-         "name": "manifest-3x0-jammy",
+      "manifest-main-3x0-jammy": {
+         "name": "manifest-main-3x0-jammy",
          "needs": [
             "build-3x0-jammy-amd64",
             "build-3x0-jammy-arm64"
          ],
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-latest",
          "steps": [
@@ -3200,6 +5502,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -3246,15 +5552,16 @@
             }
          ]
       },
-      "manifest-3x1-bionic": {
-         "name": "manifest-3x1-bionic",
+      "manifest-main-3x1-bionic": {
+         "name": "manifest-main-3x1-bionic",
          "needs": [
             "build-3x1-bionic-amd64",
             "build-3x1-bionic-arm64"
          ],
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-latest",
          "steps": [
@@ -3270,6 +5577,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -3316,15 +5627,16 @@
             }
          ]
       },
-      "manifest-3x1-bullseye": {
-         "name": "manifest-3x1-bullseye",
+      "manifest-main-3x1-bullseye": {
+         "name": "manifest-main-3x1-bullseye",
          "needs": [
             "build-3x1-bullseye-amd64",
             "build-3x1-bullseye-arm64"
          ],
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-latest",
          "steps": [
@@ -3340,6 +5652,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -3386,15 +5702,16 @@
             }
          ]
       },
-      "manifest-3x1-focal": {
-         "name": "manifest-3x1-focal",
+      "manifest-main-3x1-focal": {
+         "name": "manifest-main-3x1-focal",
          "needs": [
             "build-3x1-focal-amd64",
             "build-3x1-focal-arm64"
          ],
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-latest",
          "steps": [
@@ -3410,6 +5727,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -3456,15 +5777,16 @@
             }
          ]
       },
-      "manifest-3x1-jammy": {
-         "name": "manifest-3x1-jammy",
+      "manifest-main-3x1-jammy": {
+         "name": "manifest-main-3x1-jammy",
          "needs": [
             "build-3x1-jammy-amd64",
             "build-3x1-jammy-arm64"
          ],
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-latest",
          "steps": [
@@ -3480,6 +5802,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -3526,15 +5852,16 @@
             }
          ]
       },
-      "manifest-3x2-bookworm": {
-         "name": "manifest-3x2-bookworm",
+      "manifest-main-3x2-bookworm": {
+         "name": "manifest-main-3x2-bookworm",
          "needs": [
             "build-3x2-bookworm-amd64",
             "build-3x2-bookworm-arm64"
          ],
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-latest",
          "steps": [
@@ -3550,6 +5877,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -3596,15 +5927,16 @@
             }
          ]
       },
-      "manifest-3x2-bullseye": {
-         "name": "manifest-3x2-bullseye",
+      "manifest-main-3x2-bullseye": {
+         "name": "manifest-main-3x2-bullseye",
          "needs": [
             "build-3x2-bullseye-amd64",
             "build-3x2-bullseye-arm64"
          ],
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-latest",
          "steps": [
@@ -3620,6 +5952,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -3666,15 +6002,16 @@
             }
          ]
       },
-      "manifest-3x2-focal": {
-         "name": "manifest-3x2-focal",
+      "manifest-main-3x2-focal": {
+         "name": "manifest-main-3x2-focal",
          "needs": [
             "build-3x2-focal-amd64",
             "build-3x2-focal-arm64"
          ],
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-latest",
          "steps": [
@@ -3690,6 +6027,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -3736,15 +6077,16 @@
             }
          ]
       },
-      "manifest-3x2-jammy": {
-         "name": "manifest-3x2-jammy",
+      "manifest-main-3x2-jammy": {
+         "name": "manifest-main-3x2-jammy",
          "needs": [
             "build-3x2-jammy-amd64",
             "build-3x2-jammy-arm64"
          ],
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-latest",
          "steps": [
@@ -3760,6 +6102,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -3806,15 +6152,16 @@
             }
          ]
       },
-      "manifest-3x2-noble": {
-         "name": "manifest-3x2-noble",
+      "manifest-main-3x2-noble": {
+         "name": "manifest-main-3x2-noble",
          "needs": [
             "build-3x2-noble-amd64",
             "build-3x2-noble-arm64"
          ],
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-latest",
          "steps": [
@@ -3830,6 +6177,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -3876,15 +6227,16 @@
             }
          ]
       },
-      "manifest-3x3-bookworm": {
-         "name": "manifest-3x3-bookworm",
+      "manifest-main-3x3-bookworm": {
+         "name": "manifest-main-3x3-bookworm",
          "needs": [
             "build-3x3-bookworm-amd64",
             "build-3x3-bookworm-arm64"
          ],
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-latest",
          "steps": [
@@ -3900,6 +6252,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -3946,15 +6302,16 @@
             }
          ]
       },
-      "manifest-3x3-bullseye": {
-         "name": "manifest-3x3-bullseye",
+      "manifest-main-3x3-bullseye": {
+         "name": "manifest-main-3x3-bullseye",
          "needs": [
             "build-3x3-bullseye-amd64",
             "build-3x3-bullseye-arm64"
          ],
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-latest",
          "steps": [
@@ -3970,6 +6327,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -4016,15 +6377,16 @@
             }
          ]
       },
-      "manifest-3x3-focal": {
-         "name": "manifest-3x3-focal",
+      "manifest-main-3x3-focal": {
+         "name": "manifest-main-3x3-focal",
          "needs": [
             "build-3x3-focal-amd64",
             "build-3x3-focal-arm64"
          ],
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-latest",
          "steps": [
@@ -4040,6 +6402,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -4086,15 +6452,16 @@
             }
          ]
       },
-      "manifest-3x3-jammy": {
-         "name": "manifest-3x3-jammy",
+      "manifest-main-3x3-jammy": {
+         "name": "manifest-main-3x3-jammy",
          "needs": [
             "build-3x3-jammy-amd64",
             "build-3x3-jammy-arm64"
          ],
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-latest",
          "steps": [
@@ -4110,6 +6477,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -4156,15 +6527,16 @@
             }
          ]
       },
-      "manifest-3x3-noble": {
-         "name": "manifest-3x3-noble",
+      "manifest-main-3x3-noble": {
+         "name": "manifest-main-3x3-noble",
          "needs": [
             "build-3x3-noble-amd64",
             "build-3x3-noble-arm64"
          ],
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-latest",
          "steps": [
@@ -4180,6 +6552,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -4226,15 +6602,16 @@
             }
          ]
       },
-      "manifest-3x3-trixie": {
-         "name": "manifest-3x3-trixie",
+      "manifest-main-3x3-trixie": {
+         "name": "manifest-main-3x3-trixie",
          "needs": [
             "build-3x3-trixie-amd64",
             "build-3x3-trixie-arm64"
          ],
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-latest",
          "steps": [
@@ -4250,6 +6627,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -4296,15 +6677,16 @@
             }
          ]
       },
-      "manifest-3x4-bookworm": {
-         "name": "manifest-3x4-bookworm",
+      "manifest-main-3x4-bookworm": {
+         "name": "manifest-main-3x4-bookworm",
          "needs": [
             "build-3x4-bookworm-amd64",
             "build-3x4-bookworm-arm64"
          ],
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-latest",
          "steps": [
@@ -4320,6 +6702,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -4366,15 +6752,16 @@
             }
          ]
       },
-      "manifest-3x4-jammy": {
-         "name": "manifest-3x4-jammy",
+      "manifest-main-3x4-jammy": {
+         "name": "manifest-main-3x4-jammy",
          "needs": [
             "build-3x4-jammy-amd64",
             "build-3x4-jammy-arm64"
          ],
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-latest",
          "steps": [
@@ -4390,6 +6777,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -4436,15 +6827,16 @@
             }
          ]
       },
-      "manifest-3x4-noble": {
-         "name": "manifest-3x4-noble",
+      "manifest-main-3x4-noble": {
+         "name": "manifest-main-3x4-noble",
          "needs": [
             "build-3x4-noble-amd64",
             "build-3x4-noble-arm64"
          ],
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-latest",
          "steps": [
@@ -4460,6 +6852,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -4506,15 +6902,16 @@
             }
          ]
       },
-      "manifest-3x4-trixie": {
-         "name": "manifest-3x4-trixie",
+      "manifest-main-3x4-trixie": {
+         "name": "manifest-main-3x4-trixie",
          "needs": [
             "build-3x4-trixie-amd64",
             "build-3x4-trixie-arm64"
          ],
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-latest",
          "steps": [
@@ -4530,6 +6927,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
@@ -4576,8 +6977,8 @@
             }
          ]
       },
-      "manifest-latest": {
-         "name": "manifest-latest",
+      "manifest-main-latest": {
+         "name": "manifest-main-latest",
          "needs": [
             "build-3x4-jammy-amd64",
             "build-3x4-jammy-arm64",
@@ -4590,7 +6991,8 @@
          ],
          "permissions": {
             "contents": "read",
-            "id-token": "write"
+            "id-token": "write",
+            "packages": "write"
          },
          "runs-on": "ubuntu-latest",
          "steps": [
@@ -4606,6 +7008,10 @@
             {
                "name": "login-dockerhub",
                "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
             },
             {
                "uses": "aws-actions/configure-aws-credentials@v1",
