@@ -5,6 +5,8 @@ require 'json'
 DOIT = !(ENV['DRY_RUN'] == '1')
 
 NUM_RETRIES = ENV['DOCKERHUB'] ? 15 : 3
+RETRY_JITTER = ENV['DOCKERHUB'] ? (30*1000) : 2000
+RETRY_MAX_INTERVAL = ENV['DOCKERHUB'] ? (120.0+rand(60)) : 60.0
 
 def cmd(*args, exception: true, num_retries: NUM_RETRIES)
   puts "#{DOIT ? '' : '(dry-run) '}$ #{args.join(" ")}"
@@ -13,7 +15,7 @@ def cmd(*args, exception: true, num_retries: NUM_RETRIES)
     system(*args, exception: exception) if DOIT
   rescue RuntimeError => e
     tries += 1
-    wait = [(2**tries)+ (rand(2000)/1000.0), 60.0].min
+    wait = [(2**tries) + RETRY_JITTER, RETRY_MAX_INTERVAL].min
 
     if tries > num_retries
       raise
