@@ -2320,6 +2320,122 @@
             }
          ]
       },
+      "build-3x3-trixie-amd64": {
+         "name": "build-3x3-trixie-amd64",
+         "permissions": {
+            "contents": "read",
+            "id-token": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "docker/setup-qemu-action@v2"
+            },
+            {
+               "env": {
+                  "ARCH_FILTER": "amd64",
+                  "DIST_FILTER": "trixie",
+                  "SERIES_FILTER": "3.3"
+               },
+               "run": "ruby build.rb --pull --push"
+            },
+            {
+               "uses": "actions/upload-artifact@v4",
+               "with": {
+                  "name": "build-3x3-trixie-amd64-artifacts",
+                  "path": "tmp/built_images.json",
+                  "retention-days": 1
+               }
+            }
+         ]
+      },
+      "build-3x3-trixie-arm64": {
+         "name": "build-3x3-trixie-arm64",
+         "permissions": {
+            "contents": "read",
+            "id-token": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "docker/setup-qemu-action@v2"
+            },
+            {
+               "env": {
+                  "ARCH_FILTER": "arm64",
+                  "DIST_FILTER": "trixie",
+                  "SERIES_FILTER": "3.3"
+               },
+               "run": "ruby build.rb --pull --push"
+            },
+            {
+               "uses": "actions/upload-artifact@v4",
+               "with": {
+                  "name": "build-3x3-trixie-arm64-artifacts",
+                  "path": "tmp/built_images.json",
+                  "retention-days": 1
+               }
+            }
+         ]
+      },
       "build-3x4-bookworm-amd64": {
          "name": "build-3x4-bookworm-amd64",
          "permissions": {
@@ -2668,6 +2784,122 @@
             }
          ]
       },
+      "build-3x4-trixie-amd64": {
+         "name": "build-3x4-trixie-amd64",
+         "permissions": {
+            "contents": "read",
+            "id-token": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "docker/setup-qemu-action@v2"
+            },
+            {
+               "env": {
+                  "ARCH_FILTER": "amd64",
+                  "DIST_FILTER": "trixie",
+                  "SERIES_FILTER": "3.4"
+               },
+               "run": "ruby build.rb --pull --push"
+            },
+            {
+               "uses": "actions/upload-artifact@v4",
+               "with": {
+                  "name": "build-3x4-trixie-amd64-artifacts",
+                  "path": "tmp/built_images.json",
+                  "retention-days": 1
+               }
+            }
+         ]
+      },
+      "build-3x4-trixie-arm64": {
+         "name": "build-3x4-trixie-arm64",
+         "permissions": {
+            "contents": "read",
+            "id-token": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "docker/setup-qemu-action@v2"
+            },
+            {
+               "env": {
+                  "ARCH_FILTER": "arm64",
+                  "DIST_FILTER": "trixie",
+                  "SERIES_FILTER": "3.4"
+               },
+               "run": "ruby build.rb --pull --push"
+            },
+            {
+               "uses": "actions/upload-artifact@v4",
+               "with": {
+                  "name": "build-3x4-trixie-arm64-artifacts",
+                  "path": "tmp/built_images.json",
+                  "retention-days": 1
+               }
+            }
+         ]
+      },
       "cleanup": {
          "name": "cleanup",
          "needs": [
@@ -2691,9 +2923,11 @@
             "manifest-3x3-noble",
             "manifest-3x3-bullseye",
             "manifest-3x3-bookworm",
+            "manifest-3x3-trixie",
             "manifest-3x4-jammy",
             "manifest-3x4-noble",
             "manifest-3x4-bookworm",
+            "manifest-3x4-trixie",
             "manifest-latest"
          ],
          "permissions": {
@@ -4142,6 +4376,76 @@
             }
          ]
       },
+      "manifest-3x3-trixie": {
+         "name": "manifest-3x3-trixie",
+         "needs": [
+            "build-3x3-trixie-amd64",
+            "build-3x3-trixie-arm64"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x3-trixie-amd64-artifacts",
+                  "path": "tmp/build-3x3-trixie-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x3-trixie-arm64-artifacts",
+                  "path": "tmp/build-3x3-trixie-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "env": {
+                  "DIST_FILTER": "trixie",
+                  "SERIES_FILTER": "3.3"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
       "manifest-3x4-bookworm": {
          "name": "manifest-3x4-bookworm",
          "needs": [
@@ -4352,6 +4656,76 @@
             }
          ]
       },
+      "manifest-3x4-trixie": {
+         "name": "manifest-3x4-trixie",
+         "needs": [
+            "build-3x4-trixie-amd64",
+            "build-3x4-trixie-arm64"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x4-trixie-amd64-artifacts",
+                  "path": "tmp/build-3x4-trixie-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x4-trixie-arm64-artifacts",
+                  "path": "tmp/build-3x4-trixie-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "env": {
+                  "DIST_FILTER": "trixie",
+                  "SERIES_FILTER": "3.4"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
       "manifest-latest": {
          "name": "manifest-latest",
          "needs": [
@@ -4360,7 +4734,9 @@
             "build-3x4-noble-amd64",
             "build-3x4-noble-arm64",
             "build-3x4-bookworm-amd64",
-            "build-3x4-bookworm-arm64"
+            "build-3x4-bookworm-arm64",
+            "build-3x4-trixie-amd64",
+            "build-3x4-trixie-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -4437,6 +4813,20 @@
                "with": {
                   "name": "build-3x4-bookworm-arm64-artifacts",
                   "path": "tmp/build-3x4-bookworm-arm64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x4-trixie-amd64-artifacts",
+                  "path": "tmp/build-3x4-trixie-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x4-trixie-arm64-artifacts",
+                  "path": "tmp/build-3x4-trixie-arm64-artifacts"
                }
             },
             {

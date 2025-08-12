@@ -33,11 +33,11 @@ local common_steps = [
 local splitWithSpace = function(s) [token for token in std.split(s, ' ') if token != ''];
 local matrix = [
   { series: '2.7', distro: splitWithSpace('bionic focal                                       '), arm: true },
-  { series: '3.0', distro: splitWithSpace('bionic focal jammy                bullseye         '), arm: true },
-  { series: '3.1', distro: splitWithSpace('bionic focal jammy                bullseye         '), arm: true },
-  { series: '3.2', distro: splitWithSpace('       focal jammy noble          bullseye bookworm'), arm: true },
-  { series: '3.3', distro: splitWithSpace('       focal jammy noble          bullseye bookworm'), arm: true },
-  { series: '3.4', distro: splitWithSpace('             jammy noble                   bookworm'), arm: true },
+  { series: '3.0', distro: splitWithSpace('bionic focal jammy         bullseye                '), arm: true },
+  { series: '3.1', distro: splitWithSpace('bionic focal jammy         bullseye                '), arm: true },
+  { series: '3.2', distro: splitWithSpace('       focal jammy noble   bullseye bookworm       '), arm: true },
+  { series: '3.3', distro: splitWithSpace('       focal jammy noble   bullseye bookworm trixie'), arm: true },
+  { series: '3.4', distro: splitWithSpace('             jammy noble            bookworm trixie'), arm: true },
 ];
 local archs = ['amd64', 'arm64'];
 
