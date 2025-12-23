@@ -6,7 +6,6 @@
 
 ## Public repositories
 
-- [ghcr.io/sorah-rbpkg/ruby](https://github.com/sorah-rbpkg/dockerfiles/pkgs/container/ruby)
 - [public.ecr.aws/sorah/ruby](https://gallery.ecr.aws/sorah/ruby)
 - [sorah/ruby](https://hub.docker.com/r/sorah/ruby) _(deprecated, no longer guaranteed to be updated)_
 
