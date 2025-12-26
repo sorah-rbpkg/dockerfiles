@@ -48,6 +48,7 @@ local matrix = [
   { series: '3.2', distro: splitWithSpace('       focal jammy noble            bookworm       '), arm: true },
   { series: '3.3', distro: splitWithSpace('       focal jammy noble            bookworm trixie'), arm: true },
   { series: '3.4', distro: splitWithSpace('             jammy noble            bookworm trixie'), arm: true },
+  { series: '4.0', distro: splitWithSpace('             jammy noble            bookworm trixie'), arm: true },
 ];
 local archs = ['amd64', 'arm64'];
 

@@ -35,3 +35,7 @@ Pin-Priority: 600
 Package: src:ruby3.4
 Pin: origin "cache.ruby-lang.org"
 Pin-Priority: 600
+
+Package: src:ruby4.0
+Pin: origin "cache.ruby-lang.org"
+Pin-Priority: 600

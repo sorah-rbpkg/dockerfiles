@@ -141,6 +141,7 @@ SERIES = [
   Release.new(version: '3.2', default_distro: 'jammy', arm: true),
   Release.new(version: '3.3', default_distro: 'jammy', arm: true),
   Release.new(version: '3.4', default_distro: 'noble', arm: true),
+  Release.new(version: '4.0', default_distro: 'noble', arm: true),
 ]
 
 def find_series(version)
