@@ -41,7 +41,6 @@ SERIES.each do |series|
     next if DISTRO_FILTER && !DISTRO_FILTER.include?(distro.name)
 
     packages = apt_packages(distro.apt_url)
-    pp packages if distro.name == 'trixie'
 
     default_version = packages.dig('ruby-defaults', 'ruby')&.map { |_| _.fetch('Version')[0] }&.grep(/#{Regexp.escape(series.version)}[.+~]/)&.sort&.last
     deb_version = packages.dig("ruby#{series.version}", "ruby#{series.version}")&.map { |_| _.fetch('Version')[0] }&.sort&.last
@@ -82,6 +81,8 @@ SERIES.each do |series|
     end
   end
 end
+
+raise "no images built" if @built_images.empty?
 
 puts "=> Built images"
 built_images_json = JSON.pretty_generate(@built_images.map(&:to_h))
