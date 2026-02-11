@@ -46,6 +46,7 @@ SERIES.each do |series|
     deb_version = packages.dig("ruby#{series.version}", "ruby#{series.version}")&.map { |_| _.fetch('Version')[0] }&.sort&.last
     unless default_version && deb_version
       puts "=> #{series.version}-#{distro.name} skipped due to inexistent package"
+      p default_version: default_version, deb_version: deb_version
       next
     end
 
