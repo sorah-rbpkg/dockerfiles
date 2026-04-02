@@ -35,8 +35,8 @@ for instance: `public.ecr.aws/sorah/ruby:3.2-dev-noble`, `public.ecr.aws/sorah/r
 - `3.1`, `3.1-dev` distro= `bionic`, `focal`, __`jammy`__, `bullseye`
 - `3.2`, `3.2-dev` distro= `focal`, __`jammy`__, `noble`, `bullseye`, `bookworm`
 - `3.3`, `3.3-dev` distro= `focal`, __`jammy`__, `noble`, `bullseye`, `bookworm`, `trixie`
-- `3.4`, `3.4-dev` distro= `jammy`, __`noble`__, `bookworm`, `trixie`
-- `4.0`, `4.0-dev` distro= `jammy`, __`noble`__, `bookworm`, `trixie`
+- `3.4`, `3.4-dev` distro= `jammy`, __`noble`__, `resolute`, `bookworm`, `trixie`
+- `4.0`, `4.0-dev` distro= `jammy`, __`noble`__, `resolute`, `bookworm`, `trixie`
 
 _a distro marked bold is default - used on tags which omits DISTRO_
 

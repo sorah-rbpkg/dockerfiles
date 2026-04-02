@@ -1920,6 +1920,126 @@
             }
          ]
       },
+      "build-3x4-resolute-amd64": {
+         "name": "build-3x4-resolute-amd64",
+         "permissions": {
+            "contents": "read",
+            "id-token": "write",
+            "packages": "write"
+         },
+         "runs-on": "ubuntu-24.04",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "env": {
+                  "ARCH_FILTER": "amd64",
+                  "DIST_FILTER": "resolute",
+                  "SERIES_FILTER": "3.4"
+               },
+               "run": "ruby build.rb --pull --push"
+            },
+            {
+               "uses": "actions/upload-artifact@v4",
+               "with": {
+                  "name": "build-3x4-resolute-amd64-artifacts",
+                  "path": "tmp/built_images.json",
+                  "retention-days": 1
+               }
+            }
+         ]
+      },
+      "build-3x4-resolute-arm64": {
+         "name": "build-3x4-resolute-arm64",
+         "permissions": {
+            "contents": "read",
+            "id-token": "write",
+            "packages": "write"
+         },
+         "runs-on": "ubuntu-24.04-arm",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "env": {
+                  "ARCH_FILTER": "arm64",
+                  "DIST_FILTER": "resolute",
+                  "SERIES_FILTER": "3.4"
+               },
+               "run": "ruby build.rb --pull --push"
+            },
+            {
+               "uses": "actions/upload-artifact@v4",
+               "with": {
+                  "name": "build-3x4-resolute-arm64-artifacts",
+                  "path": "tmp/built_images.json",
+                  "retention-days": 1
+               }
+            }
+         ]
+      },
       "build-3x4-trixie-amd64": {
          "name": "build-3x4-trixie-amd64",
          "permissions": {
@@ -2400,6 +2520,126 @@
             }
          ]
       },
+      "build-4x0-resolute-amd64": {
+         "name": "build-4x0-resolute-amd64",
+         "permissions": {
+            "contents": "read",
+            "id-token": "write",
+            "packages": "write"
+         },
+         "runs-on": "ubuntu-24.04",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "env": {
+                  "ARCH_FILTER": "amd64",
+                  "DIST_FILTER": "resolute",
+                  "SERIES_FILTER": "4.0"
+               },
+               "run": "ruby build.rb --pull --push"
+            },
+            {
+               "uses": "actions/upload-artifact@v4",
+               "with": {
+                  "name": "build-4x0-resolute-amd64-artifacts",
+                  "path": "tmp/built_images.json",
+                  "retention-days": 1
+               }
+            }
+         ]
+      },
+      "build-4x0-resolute-arm64": {
+         "name": "build-4x0-resolute-arm64",
+         "permissions": {
+            "contents": "read",
+            "id-token": "write",
+            "packages": "write"
+         },
+         "runs-on": "ubuntu-24.04-arm",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "env": {
+                  "ARCH_FILTER": "arm64",
+                  "DIST_FILTER": "resolute",
+                  "SERIES_FILTER": "4.0"
+               },
+               "run": "ruby build.rb --pull --push"
+            },
+            {
+               "uses": "actions/upload-artifact@v4",
+               "with": {
+                  "name": "build-4x0-resolute-arm64-artifacts",
+                  "path": "tmp/built_images.json",
+                  "retention-days": 1
+               }
+            }
+         ]
+      },
       "build-4x0-trixie-amd64": {
          "name": "build-4x0-trixie-amd64",
          "permissions": {
@@ -2538,10 +2778,12 @@
             "manifest-main-3x3-trixie",
             "manifest-main-3x4-jammy",
             "manifest-main-3x4-noble",
+            "manifest-main-3x4-resolute",
             "manifest-main-3x4-bookworm",
             "manifest-main-3x4-trixie",
             "manifest-main-4x0-jammy",
             "manifest-main-4x0-noble",
+            "manifest-main-4x0-resolute",
             "manifest-main-4x0-bookworm",
             "manifest-main-4x0-trixie",
             "manifest-main-latest"
@@ -3844,6 +4086,84 @@
             }
          ]
       },
+      "manifest-hub-3x4-resolute": {
+         "name": "manifest-hub-3x4-resolute",
+         "needs": [
+            "build-3x4-resolute-amd64",
+            "build-3x4-resolute-arm64",
+            "cleanup"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write",
+            "packages": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x4-resolute-amd64-artifacts",
+                  "path": "tmp/build-3x4-resolute-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x4-resolute-arm64-artifacts",
+                  "path": "tmp/build-3x4-resolute-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "continue-on-error": true,
+               "env": {
+                  "DIST_FILTER": "resolute",
+                  "DOCKERHUB": "1",
+                  "SERIES_FILTER": "3.4"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
       "manifest-hub-3x4-trixie": {
          "name": "manifest-hub-3x4-trixie",
          "needs": [
@@ -4156,6 +4476,84 @@
             }
          ]
       },
+      "manifest-hub-4x0-resolute": {
+         "name": "manifest-hub-4x0-resolute",
+         "needs": [
+            "build-4x0-resolute-amd64",
+            "build-4x0-resolute-arm64",
+            "cleanup"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write",
+            "packages": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-4x0-resolute-amd64-artifacts",
+                  "path": "tmp/build-4x0-resolute-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-4x0-resolute-arm64-artifacts",
+                  "path": "tmp/build-4x0-resolute-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "continue-on-error": true,
+               "env": {
+                  "DIST_FILTER": "resolute",
+                  "DOCKERHUB": "1",
+                  "SERIES_FILTER": "4.0"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
       "manifest-hub-4x0-trixie": {
          "name": "manifest-hub-4x0-trixie",
          "needs": [
@@ -4241,6 +4639,8 @@
             "build-4x0-jammy-arm64",
             "build-4x0-noble-amd64",
             "build-4x0-noble-arm64",
+            "build-4x0-resolute-amd64",
+            "build-4x0-resolute-arm64",
             "build-4x0-bookworm-amd64",
             "build-4x0-bookworm-arm64",
             "build-4x0-trixie-amd64",
@@ -4312,6 +4712,20 @@
                "with": {
                   "name": "build-4x0-noble-arm64-artifacts",
                   "path": "tmp/build-4x0-noble-arm64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-4x0-resolute-amd64-artifacts",
+                  "path": "tmp/build-4x0-resolute-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-4x0-resolute-arm64-artifacts",
+                  "path": "tmp/build-4x0-resolute-arm64-artifacts"
                }
             },
             {
@@ -5573,6 +5987,82 @@
             }
          ]
       },
+      "manifest-main-3x4-resolute": {
+         "name": "manifest-main-3x4-resolute",
+         "needs": [
+            "build-3x4-resolute-amd64",
+            "build-3x4-resolute-arm64"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write",
+            "packages": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x4-resolute-amd64-artifacts",
+                  "path": "tmp/build-3x4-resolute-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-3x4-resolute-arm64-artifacts",
+                  "path": "tmp/build-3x4-resolute-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "continue-on-error": false,
+               "env": {
+                  "DIST_FILTER": "resolute",
+                  "SERIES_FILTER": "3.4"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
       "manifest-main-3x4-trixie": {
          "name": "manifest-main-3x4-trixie",
          "needs": [
@@ -5877,6 +6367,82 @@
             }
          ]
       },
+      "manifest-main-4x0-resolute": {
+         "name": "manifest-main-4x0-resolute",
+         "needs": [
+            "build-4x0-resolute-amd64",
+            "build-4x0-resolute-arm64"
+         ],
+         "permissions": {
+            "contents": "read",
+            "id-token": "write",
+            "packages": "write"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "run": "mkdir -p ~/.docker\\n\necho '{\"experimental\": \"enabled\"}' > ~/.docker/config.json\n"
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "name": "login-dockerhub",
+               "run": "echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u sorah --password-stdin"
+            },
+            {
+               "name": "login-ghcr",
+               "run": "echo \"${{ secrets.GITHUB_TOKEN }}\" | docker login ghcr.io -u ${{ github.actor }} --password-stdin"
+            },
+            {
+               "uses": "aws-actions/configure-aws-credentials@v1",
+               "with": {
+                  "aws-region": "us-east-1",
+                  "role-duration-seconds": 14400,
+                  "role-skip-session-tagging": "true",
+                  "role-to-assume": "${{ secrets.AWS_ROLE_TO_ASSUME }}"
+               }
+            },
+            {
+               "name": "Login to ECR Public",
+               "run": "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws"
+            },
+            {
+               "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-4x0-resolute-amd64-artifacts",
+                  "path": "tmp/build-4x0-resolute-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-4x0-resolute-arm64-artifacts",
+                  "path": "tmp/build-4x0-resolute-arm64-artifacts"
+               }
+            },
+            {
+               "run": "find tmp"
+            },
+            {
+               "run": "ruby -rjson -e \"puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))\" tmp/*-artifacts/built_images.json > tmp/built_images.json"
+            },
+            {
+               "continue-on-error": false,
+               "env": {
+                  "DIST_FILTER": "resolute",
+                  "SERIES_FILTER": "4.0"
+               },
+               "run": "ruby manifest.rb --pull --subtag"
+            }
+         ]
+      },
       "manifest-main-4x0-trixie": {
          "name": "manifest-main-4x0-trixie",
          "needs": [
@@ -5960,6 +6526,8 @@
             "build-4x0-jammy-arm64",
             "build-4x0-noble-amd64",
             "build-4x0-noble-arm64",
+            "build-4x0-resolute-amd64",
+            "build-4x0-resolute-arm64",
             "build-4x0-bookworm-amd64",
             "build-4x0-bookworm-arm64",
             "build-4x0-trixie-amd64",
@@ -6031,6 +6599,20 @@
                "with": {
                   "name": "build-4x0-noble-arm64-artifacts",
                   "path": "tmp/build-4x0-noble-arm64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-4x0-resolute-amd64-artifacts",
+                  "path": "tmp/build-4x0-resolute-amd64-artifacts"
+               }
+            },
+            {
+               "uses": "actions/download-artifact@v4",
+               "with": {
+                  "name": "build-4x0-resolute-arm64-artifacts",
+                  "path": "tmp/build-4x0-resolute-arm64-artifacts"
                }
             },
             {
