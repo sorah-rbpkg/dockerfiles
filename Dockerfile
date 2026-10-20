@@ -28,6 +28,12 @@ RUN apt-get update \
   tzdata \
   && rm -rf /var/lib/apt/lists/*
 
+# Debian has still pending updates https://emudhra.we-have-a-problem.com/
+RUN sed -i \
+  -e 's|^mozilla/emSign_ECC_Root_CA_-_G3.crt|!&|' \
+  -e 's|^mozilla/Comodo_AAA_Services_root.crt|!&|' \
+  /etc/ca-certificates.conf && update-ca-certificates
+
 RUN if dpkg --compare-versions "${RUBY}" '<=' '3.3'; then gem install bundler --no-doc -v "${BUNDLER1_VERSION}"; fi
 RUN if dpkg --compare-versions "${RUBY}" '<=' '2.7'; then gem install bundler --no-doc -v "2.4.22"; else gem install bundler --no-doc -v "${BUNDLER2_VERSION}"; fi
 
