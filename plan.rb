@@ -21,7 +21,7 @@ output(all: true) if ENV.fetch('GITHUB_EVENT_NAME') != 'push' || before.empty? |
 changed = git('diff', '--name-only', before, 'HEAD')&.lines(chomp: true)
 output(all: true) unless changed == ['versions.json']
 
-old = git('show', "#{before}:versions.json")&.then { JSON.parse(it) }
+old = git('show', "#{before}:versions.json")&.then { |json| JSON.parse(json) }
 output(all: true) unless old
 
 new = JSON.parse(File.read(File.join(__dir__, 'versions.json')))
