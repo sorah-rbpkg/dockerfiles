@@ -77,6 +77,8 @@ local build_job(pattern) =
     _name:: name,
     [name]: {
       name: name,
+      needs: ['plan'],
+      'if': std.format("needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '%s-%s')", [pattern.series, pattern.distro]),
       'runs-on': (if pattern.arch == 'arm64' then 'ubuntu-24.04-arm' else 'ubuntu-24.04'),
       permissions: permissions,
       steps: common_steps + [
@@ -157,7 +159,9 @@ local build_jobs = [
   for pattern in build_job_patterns
 ];
 
-local latest_manifest_parents = [pattern_to_job_name('build', pattern) for pattern in build_job_patterns if pattern.series == matrix[std.length(matrix) - 1].series];
+// manifest.rb --latest reads only the default distro of the newest series. NOTE: keep in sync with config.rb
+local latest_default_distro = 'noble';
+local latest_manifest_parents = [pattern_to_job_name('build', pattern) for pattern in build_job_patterns if pattern.series == matrix[std.length(matrix) - 1].series && pattern.distro == latest_default_distro];
 local manifest_jobs = std.flattenArrays([
   manifest_subtag_job(pattern)
   for pattern in manifest_subtag_job_patterns
@@ -171,6 +175,8 @@ local cleanup_job = {
     name: 'cleanup',
     'runs-on': 'ubuntu-latest',
     permissions: { 'id-token': 'write', contents: 'read' },
+    // Manifest jobs of series and distros left unbuilt are skipped.
+    'if': '${{ !cancelled() && !contains(needs.*.result, \'failure\') }}',
     needs: std.flattenArrays([[y.name for y in std.objectValues(x) if std.startsWith(y.name, 'manifest-main-')] for x in manifest_jobs]),
     steps: common_steps + [
       {
@@ -187,7 +193,29 @@ local cleanup_job = {
 };
 
 
-local jobs = build_jobs + manifest_jobs + [
+// A push that changes only versions.json builds just what it changed; see plan.rb.
+local plan_job = {
+  plan: {
+    name: 'plan',
+    'runs-on': 'ubuntu-latest',
+    permissions: { contents: 'read' },
+    outputs: {
+      all: '${{ steps.plan.outputs.all }}',
+      targets: '${{ steps.plan.outputs.targets }}',
+    },
+    steps: [
+      { uses: 'actions/checkout@v3', with: { 'fetch-depth': 0 } },
+      { uses: 'ruby/setup-ruby@v1', with: { 'ruby-version': '3.3' } },
+      {
+        id: 'plan',
+        run: 'ruby plan.rb',
+        env: { BEFORE: '${{ github.event.before }}' },
+      },
+    ],
+  },
+};
+
+local jobs = [plan_job] + build_jobs + manifest_jobs + [
   cleanup_job,
 ];
 
@@ -196,6 +224,7 @@ local jobs = build_jobs + manifest_jobs + [
   on: {
     schedule: [{ cron: '18 7 2,12,22 * *' }],
     push: { branches: ['master'] },
+    workflow_dispatch: {},
   },
   jobs: std.foldl(function(r, i) r + i, jobs, {}),
 }

@@ -1,7 +1,11 @@
 {
    "jobs": {
       "build-3x0-focal-amd64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.0-focal')",
          "name": "build-3x0-focal-amd64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -61,7 +65,11 @@
          ]
       },
       "build-3x0-focal-arm64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.0-focal')",
          "name": "build-3x0-focal-arm64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -121,7 +129,11 @@
          ]
       },
       "build-3x0-jammy-amd64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.0-jammy')",
          "name": "build-3x0-jammy-amd64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -181,7 +193,11 @@
          ]
       },
       "build-3x0-jammy-arm64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.0-jammy')",
          "name": "build-3x0-jammy-arm64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -241,7 +257,11 @@
          ]
       },
       "build-3x1-focal-amd64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.1-focal')",
          "name": "build-3x1-focal-amd64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -301,7 +321,11 @@
          ]
       },
       "build-3x1-focal-arm64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.1-focal')",
          "name": "build-3x1-focal-arm64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -361,7 +385,11 @@
          ]
       },
       "build-3x1-jammy-amd64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.1-jammy')",
          "name": "build-3x1-jammy-amd64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -421,7 +449,11 @@
          ]
       },
       "build-3x1-jammy-arm64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.1-jammy')",
          "name": "build-3x1-jammy-arm64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -481,7 +513,11 @@
          ]
       },
       "build-3x2-bookworm-amd64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.2-bookworm')",
          "name": "build-3x2-bookworm-amd64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -541,7 +577,11 @@
          ]
       },
       "build-3x2-bookworm-arm64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.2-bookworm')",
          "name": "build-3x2-bookworm-arm64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -601,7 +641,11 @@
          ]
       },
       "build-3x2-focal-amd64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.2-focal')",
          "name": "build-3x2-focal-amd64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -661,7 +705,11 @@
          ]
       },
       "build-3x2-focal-arm64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.2-focal')",
          "name": "build-3x2-focal-arm64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -721,7 +769,11 @@
          ]
       },
       "build-3x2-jammy-amd64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.2-jammy')",
          "name": "build-3x2-jammy-amd64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -781,7 +833,11 @@
          ]
       },
       "build-3x2-jammy-arm64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.2-jammy')",
          "name": "build-3x2-jammy-arm64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -841,7 +897,11 @@
          ]
       },
       "build-3x2-noble-amd64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.2-noble')",
          "name": "build-3x2-noble-amd64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -901,7 +961,11 @@
          ]
       },
       "build-3x2-noble-arm64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.2-noble')",
          "name": "build-3x2-noble-arm64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -961,7 +1025,11 @@
          ]
       },
       "build-3x3-bookworm-amd64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.3-bookworm')",
          "name": "build-3x3-bookworm-amd64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -1021,7 +1089,11 @@
          ]
       },
       "build-3x3-bookworm-arm64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.3-bookworm')",
          "name": "build-3x3-bookworm-arm64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -1081,7 +1153,11 @@
          ]
       },
       "build-3x3-focal-amd64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.3-focal')",
          "name": "build-3x3-focal-amd64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -1141,7 +1217,11 @@
          ]
       },
       "build-3x3-focal-arm64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.3-focal')",
          "name": "build-3x3-focal-arm64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -1201,7 +1281,11 @@
          ]
       },
       "build-3x3-jammy-amd64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.3-jammy')",
          "name": "build-3x3-jammy-amd64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -1261,7 +1345,11 @@
          ]
       },
       "build-3x3-jammy-arm64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.3-jammy')",
          "name": "build-3x3-jammy-arm64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -1321,7 +1409,11 @@
          ]
       },
       "build-3x3-noble-amd64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.3-noble')",
          "name": "build-3x3-noble-amd64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -1381,7 +1473,11 @@
          ]
       },
       "build-3x3-noble-arm64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.3-noble')",
          "name": "build-3x3-noble-arm64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -1441,7 +1537,11 @@
          ]
       },
       "build-3x3-trixie-amd64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.3-trixie')",
          "name": "build-3x3-trixie-amd64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -1501,7 +1601,11 @@
          ]
       },
       "build-3x3-trixie-arm64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.3-trixie')",
          "name": "build-3x3-trixie-arm64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -1561,7 +1665,11 @@
          ]
       },
       "build-3x4-bookworm-amd64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.4-bookworm')",
          "name": "build-3x4-bookworm-amd64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -1621,7 +1729,11 @@
          ]
       },
       "build-3x4-bookworm-arm64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.4-bookworm')",
          "name": "build-3x4-bookworm-arm64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -1681,7 +1793,11 @@
          ]
       },
       "build-3x4-jammy-amd64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.4-jammy')",
          "name": "build-3x4-jammy-amd64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -1741,7 +1857,11 @@
          ]
       },
       "build-3x4-jammy-arm64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.4-jammy')",
          "name": "build-3x4-jammy-arm64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -1801,7 +1921,11 @@
          ]
       },
       "build-3x4-noble-amd64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.4-noble')",
          "name": "build-3x4-noble-amd64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -1861,7 +1985,11 @@
          ]
       },
       "build-3x4-noble-arm64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.4-noble')",
          "name": "build-3x4-noble-arm64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -1921,7 +2049,11 @@
          ]
       },
       "build-3x4-resolute-amd64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.4-resolute')",
          "name": "build-3x4-resolute-amd64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -1981,7 +2113,11 @@
          ]
       },
       "build-3x4-resolute-arm64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.4-resolute')",
          "name": "build-3x4-resolute-arm64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -2041,7 +2177,11 @@
          ]
       },
       "build-3x4-trixie-amd64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.4-trixie')",
          "name": "build-3x4-trixie-amd64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -2101,7 +2241,11 @@
          ]
       },
       "build-3x4-trixie-arm64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '3.4-trixie')",
          "name": "build-3x4-trixie-arm64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -2161,7 +2305,11 @@
          ]
       },
       "build-4x0-bookworm-amd64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '4.0-bookworm')",
          "name": "build-4x0-bookworm-amd64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -2221,7 +2369,11 @@
          ]
       },
       "build-4x0-bookworm-arm64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '4.0-bookworm')",
          "name": "build-4x0-bookworm-arm64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -2281,7 +2433,11 @@
          ]
       },
       "build-4x0-jammy-amd64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '4.0-jammy')",
          "name": "build-4x0-jammy-amd64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -2341,7 +2497,11 @@
          ]
       },
       "build-4x0-jammy-arm64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '4.0-jammy')",
          "name": "build-4x0-jammy-arm64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -2401,7 +2561,11 @@
          ]
       },
       "build-4x0-noble-amd64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '4.0-noble')",
          "name": "build-4x0-noble-amd64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -2461,7 +2625,11 @@
          ]
       },
       "build-4x0-noble-arm64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '4.0-noble')",
          "name": "build-4x0-noble-arm64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -2521,7 +2689,11 @@
          ]
       },
       "build-4x0-resolute-amd64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '4.0-resolute')",
          "name": "build-4x0-resolute-amd64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -2581,7 +2753,11 @@
          ]
       },
       "build-4x0-resolute-arm64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '4.0-resolute')",
          "name": "build-4x0-resolute-arm64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -2641,7 +2817,11 @@
          ]
       },
       "build-4x0-trixie-amd64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '4.0-trixie')",
          "name": "build-4x0-trixie-amd64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -2701,7 +2881,11 @@
          ]
       },
       "build-4x0-trixie-arm64": {
+         "if": "needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '4.0-trixie')",
          "name": "build-4x0-trixie-arm64",
+         "needs": [
+            "plan"
+         ],
          "permissions": {
             "contents": "read",
             "id-token": "write",
@@ -2761,6 +2945,7 @@
          ]
       },
       "cleanup": {
+         "if": "${{ !cancelled() && !contains(needs.*.result, 'failure') }}",
          "name": "cleanup",
          "needs": [
             "manifest-main-3x0-focal",
@@ -4635,16 +4820,8 @@
       "manifest-hub-latest": {
          "name": "manifest-hub-latest",
          "needs": [
-            "build-4x0-jammy-amd64",
-            "build-4x0-jammy-arm64",
             "build-4x0-noble-amd64",
-            "build-4x0-noble-arm64",
-            "build-4x0-resolute-amd64",
-            "build-4x0-resolute-arm64",
-            "build-4x0-bookworm-amd64",
-            "build-4x0-bookworm-arm64",
-            "build-4x0-trixie-amd64",
-            "build-4x0-trixie-arm64"
+            "build-4x0-noble-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -4689,20 +4866,6 @@
             {
                "uses": "actions/download-artifact@v4",
                "with": {
-                  "name": "build-4x0-jammy-amd64-artifacts",
-                  "path": "tmp/build-4x0-jammy-amd64-artifacts"
-               }
-            },
-            {
-               "uses": "actions/download-artifact@v4",
-               "with": {
-                  "name": "build-4x0-jammy-arm64-artifacts",
-                  "path": "tmp/build-4x0-jammy-arm64-artifacts"
-               }
-            },
-            {
-               "uses": "actions/download-artifact@v4",
-               "with": {
                   "name": "build-4x0-noble-amd64-artifacts",
                   "path": "tmp/build-4x0-noble-amd64-artifacts"
                }
@@ -4712,48 +4875,6 @@
                "with": {
                   "name": "build-4x0-noble-arm64-artifacts",
                   "path": "tmp/build-4x0-noble-arm64-artifacts"
-               }
-            },
-            {
-               "uses": "actions/download-artifact@v4",
-               "with": {
-                  "name": "build-4x0-resolute-amd64-artifacts",
-                  "path": "tmp/build-4x0-resolute-amd64-artifacts"
-               }
-            },
-            {
-               "uses": "actions/download-artifact@v4",
-               "with": {
-                  "name": "build-4x0-resolute-arm64-artifacts",
-                  "path": "tmp/build-4x0-resolute-arm64-artifacts"
-               }
-            },
-            {
-               "uses": "actions/download-artifact@v4",
-               "with": {
-                  "name": "build-4x0-bookworm-amd64-artifacts",
-                  "path": "tmp/build-4x0-bookworm-amd64-artifacts"
-               }
-            },
-            {
-               "uses": "actions/download-artifact@v4",
-               "with": {
-                  "name": "build-4x0-bookworm-arm64-artifacts",
-                  "path": "tmp/build-4x0-bookworm-arm64-artifacts"
-               }
-            },
-            {
-               "uses": "actions/download-artifact@v4",
-               "with": {
-                  "name": "build-4x0-trixie-amd64-artifacts",
-                  "path": "tmp/build-4x0-trixie-amd64-artifacts"
-               }
-            },
-            {
-               "uses": "actions/download-artifact@v4",
-               "with": {
-                  "name": "build-4x0-trixie-arm64-artifacts",
-                  "path": "tmp/build-4x0-trixie-arm64-artifacts"
                }
             },
             {
@@ -6522,16 +6643,8 @@
       "manifest-main-latest": {
          "name": "manifest-main-latest",
          "needs": [
-            "build-4x0-jammy-amd64",
-            "build-4x0-jammy-arm64",
             "build-4x0-noble-amd64",
-            "build-4x0-noble-arm64",
-            "build-4x0-resolute-amd64",
-            "build-4x0-resolute-arm64",
-            "build-4x0-bookworm-amd64",
-            "build-4x0-bookworm-arm64",
-            "build-4x0-trixie-amd64",
-            "build-4x0-trixie-arm64"
+            "build-4x0-noble-arm64"
          ],
          "permissions": {
             "contents": "read",
@@ -6576,20 +6689,6 @@
             {
                "uses": "actions/download-artifact@v4",
                "with": {
-                  "name": "build-4x0-jammy-amd64-artifacts",
-                  "path": "tmp/build-4x0-jammy-amd64-artifacts"
-               }
-            },
-            {
-               "uses": "actions/download-artifact@v4",
-               "with": {
-                  "name": "build-4x0-jammy-arm64-artifacts",
-                  "path": "tmp/build-4x0-jammy-arm64-artifacts"
-               }
-            },
-            {
-               "uses": "actions/download-artifact@v4",
-               "with": {
                   "name": "build-4x0-noble-amd64-artifacts",
                   "path": "tmp/build-4x0-noble-amd64-artifacts"
                }
@@ -6602,48 +6701,6 @@
                }
             },
             {
-               "uses": "actions/download-artifact@v4",
-               "with": {
-                  "name": "build-4x0-resolute-amd64-artifacts",
-                  "path": "tmp/build-4x0-resolute-amd64-artifacts"
-               }
-            },
-            {
-               "uses": "actions/download-artifact@v4",
-               "with": {
-                  "name": "build-4x0-resolute-arm64-artifacts",
-                  "path": "tmp/build-4x0-resolute-arm64-artifacts"
-               }
-            },
-            {
-               "uses": "actions/download-artifact@v4",
-               "with": {
-                  "name": "build-4x0-bookworm-amd64-artifacts",
-                  "path": "tmp/build-4x0-bookworm-amd64-artifacts"
-               }
-            },
-            {
-               "uses": "actions/download-artifact@v4",
-               "with": {
-                  "name": "build-4x0-bookworm-arm64-artifacts",
-                  "path": "tmp/build-4x0-bookworm-arm64-artifacts"
-               }
-            },
-            {
-               "uses": "actions/download-artifact@v4",
-               "with": {
-                  "name": "build-4x0-trixie-amd64-artifacts",
-                  "path": "tmp/build-4x0-trixie-amd64-artifacts"
-               }
-            },
-            {
-               "uses": "actions/download-artifact@v4",
-               "with": {
-                  "name": "build-4x0-trixie-arm64-artifacts",
-                  "path": "tmp/build-4x0-trixie-arm64-artifacts"
-               }
-            },
-            {
                "run": "find tmp"
             },
             {
@@ -6653,6 +6710,38 @@
                "continue-on-error": false,
                "env": { },
                "run": "ruby manifest.rb --pull --latest"
+            }
+         ]
+      },
+      "plan": {
+         "name": "plan",
+         "outputs": {
+            "all": "${{ steps.plan.outputs.all }}",
+            "targets": "${{ steps.plan.outputs.targets }}"
+         },
+         "permissions": {
+            "contents": "read"
+         },
+         "runs-on": "ubuntu-latest",
+         "steps": [
+            {
+               "uses": "actions/checkout@v3",
+               "with": {
+                  "fetch-depth": 0
+               }
+            },
+            {
+               "uses": "ruby/setup-ruby@v1",
+               "with": {
+                  "ruby-version": "3.3"
+               }
+            },
+            {
+               "env": {
+                  "BEFORE": "${{ github.event.before }}"
+               },
+               "id": "plan",
+               "run": "ruby plan.rb"
             }
          ]
       }
@@ -6668,6 +6757,7 @@
          {
             "cron": "18 7 2,12,22 * *"
          }
-      ]
+      ],
+      "workflow_dispatch": { }
    }
 }
