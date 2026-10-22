@@ -41,9 +41,24 @@ SERIES.each do |series|
     next if DISTRO_FILTER && !DISTRO_FILTER.include?(distro.name)
 
     packages = apt_packages(distro.apt_url)
+    deb_versions = ->(pkgs) { pkgs.dig("ruby#{series.version}", "ruby#{series.version}")&.map { |_| _.fetch('Version')[0] } || [] }
 
-    default_version = packages.dig('ruby-defaults', 'ruby')&.map { |_| _.fetch('Version')[0] }&.grep(/#{Regexp.escape(series.version)}[.+~]/)&.sort&.last
-    deb_version = packages.dig("ruby#{series.version}", "ruby#{series.version}")&.map { |_| _.fetch('Version')[0] }&.sort&.last
+    pinned = VERSIONS.dig(series.version, distro.name)
+    if pinned
+      # bin/publish purges the CDN before pushing a new pin, so this only waits out a stray lag.
+      tries = 0
+      until deb_versions.(packages).include?(pinned)
+        tries += 1
+        raise "#{series.version}-#{distro.name}: #{pinned} is not in #{distro.apt_url}" if tries > 4
+        $stderr.puts "#{pinned} is not in #{distro.apt_url} yet, retrying"
+        sleep 4 * 2**tries
+        packages = apt_packages(distro.apt_url, refresh: true)
+      end
+      deb_version = pinned
+    else
+      deb_version = newest_deb_version(deb_versions.(packages))
+    end
+    default_version = newest_deb_version(packages.dig('ruby-defaults', 'ruby')&.map { |_| _.fetch('Version')[0] }&.grep(/#{Regexp.escape(series.version)}[.+~]/) || [])
     unless default_version && deb_version
       puts "=> #{series.version}-#{distro.name} skipped due to inexistent package"
       p default_version: default_version, deb_version: deb_version

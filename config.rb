@@ -29,7 +29,8 @@ def cmd(*args, exception: true, num_retries: NUM_RETRIES)
 end
 
 @apt_repo_packages = {}
-def apt_packages(repo_url)
+def apt_packages(repo_url, refresh: false)
+  @apt_repo_packages.delete(repo_url) if refresh
   # source->package->versions
   @apt_repo_packages[repo_url] ||= URI.open(repo_url, 'r', &:read)
     .each_line
@@ -48,6 +49,14 @@ def apt_packages(repo_url)
     .map{ |source, versions| [source, versions.group_by{ |_| _['Package'][0] }] }
     .to_h
 end
+
+# Debian version ordering, under which 3.3.12 is newer than 3.3.9.
+def newest_deb_version(versions)
+  versions.max { |a, b| a == b ? 0 : (system('dpkg', '--compare-versions', a, 'lt', b) ? -1 : 1) }
+end
+
+# Series => distro => Debian version, written by sorah-rbpkg/build's bin/publish when it releases.
+VERSIONS = JSON.parse(File.read(File.join(__dir__, 'versions.json')))
 
 Release = Struct.new(:version, :arm, :default_distro, keyword_init: true)
 Distro = Struct.new(:family, :name, :apt_url, :arm, keyword_init: true)
