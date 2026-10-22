@@ -1,6 +1,7 @@
 {
   "3.3": {
     "bookworm": "3.3.12-0nkmi1~bookworm",
+    "bullseye": "3.3.12-0nkmi2~bullseye",
     "focal": "3.3.12-0nkmi1~focal",
     "jammy": "3.3.12-0nkmi1~jammy",
     "noble": "3.3.12-0nkmi1~noble",
