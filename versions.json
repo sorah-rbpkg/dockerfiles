@@ -1,11 +1,11 @@
 {
   "3.3": {
-    "bookworm": "3.3.12-0nkmi1~bookworm",
-    "bullseye": "3.3.12-0nkmi2~bullseye",
-    "focal": "3.3.12-0nkmi1~focal",
-    "jammy": "3.3.12-0nkmi1~jammy",
-    "noble": "3.3.12-0nkmi1~noble",
-    "trixie": "3.3.12-0nkmi1~trixie"
+    "bookworm": "3.3.13-0nkmi1~bookworm",
+    "bullseye": "3.3.13-0nkmi1~bullseye",
+    "focal": "3.3.13-0nkmi1~focal",
+    "jammy": "3.3.13-0nkmi1~jammy",
+    "noble": "3.3.13-0nkmi1~noble",
+    "trixie": "3.3.13-0nkmi1~trixie"
   },
   "3.4": {
     "bookworm": "3.4.11-0nkmi1~bookworm",
