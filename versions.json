@@ -8,11 +8,11 @@
     "trixie": "3.3.13-0nkmi1~trixie"
   },
   "3.4": {
-    "bookworm": "3.4.11-0nkmi1~bookworm",
-    "jammy": "3.4.11-0nkmi1~jammy",
-    "noble": "3.4.11-0nkmi1~noble",
-    "resolute": "3.4.11-0nkmi1~resolute",
-    "trixie": "3.4.11-0nkmi1~trixie"
+    "bookworm": "3.4.12-0nkmi1~bookworm",
+    "jammy": "3.4.12-0nkmi1~jammy",
+    "noble": "3.4.12-0nkmi1~noble",
+    "resolute": "3.4.12-0nkmi1~resolute",
+    "trixie": "3.4.12-0nkmi1~trixie"
   },
   "4.0": {
     "bookworm": "4.0.8-0nkmi1~bookworm",
