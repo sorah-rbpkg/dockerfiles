@@ -8,14 +8,15 @@ NUM_RETRIES = ENV['DOCKERHUB'] ? 15 : 3
 RETRY_JITTER = ENV['DOCKERHUB'] ? (30*1000) : 2000
 RETRY_MAX_INTERVAL = ENV['DOCKERHUB'] ? (120.0+rand(60)) : 60.0
 
-def cmd(*args, exception: true, num_retries: NUM_RETRIES)
+def cmd(*args, exception: true, num_retries: NUM_RETRIES, jitter: RETRY_JITTER)
   puts "#{DOIT ? '' : '(dry-run) '}$ #{args.join(" ")}"
   tries = 0
   begin
     system(*args, exception: exception) if DOIT
   rescue RuntimeError => e
     tries += 1
-    wait = [(2**tries) + (rand(RETRY_JITTER)/1000.0), RETRY_MAX_INTERVAL].min
+    # Jitter on top of the cap keeps jobs that fail together from retrying together.
+    wait = [2**tries, RETRY_MAX_INTERVAL].min + (rand(jitter)/1000.0)
 
     if tries > num_retries
       raise

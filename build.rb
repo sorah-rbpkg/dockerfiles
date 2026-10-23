@@ -6,6 +6,13 @@ PUSH = !!ARGV.delete('--push')
 
 p filters: {distro: DISTRO_FILTER, arch: ARCH_FILTER, series: SERIES_FILTER }
 
+# GitHub-hosted runners pull from Docker Hub without its rate limit, sparing public.ecr.aws for the pushes.
+BASE_IMAGES = if ENV['GITHUB_ACTIONS'] == 'true'
+  {'ubuntu' => 'docker.io/library/ubuntu', 'debian' => 'docker.io/library/debian'}
+else
+  {'ubuntu' => 'public.ecr.aws/ubuntu/ubuntu', 'debian' => 'public.ecr.aws/debian/debian'}
+end
+
 @built_images = []
 @bake_targets = {}
 
@@ -16,7 +23,8 @@ def bake_target(image, dockerfile:, contexts: nil)
     platforms: [image.platform],
     tags: PUSH_REPOS.map { "#{_1}:#{image.canonical_tag}" },
     pull: PULL,
-    'cache-from': ["type=registry,ref=#{PUSH_REPOS[0]}:#{image.canonical_tag}"],
+    # Read from ghcr.io, as public.ecr.aws throttles the requests of every build job starting at once.
+    'cache-from': ["type=registry,ref=#{ATTEST_REPO}:#{image.canonical_tag}"],
     'cache-to': ['type=inline'],
     contexts:,
   }.compact
@@ -58,7 +66,7 @@ SERIES.each do |series|
 
     locals = {
       ruby: series.version,
-      base: {'ubuntu' => 'public.ecr.aws/ubuntu/ubuntu', 'debian' => 'public.ecr.aws/debian/debian'}.fetch(distro.family),
+      base: BASE_IMAGES.fetch(distro.family),
       distro: distro.name,
       deb_ruby: deb_version,
       deb_ruby_default: default_version,
@@ -97,7 +105,8 @@ raise "no images built" if @built_images.empty?
 File.write 'tmp/bake.json', "#{JSON.pretty_generate(target: @bake_targets, group: { default: { targets: @bake_targets.keys } })}\n"
 # Attestations need the image pushed by BuildKit; the local image store cannot hold them.
 attest_args = PUSH ? %w(--push --provenance=mode=max --sbom=true) : %w(--load --provenance=false --sbom=false)
-cmd('docker', 'buildx', 'bake', '-f', 'tmp/bake.json', '--metadata-file', 'tmp/bake-metadata.json', *attest_args)
+# Pushing to public.ecr.aws hits its rate limits when every build job pushes at once. A retry only pushes again.
+cmd('docker', 'buildx', 'bake', '-f', 'tmp/bake.json', '--metadata-file', 'tmp/bake-metadata.json', *attest_args, num_retries: 8, jitter: 30_000)
 
 puts "=> Built images"
 built_images_json = JSON.pretty_generate(@built_images.map(&:to_h))
