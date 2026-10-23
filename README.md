@@ -57,6 +57,21 @@ The image has the following pinning with apt_preferences(5):
 
 The images is built using GitHub Actions. Some older distros/series have been stopped building: `bionic` and earlier, `bullseye` and earlier, and Ruby 2.7 and earlier.
 
+### Attestations
+
+Images on ghcr.io and public.ecr.aws carry BuildKit's SLSA provenance (`mode=max`) and SBOM attestations for each platform:
+
+```
+docker buildx imagetools inspect ghcr.io/sorah-rbpkg/ruby:3.4 --format '{{json .Provenance}}'
+docker buildx imagetools inspect ghcr.io/sorah-rbpkg/ruby:3.4 --format '{{json .SBOM}}'
+```
+
+Each multi-platform image also has a GitHub artifact attestation, which verifies on either registry as they share digests:
+
+```
+gh attestation verify oci://public.ecr.aws/sorah/ruby:3.4 --repo sorah-rbpkg/dockerfiles
+```
+
 ### Versions
 
 [`versions.json`](./versions.json) pins the Debian version of `rubyX.Y` each series and distro installs, and a build fails when the apt repository does not have it. [sorah-rbpkg/build](https://github.com/sorah-rbpkg/build)'s `bin/publish` updates and pushes it after releasing packages. A push that changes only `versions.json` builds just the series and distros it changed; other pushes and the scheduled rebuild build everything. Series and distros without a pin install the newest version in the apt repository.

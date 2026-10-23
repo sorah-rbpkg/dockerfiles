@@ -165,6 +165,8 @@ end
 
 
 PUSH_REPOS = ENV['DOCKERHUB'] ? %W(sorah/ruby) : %W(public.ecr.aws/sorah/ruby ghcr.io/sorah-rbpkg/ruby)
+# GitHub artifact attestations of manifests are pushed to this registry; the others share its digests.
+ATTEST_REPO = 'ghcr.io/sorah-rbpkg/ruby'
 
 DISTRO_FILTER = ENV['DIST_FILTER']&.split(/,\s*/)
 ARCH_FILTER = ENV['ARCH_FILTER']&.split(/,\s*/)

@@ -1,7 +1,6 @@
 #!/usr/bin/env ruby
 require_relative './config.rb'
 
-PULL = !!ARGV.delete('--pull')
 DO_SUBTAG = !!ARGV.delete('--subtag')
 DO_LATEST = !!ARGV.delete('--latest')
 
@@ -64,25 +63,37 @@ end
 
 @manifests.reject! { _2.images.empty? }
 
+@digests = []
+
+# imagetools create keeps the attestation manifests BuildKit pushed along each per-arch image.
 def create_manifest(manifests)
-  @manifests.each_value { |manifest|
+  manifests.each_value { |manifest|
     images = manifest.images.map(&:canonical_tag)
     p manifest.name => manifest.images.map(&:canonical_tag)
     raise "manifest with more than 2 images: #{manifest.inspect}" if images.size > 2
   }
-  @manifests.each do |manifest_name, manifest|
+  manifests.values.group_by { _1.images.map(&:canonical_tag).sort }.each do |canonical_tags, group|
+    dev = group[0].images[0].dev
     PUSH_REPOS.each do |repo|
-      if PULL
-        manifest.images do |image|
-          cmd('docker', 'pull', "#{repo}:#{image.canonical_tag}")
-        end
-      end
-      name = "#{repo}:#{manifest.name}"
-      cmd('docker', 'manifest', 'create', '--amend', name, *(manifest.images.map { "#{repo}:#{_1.canonical_tag}" }))
-      cmd('docker', 'manifest', 'push', name)
+      metadata_path = "tmp/imagetools-#{repo.tr('/:', '__')}-#{canonical_tags[0]}.json"
+      cmd('docker', 'buildx', 'imagetools', 'create', '--metadata-file', metadata_path, *group.flat_map { ['-t', "#{repo}:#{_1.name}"] }, *canonical_tags.map { "#{repo}:#{_1}" })
+      next unless DOIT
+      @digests << { repo:, dev:, tags: group.map(&:name), digest: JSON.parse(File.read(metadata_path)).fetch('containerimage.descriptor').fetch('digest') }
     end
   end
 end
 
 create_manifest(@manifests.select { _2.kind == :subtag }) if DO_SUBTAG
 create_manifest(@manifests.select { _2.kind == :latest }) if DO_LATEST
+
+File.write 'tmp/manifest_digests.json', "#{JSON.pretty_generate(@digests)}\n"
+puts JSON.pretty_generate(@digests)
+
+# Read by the attest steps of the workflow, one per digest.
+if ENV['GITHUB_OUTPUT'] && PUSH_REPOS.include?(ATTEST_REPO)
+  outputs = @digests.select { _1[:repo] == ATTEST_REPO }.group_by { _1[:dev] ? 'dev' : 'base' }.map do |kind, digests|
+    raise "#{ATTEST_REPO} got several #{kind} digests: #{digests.inspect}" if digests.map { _1[:digest] }.uniq.size > 1
+    "#{kind}=#{digests[0][:digest]}\n"
+  end
+  File.write(ENV['GITHUB_OUTPUT'], "name=#{ATTEST_REPO}\n#{outputs.join}", mode: 'a')
+end

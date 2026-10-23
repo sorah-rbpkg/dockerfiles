@@ -82,6 +82,8 @@ local build_job(pattern) =
       'runs-on': (if pattern.arch == 'arm64' then 'ubuntu-24.04-arm' else 'ubuntu-24.04'),
       permissions: permissions,
       steps: common_steps + [
+        // The docker driver cannot push provenance and SBOM attestations.
+        { uses: 'docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069' },  // v4.4.1
         {
           run: 'ruby build.rb --pull --push',
           env: {
@@ -103,11 +105,22 @@ local build_job(pattern) =
   };
 
 
+local attest_step(kind) = {
+  uses: 'actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6',  // v4.2.2
+  'if': std.format('steps.manifest.outputs.%s', [kind]),
+  with: {
+    'subject-name': '${{ steps.manifest.outputs.name }}',
+    'subject-digest': std.format('${{ steps.manifest.outputs.%s }}', [kind]),
+    'push-to-registry': true,
+  },
+};
+
 local manifest_job(name, kind, env, parents) = {
+  local attest = !std.objectHas(env, 'DOCKERHUB'),
   [name]: {
     name: name,
     'runs-on': 'ubuntu-latest',
-    permissions: permissions,
+    permissions: permissions + (if attest then { attestations: 'write' } else {}),
     needs: parents,
     steps: common_steps + [
       {
@@ -127,11 +140,12 @@ local manifest_job(name, kind, env, parents) = {
         run: 'ruby -rjson -e "puts JSON.generate(ARGV.map { JSON.parse(File.read(_1)) }.inject(&:+))" tmp/*-artifacts/built_images.json > tmp/built_images.json',
       },
       {
-        run: 'ruby manifest.rb --pull --' + kind,
+        id: 'manifest',
+        run: 'ruby manifest.rb --' + kind,
         env: env,
         'continue-on-error': std.objectHas(env, 'DOCKERHUB'),
       },
-    ],
+    ] + (if attest then [attest_step('base'), attest_step('dev')] else []),
   },
 };
 
@@ -180,7 +194,7 @@ local cleanup_job = {
     needs: std.flattenArrays([[y.name for y in std.objectValues(x) if std.startsWith(y.name, 'manifest-main-')] for x in manifest_jobs]),
     steps: common_steps + [
       {
-        run: 'curl -Ssfo cleanup.rb https://raw.githubusercontent.com/sorah/config/1a4323466aa3c554dd53b70a17fe36fb4c8c87fd/bin/sorah-aws-ecr-public-cleanup',
+        run: 'curl -Ssfo cleanup.rb https://raw.githubusercontent.com/sorah/config/548e013da6d3e522fc9e71bcc679d5dd8eb5e558/bin/sorah-aws-ecr-public-cleanup',
       },
       {
         run: 'gem i aws-sdk-ecrpublic',

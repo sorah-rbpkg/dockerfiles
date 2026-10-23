@@ -47,6 +47,9 @@
                "uses": "actions/checkout@v3"
             },
             {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
+            },
+            {
                "env": {
                   "ARCH_FILTER": "amd64",
                   "DIST_FILTER": "focal",
@@ -109,6 +112,9 @@
             },
             {
                "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
             },
             {
                "env": {
@@ -175,6 +181,9 @@
                "uses": "actions/checkout@v3"
             },
             {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
+            },
+            {
                "env": {
                   "ARCH_FILTER": "amd64",
                   "DIST_FILTER": "jammy",
@@ -237,6 +246,9 @@
             },
             {
                "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
             },
             {
                "env": {
@@ -303,6 +315,9 @@
                "uses": "actions/checkout@v3"
             },
             {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
+            },
+            {
                "env": {
                   "ARCH_FILTER": "amd64",
                   "DIST_FILTER": "focal",
@@ -365,6 +380,9 @@
             },
             {
                "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
             },
             {
                "env": {
@@ -431,6 +449,9 @@
                "uses": "actions/checkout@v3"
             },
             {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
+            },
+            {
                "env": {
                   "ARCH_FILTER": "amd64",
                   "DIST_FILTER": "jammy",
@@ -493,6 +514,9 @@
             },
             {
                "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
             },
             {
                "env": {
@@ -559,6 +583,9 @@
                "uses": "actions/checkout@v3"
             },
             {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
+            },
+            {
                "env": {
                   "ARCH_FILTER": "amd64",
                   "DIST_FILTER": "bookworm",
@@ -621,6 +648,9 @@
             },
             {
                "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
             },
             {
                "env": {
@@ -687,6 +717,9 @@
                "uses": "actions/checkout@v3"
             },
             {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
+            },
+            {
                "env": {
                   "ARCH_FILTER": "amd64",
                   "DIST_FILTER": "focal",
@@ -749,6 +782,9 @@
             },
             {
                "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
             },
             {
                "env": {
@@ -815,6 +851,9 @@
                "uses": "actions/checkout@v3"
             },
             {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
+            },
+            {
                "env": {
                   "ARCH_FILTER": "amd64",
                   "DIST_FILTER": "jammy",
@@ -877,6 +916,9 @@
             },
             {
                "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
             },
             {
                "env": {
@@ -943,6 +985,9 @@
                "uses": "actions/checkout@v3"
             },
             {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
+            },
+            {
                "env": {
                   "ARCH_FILTER": "amd64",
                   "DIST_FILTER": "noble",
@@ -1005,6 +1050,9 @@
             },
             {
                "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
             },
             {
                "env": {
@@ -1071,6 +1119,9 @@
                "uses": "actions/checkout@v3"
             },
             {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
+            },
+            {
                "env": {
                   "ARCH_FILTER": "amd64",
                   "DIST_FILTER": "bookworm",
@@ -1133,6 +1184,9 @@
             },
             {
                "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
             },
             {
                "env": {
@@ -1199,6 +1253,9 @@
                "uses": "actions/checkout@v3"
             },
             {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
+            },
+            {
                "env": {
                   "ARCH_FILTER": "amd64",
                   "DIST_FILTER": "focal",
@@ -1261,6 +1318,9 @@
             },
             {
                "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
             },
             {
                "env": {
@@ -1327,6 +1387,9 @@
                "uses": "actions/checkout@v3"
             },
             {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
+            },
+            {
                "env": {
                   "ARCH_FILTER": "amd64",
                   "DIST_FILTER": "jammy",
@@ -1389,6 +1452,9 @@
             },
             {
                "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
             },
             {
                "env": {
@@ -1455,6 +1521,9 @@
                "uses": "actions/checkout@v3"
             },
             {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
+            },
+            {
                "env": {
                   "ARCH_FILTER": "amd64",
                   "DIST_FILTER": "noble",
@@ -1517,6 +1586,9 @@
             },
             {
                "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
             },
             {
                "env": {
@@ -1583,6 +1655,9 @@
                "uses": "actions/checkout@v3"
             },
             {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
+            },
+            {
                "env": {
                   "ARCH_FILTER": "amd64",
                   "DIST_FILTER": "trixie",
@@ -1645,6 +1720,9 @@
             },
             {
                "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
             },
             {
                "env": {
@@ -1711,6 +1789,9 @@
                "uses": "actions/checkout@v3"
             },
             {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
+            },
+            {
                "env": {
                   "ARCH_FILTER": "amd64",
                   "DIST_FILTER": "bookworm",
@@ -1773,6 +1854,9 @@
             },
             {
                "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
             },
             {
                "env": {
@@ -1839,6 +1923,9 @@
                "uses": "actions/checkout@v3"
             },
             {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
+            },
+            {
                "env": {
                   "ARCH_FILTER": "amd64",
                   "DIST_FILTER": "jammy",
@@ -1901,6 +1988,9 @@
             },
             {
                "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
             },
             {
                "env": {
@@ -1967,6 +2057,9 @@
                "uses": "actions/checkout@v3"
             },
             {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
+            },
+            {
                "env": {
                   "ARCH_FILTER": "amd64",
                   "DIST_FILTER": "noble",
@@ -2029,6 +2122,9 @@
             },
             {
                "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
             },
             {
                "env": {
@@ -2095,6 +2191,9 @@
                "uses": "actions/checkout@v3"
             },
             {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
+            },
+            {
                "env": {
                   "ARCH_FILTER": "amd64",
                   "DIST_FILTER": "resolute",
@@ -2157,6 +2256,9 @@
             },
             {
                "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
             },
             {
                "env": {
@@ -2223,6 +2325,9 @@
                "uses": "actions/checkout@v3"
             },
             {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
+            },
+            {
                "env": {
                   "ARCH_FILTER": "amd64",
                   "DIST_FILTER": "trixie",
@@ -2285,6 +2390,9 @@
             },
             {
                "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
             },
             {
                "env": {
@@ -2351,6 +2459,9 @@
                "uses": "actions/checkout@v3"
             },
             {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
+            },
+            {
                "env": {
                   "ARCH_FILTER": "amd64",
                   "DIST_FILTER": "bookworm",
@@ -2413,6 +2524,9 @@
             },
             {
                "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
             },
             {
                "env": {
@@ -2479,6 +2593,9 @@
                "uses": "actions/checkout@v3"
             },
             {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
+            },
+            {
                "env": {
                   "ARCH_FILTER": "amd64",
                   "DIST_FILTER": "jammy",
@@ -2541,6 +2658,9 @@
             },
             {
                "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
             },
             {
                "env": {
@@ -2607,6 +2727,9 @@
                "uses": "actions/checkout@v3"
             },
             {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
+            },
+            {
                "env": {
                   "ARCH_FILTER": "amd64",
                   "DIST_FILTER": "noble",
@@ -2669,6 +2792,9 @@
             },
             {
                "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
             },
             {
                "env": {
@@ -2735,6 +2861,9 @@
                "uses": "actions/checkout@v3"
             },
             {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
+            },
+            {
                "env": {
                   "ARCH_FILTER": "amd64",
                   "DIST_FILTER": "resolute",
@@ -2797,6 +2926,9 @@
             },
             {
                "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
             },
             {
                "env": {
@@ -2863,6 +2995,9 @@
                "uses": "actions/checkout@v3"
             },
             {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
+            },
+            {
                "env": {
                   "ARCH_FILTER": "amd64",
                   "DIST_FILTER": "trixie",
@@ -2925,6 +3060,9 @@
             },
             {
                "uses": "actions/checkout@v3"
+            },
+            {
+               "uses": "docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069"
             },
             {
                "env": {
@@ -3013,7 +3151,7 @@
                "uses": "actions/checkout@v3"
             },
             {
-               "run": "curl -Ssfo cleanup.rb https://raw.githubusercontent.com/sorah/config/1a4323466aa3c554dd53b70a17fe36fb4c8c87fd/bin/sorah-aws-ecr-public-cleanup"
+               "run": "curl -Ssfo cleanup.rb https://raw.githubusercontent.com/sorah/config/548e013da6d3e522fc9e71bcc679d5dd8eb5e558/bin/sorah-aws-ecr-public-cleanup"
             },
             {
                "run": "gem i aws-sdk-ecrpublic"
@@ -3097,7 +3235,8 @@
                   "DOCKERHUB": "1",
                   "SERIES_FILTER": "3.0"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
             }
          ]
       },
@@ -3175,7 +3314,8 @@
                   "DOCKERHUB": "1",
                   "SERIES_FILTER": "3.0"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
             }
          ]
       },
@@ -3253,7 +3393,8 @@
                   "DOCKERHUB": "1",
                   "SERIES_FILTER": "3.1"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
             }
          ]
       },
@@ -3331,7 +3472,8 @@
                   "DOCKERHUB": "1",
                   "SERIES_FILTER": "3.1"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
             }
          ]
       },
@@ -3409,7 +3551,8 @@
                   "DOCKERHUB": "1",
                   "SERIES_FILTER": "3.2"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
             }
          ]
       },
@@ -3487,7 +3630,8 @@
                   "DOCKERHUB": "1",
                   "SERIES_FILTER": "3.2"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
             }
          ]
       },
@@ -3565,7 +3709,8 @@
                   "DOCKERHUB": "1",
                   "SERIES_FILTER": "3.2"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
             }
          ]
       },
@@ -3643,7 +3788,8 @@
                   "DOCKERHUB": "1",
                   "SERIES_FILTER": "3.2"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
             }
          ]
       },
@@ -3721,7 +3867,8 @@
                   "DOCKERHUB": "1",
                   "SERIES_FILTER": "3.3"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
             }
          ]
       },
@@ -3799,7 +3946,8 @@
                   "DOCKERHUB": "1",
                   "SERIES_FILTER": "3.3"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
             }
          ]
       },
@@ -3877,7 +4025,8 @@
                   "DOCKERHUB": "1",
                   "SERIES_FILTER": "3.3"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
             }
          ]
       },
@@ -3955,7 +4104,8 @@
                   "DOCKERHUB": "1",
                   "SERIES_FILTER": "3.3"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
             }
          ]
       },
@@ -4033,7 +4183,8 @@
                   "DOCKERHUB": "1",
                   "SERIES_FILTER": "3.3"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
             }
          ]
       },
@@ -4111,7 +4262,8 @@
                   "DOCKERHUB": "1",
                   "SERIES_FILTER": "3.4"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
             }
          ]
       },
@@ -4189,7 +4341,8 @@
                   "DOCKERHUB": "1",
                   "SERIES_FILTER": "3.4"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
             }
          ]
       },
@@ -4267,7 +4420,8 @@
                   "DOCKERHUB": "1",
                   "SERIES_FILTER": "3.4"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
             }
          ]
       },
@@ -4345,7 +4499,8 @@
                   "DOCKERHUB": "1",
                   "SERIES_FILTER": "3.4"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
             }
          ]
       },
@@ -4423,7 +4578,8 @@
                   "DOCKERHUB": "1",
                   "SERIES_FILTER": "3.4"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
             }
          ]
       },
@@ -4501,7 +4657,8 @@
                   "DOCKERHUB": "1",
                   "SERIES_FILTER": "4.0"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
             }
          ]
       },
@@ -4579,7 +4736,8 @@
                   "DOCKERHUB": "1",
                   "SERIES_FILTER": "4.0"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
             }
          ]
       },
@@ -4657,7 +4815,8 @@
                   "DOCKERHUB": "1",
                   "SERIES_FILTER": "4.0"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
             }
          ]
       },
@@ -4735,7 +4894,8 @@
                   "DOCKERHUB": "1",
                   "SERIES_FILTER": "4.0"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
             }
          ]
       },
@@ -4813,7 +4973,8 @@
                   "DOCKERHUB": "1",
                   "SERIES_FILTER": "4.0"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
             }
          ]
       },
@@ -4888,7 +5049,8 @@
                "env": {
                   "DOCKERHUB": "1"
                },
-               "run": "ruby manifest.rb --pull --latest"
+               "id": "manifest",
+               "run": "ruby manifest.rb --latest"
             }
          ]
       },
@@ -4899,6 +5061,7 @@
             "build-3x0-focal-arm64"
          ],
          "permissions": {
+            "attestations": "write",
             "contents": "read",
             "id-token": "write",
             "packages": "write"
@@ -4964,7 +5127,26 @@
                   "DIST_FILTER": "focal",
                   "SERIES_FILTER": "3.0"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
+            },
+            {
+               "if": "steps.manifest.outputs.base",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.base }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
+            },
+            {
+               "if": "steps.manifest.outputs.dev",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.dev }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
             }
          ]
       },
@@ -4975,6 +5157,7 @@
             "build-3x0-jammy-arm64"
          ],
          "permissions": {
+            "attestations": "write",
             "contents": "read",
             "id-token": "write",
             "packages": "write"
@@ -5040,7 +5223,26 @@
                   "DIST_FILTER": "jammy",
                   "SERIES_FILTER": "3.0"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
+            },
+            {
+               "if": "steps.manifest.outputs.base",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.base }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
+            },
+            {
+               "if": "steps.manifest.outputs.dev",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.dev }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
             }
          ]
       },
@@ -5051,6 +5253,7 @@
             "build-3x1-focal-arm64"
          ],
          "permissions": {
+            "attestations": "write",
             "contents": "read",
             "id-token": "write",
             "packages": "write"
@@ -5116,7 +5319,26 @@
                   "DIST_FILTER": "focal",
                   "SERIES_FILTER": "3.1"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
+            },
+            {
+               "if": "steps.manifest.outputs.base",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.base }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
+            },
+            {
+               "if": "steps.manifest.outputs.dev",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.dev }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
             }
          ]
       },
@@ -5127,6 +5349,7 @@
             "build-3x1-jammy-arm64"
          ],
          "permissions": {
+            "attestations": "write",
             "contents": "read",
             "id-token": "write",
             "packages": "write"
@@ -5192,7 +5415,26 @@
                   "DIST_FILTER": "jammy",
                   "SERIES_FILTER": "3.1"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
+            },
+            {
+               "if": "steps.manifest.outputs.base",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.base }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
+            },
+            {
+               "if": "steps.manifest.outputs.dev",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.dev }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
             }
          ]
       },
@@ -5203,6 +5445,7 @@
             "build-3x2-bookworm-arm64"
          ],
          "permissions": {
+            "attestations": "write",
             "contents": "read",
             "id-token": "write",
             "packages": "write"
@@ -5268,7 +5511,26 @@
                   "DIST_FILTER": "bookworm",
                   "SERIES_FILTER": "3.2"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
+            },
+            {
+               "if": "steps.manifest.outputs.base",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.base }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
+            },
+            {
+               "if": "steps.manifest.outputs.dev",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.dev }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
             }
          ]
       },
@@ -5279,6 +5541,7 @@
             "build-3x2-focal-arm64"
          ],
          "permissions": {
+            "attestations": "write",
             "contents": "read",
             "id-token": "write",
             "packages": "write"
@@ -5344,7 +5607,26 @@
                   "DIST_FILTER": "focal",
                   "SERIES_FILTER": "3.2"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
+            },
+            {
+               "if": "steps.manifest.outputs.base",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.base }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
+            },
+            {
+               "if": "steps.manifest.outputs.dev",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.dev }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
             }
          ]
       },
@@ -5355,6 +5637,7 @@
             "build-3x2-jammy-arm64"
          ],
          "permissions": {
+            "attestations": "write",
             "contents": "read",
             "id-token": "write",
             "packages": "write"
@@ -5420,7 +5703,26 @@
                   "DIST_FILTER": "jammy",
                   "SERIES_FILTER": "3.2"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
+            },
+            {
+               "if": "steps.manifest.outputs.base",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.base }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
+            },
+            {
+               "if": "steps.manifest.outputs.dev",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.dev }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
             }
          ]
       },
@@ -5431,6 +5733,7 @@
             "build-3x2-noble-arm64"
          ],
          "permissions": {
+            "attestations": "write",
             "contents": "read",
             "id-token": "write",
             "packages": "write"
@@ -5496,7 +5799,26 @@
                   "DIST_FILTER": "noble",
                   "SERIES_FILTER": "3.2"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
+            },
+            {
+               "if": "steps.manifest.outputs.base",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.base }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
+            },
+            {
+               "if": "steps.manifest.outputs.dev",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.dev }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
             }
          ]
       },
@@ -5507,6 +5829,7 @@
             "build-3x3-bookworm-arm64"
          ],
          "permissions": {
+            "attestations": "write",
             "contents": "read",
             "id-token": "write",
             "packages": "write"
@@ -5572,7 +5895,26 @@
                   "DIST_FILTER": "bookworm",
                   "SERIES_FILTER": "3.3"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
+            },
+            {
+               "if": "steps.manifest.outputs.base",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.base }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
+            },
+            {
+               "if": "steps.manifest.outputs.dev",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.dev }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
             }
          ]
       },
@@ -5583,6 +5925,7 @@
             "build-3x3-focal-arm64"
          ],
          "permissions": {
+            "attestations": "write",
             "contents": "read",
             "id-token": "write",
             "packages": "write"
@@ -5648,7 +5991,26 @@
                   "DIST_FILTER": "focal",
                   "SERIES_FILTER": "3.3"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
+            },
+            {
+               "if": "steps.manifest.outputs.base",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.base }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
+            },
+            {
+               "if": "steps.manifest.outputs.dev",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.dev }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
             }
          ]
       },
@@ -5659,6 +6021,7 @@
             "build-3x3-jammy-arm64"
          ],
          "permissions": {
+            "attestations": "write",
             "contents": "read",
             "id-token": "write",
             "packages": "write"
@@ -5724,7 +6087,26 @@
                   "DIST_FILTER": "jammy",
                   "SERIES_FILTER": "3.3"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
+            },
+            {
+               "if": "steps.manifest.outputs.base",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.base }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
+            },
+            {
+               "if": "steps.manifest.outputs.dev",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.dev }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
             }
          ]
       },
@@ -5735,6 +6117,7 @@
             "build-3x3-noble-arm64"
          ],
          "permissions": {
+            "attestations": "write",
             "contents": "read",
             "id-token": "write",
             "packages": "write"
@@ -5800,7 +6183,26 @@
                   "DIST_FILTER": "noble",
                   "SERIES_FILTER": "3.3"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
+            },
+            {
+               "if": "steps.manifest.outputs.base",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.base }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
+            },
+            {
+               "if": "steps.manifest.outputs.dev",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.dev }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
             }
          ]
       },
@@ -5811,6 +6213,7 @@
             "build-3x3-trixie-arm64"
          ],
          "permissions": {
+            "attestations": "write",
             "contents": "read",
             "id-token": "write",
             "packages": "write"
@@ -5876,7 +6279,26 @@
                   "DIST_FILTER": "trixie",
                   "SERIES_FILTER": "3.3"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
+            },
+            {
+               "if": "steps.manifest.outputs.base",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.base }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
+            },
+            {
+               "if": "steps.manifest.outputs.dev",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.dev }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
             }
          ]
       },
@@ -5887,6 +6309,7 @@
             "build-3x4-bookworm-arm64"
          ],
          "permissions": {
+            "attestations": "write",
             "contents": "read",
             "id-token": "write",
             "packages": "write"
@@ -5952,7 +6375,26 @@
                   "DIST_FILTER": "bookworm",
                   "SERIES_FILTER": "3.4"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
+            },
+            {
+               "if": "steps.manifest.outputs.base",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.base }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
+            },
+            {
+               "if": "steps.manifest.outputs.dev",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.dev }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
             }
          ]
       },
@@ -5963,6 +6405,7 @@
             "build-3x4-jammy-arm64"
          ],
          "permissions": {
+            "attestations": "write",
             "contents": "read",
             "id-token": "write",
             "packages": "write"
@@ -6028,7 +6471,26 @@
                   "DIST_FILTER": "jammy",
                   "SERIES_FILTER": "3.4"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
+            },
+            {
+               "if": "steps.manifest.outputs.base",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.base }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
+            },
+            {
+               "if": "steps.manifest.outputs.dev",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.dev }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
             }
          ]
       },
@@ -6039,6 +6501,7 @@
             "build-3x4-noble-arm64"
          ],
          "permissions": {
+            "attestations": "write",
             "contents": "read",
             "id-token": "write",
             "packages": "write"
@@ -6104,7 +6567,26 @@
                   "DIST_FILTER": "noble",
                   "SERIES_FILTER": "3.4"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
+            },
+            {
+               "if": "steps.manifest.outputs.base",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.base }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
+            },
+            {
+               "if": "steps.manifest.outputs.dev",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.dev }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
             }
          ]
       },
@@ -6115,6 +6597,7 @@
             "build-3x4-resolute-arm64"
          ],
          "permissions": {
+            "attestations": "write",
             "contents": "read",
             "id-token": "write",
             "packages": "write"
@@ -6180,7 +6663,26 @@
                   "DIST_FILTER": "resolute",
                   "SERIES_FILTER": "3.4"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
+            },
+            {
+               "if": "steps.manifest.outputs.base",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.base }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
+            },
+            {
+               "if": "steps.manifest.outputs.dev",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.dev }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
             }
          ]
       },
@@ -6191,6 +6693,7 @@
             "build-3x4-trixie-arm64"
          ],
          "permissions": {
+            "attestations": "write",
             "contents": "read",
             "id-token": "write",
             "packages": "write"
@@ -6256,7 +6759,26 @@
                   "DIST_FILTER": "trixie",
                   "SERIES_FILTER": "3.4"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
+            },
+            {
+               "if": "steps.manifest.outputs.base",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.base }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
+            },
+            {
+               "if": "steps.manifest.outputs.dev",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.dev }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
             }
          ]
       },
@@ -6267,6 +6789,7 @@
             "build-4x0-bookworm-arm64"
          ],
          "permissions": {
+            "attestations": "write",
             "contents": "read",
             "id-token": "write",
             "packages": "write"
@@ -6332,7 +6855,26 @@
                   "DIST_FILTER": "bookworm",
                   "SERIES_FILTER": "4.0"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
+            },
+            {
+               "if": "steps.manifest.outputs.base",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.base }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
+            },
+            {
+               "if": "steps.manifest.outputs.dev",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.dev }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
             }
          ]
       },
@@ -6343,6 +6885,7 @@
             "build-4x0-jammy-arm64"
          ],
          "permissions": {
+            "attestations": "write",
             "contents": "read",
             "id-token": "write",
             "packages": "write"
@@ -6408,7 +6951,26 @@
                   "DIST_FILTER": "jammy",
                   "SERIES_FILTER": "4.0"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
+            },
+            {
+               "if": "steps.manifest.outputs.base",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.base }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
+            },
+            {
+               "if": "steps.manifest.outputs.dev",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.dev }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
             }
          ]
       },
@@ -6419,6 +6981,7 @@
             "build-4x0-noble-arm64"
          ],
          "permissions": {
+            "attestations": "write",
             "contents": "read",
             "id-token": "write",
             "packages": "write"
@@ -6484,7 +7047,26 @@
                   "DIST_FILTER": "noble",
                   "SERIES_FILTER": "4.0"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
+            },
+            {
+               "if": "steps.manifest.outputs.base",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.base }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
+            },
+            {
+               "if": "steps.manifest.outputs.dev",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.dev }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
             }
          ]
       },
@@ -6495,6 +7077,7 @@
             "build-4x0-resolute-arm64"
          ],
          "permissions": {
+            "attestations": "write",
             "contents": "read",
             "id-token": "write",
             "packages": "write"
@@ -6560,7 +7143,26 @@
                   "DIST_FILTER": "resolute",
                   "SERIES_FILTER": "4.0"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
+            },
+            {
+               "if": "steps.manifest.outputs.base",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.base }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
+            },
+            {
+               "if": "steps.manifest.outputs.dev",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.dev }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
             }
          ]
       },
@@ -6571,6 +7173,7 @@
             "build-4x0-trixie-arm64"
          ],
          "permissions": {
+            "attestations": "write",
             "contents": "read",
             "id-token": "write",
             "packages": "write"
@@ -6636,7 +7239,26 @@
                   "DIST_FILTER": "trixie",
                   "SERIES_FILTER": "4.0"
                },
-               "run": "ruby manifest.rb --pull --subtag"
+               "id": "manifest",
+               "run": "ruby manifest.rb --subtag"
+            },
+            {
+               "if": "steps.manifest.outputs.base",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.base }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
+            },
+            {
+               "if": "steps.manifest.outputs.dev",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.dev }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
             }
          ]
       },
@@ -6647,6 +7269,7 @@
             "build-4x0-noble-arm64"
          ],
          "permissions": {
+            "attestations": "write",
             "contents": "read",
             "id-token": "write",
             "packages": "write"
@@ -6709,7 +7332,26 @@
             {
                "continue-on-error": false,
                "env": { },
-               "run": "ruby manifest.rb --pull --latest"
+               "id": "manifest",
+               "run": "ruby manifest.rb --latest"
+            },
+            {
+               "if": "steps.manifest.outputs.base",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.base }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
+            },
+            {
+               "if": "steps.manifest.outputs.dev",
+               "uses": "actions/attest@1e69f48acb82d1966a394da916b4c1698aa569d6",
+               "with": {
+                  "push-to-registry": true,
+                  "subject-digest": "${{ steps.manifest.outputs.dev }}",
+                  "subject-name": "${{ steps.manifest.outputs.name }}"
+               }
             }
          ]
       },

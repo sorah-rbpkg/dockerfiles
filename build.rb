@@ -7,28 +7,19 @@ PUSH = !!ARGV.delete('--push')
 p filters: {distro: DISTRO_FILTER, arch: ARCH_FILTER, series: SERIES_FILTER }
 
 @built_images = []
+@bake_targets = {}
 
-# Pull
-if PULL
-  SERIES.each do |series|
-    next if SERIES_FILTER && !SERIES_FILTER.include?(series.version)
-    DISTROS.each do |distro|
-      next if DISTRO_FILTER && !DISTRO_FILTER.include?(distro.name)
-
-      pulled_image = [PUSH_REPOS[0]].flat_map do |repo|
-        [
-          "#{repo}:#{series.version}-#{distro.name}-amd64",
-          "#{repo}:#{series.version}-#{distro.name}-arm64",
-          "#{repo}:#{series.version}-dev-#{distro.name}-amd64",
-          "#{repo}:#{series.version}-dev-#{distro.name}-arm64",
-        ]
-      end.find do |image|
-        cmd("docker", "pull", image, exception: false)
-      end
-      next unless pulled_image
-      cmd("docker", "tag", pulled_image, "sorah-ruby:#{series.version}-#{distro.name}")
-    end
-  end
+def bake_target(image, dockerfile:, contexts: nil)
+  {
+    context: __dir__,
+    dockerfile: File.expand_path(dockerfile, __dir__),
+    platforms: [image.platform],
+    tags: PUSH_REPOS.map { "#{_1}:#{image.canonical_tag}" },
+    pull: PULL,
+    'cache-from': ["type=registry,ref=#{PUSH_REPOS[0]}:#{image.canonical_tag}"],
+    'cache-to': ['type=inline'],
+    contexts:,
+  }.compact
 end
 
 # Build
@@ -85,14 +76,17 @@ SERIES.each do |series|
       File.write(dockerfile_path, dockerfile)
       built_image = BuiltImage.new(series: series.version, version: version, distro: distro.name, dev: false, arch: arch)
 
-      dev_dockerfile = dockerfile_dev_template.result_with_hash(locals.merge( base: "#{built_image.repo}:#{built_image.canonical_tag}" ))
+      base_target = "#{series.version}-#{distro.name}-#{arch}".tr('.', '_')
+
+      # The dev image builds on the base image of the same bake run, which need not be pushed or loaded first.
+      dev_dockerfile = dockerfile_dev_template.result_with_hash(locals.merge( base: 'base' ))
       dev_dockerfile_path = "./tmp/Dockerfile.dev-#{series.version}-#{distro.name}-#{arch}"
       File.write(dev_dockerfile_path, dev_dockerfile)
       built_dev_image = BuiltImage.new(series: series.version, version: version, distro: distro.name, dev: true, arch: arch)
 
-      cmd('docker', 'build', '--pull', '--platform', built_image.platform, '--cache-from', "#{PUSH_REPOS[0]}:#{built_image.canonical_tag}", '-t',  "#{built_image.repo}:#{built_image.canonical_tag}", '-f', dockerfile_path, __dir__)
+      @bake_targets[base_target] = bake_target(built_image, dockerfile: dockerfile_path)
       @built_images << built_image
-      cmd('docker', 'build', '--platform', built_dev_image.platform, '--cache-from', "#{PUSH_REPOS[0]}:#{built_dev_image.canonical_tag}", '-t',  "#{built_image.repo}:#{built_dev_image.canonical_tag}", '-f', dev_dockerfile_path, __dir__)
+      @bake_targets["#{base_target}-dev"] = bake_target(built_dev_image, dockerfile: dev_dockerfile_path, contexts: { base: "target:#{base_target}" })
       @built_images << built_dev_image
     end
   end
@@ -100,22 +94,12 @@ end
 
 raise "no images built" if @built_images.empty?
 
+File.write 'tmp/bake.json', "#{JSON.pretty_generate(target: @bake_targets, group: { default: { targets: @bake_targets.keys } })}\n"
+# Attestations need the image pushed by BuildKit; the local image store cannot hold them.
+attest_args = PUSH ? %w(--push --provenance=mode=max --sbom=true) : %w(--load --provenance=false --sbom=false)
+cmd('docker', 'buildx', 'bake', '-f', 'tmp/bake.json', '--metadata-file', 'tmp/bake-metadata.json', *attest_args)
+
 puts "=> Built images"
 built_images_json = JSON.pretty_generate(@built_images.map(&:to_h))
 File.write "tmp/built_images.json", "#{built_images_json}\n"
 puts built_images_json
-
-puts "=> Digests"
-cmd('docker', 'images', 'sorah-ruby', '--digests')
-
-if PUSH
-  puts "=> Push"
-  @built_images.each do |image|
-    PUSH_REPOS.each do |repo|
-      cmd('docker', 'tag', "#{image.repo}:#{image.canonical_tag}", "#{repo}:#{image.canonical_tag}")
-      cmd('docker', 'push', "#{repo}:#{image.canonical_tag}")
-    end
-  end
-else
-  puts "=> Push (skipped)"
-end
