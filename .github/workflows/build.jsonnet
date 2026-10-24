@@ -53,7 +53,7 @@ local matrix = [
 ];
 local archs = ['amd64', 'arm64'];
 // Series sorah-rbpkg/build's nightly.yml builds packages of.
-local nightly_series = ['3.3', '3.4', '4.0'];
+local nightly_series = ['3.3', '3.4', '4.0', '4.1'];
 
 local build_job_patterns = [
   { series: series_and_distro.series, distro: distro, arch: arch }
