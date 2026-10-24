@@ -194,7 +194,7 @@ local cleanup_job = {
     needs: std.flattenArrays([[y.name for y in std.objectValues(x) if std.startsWith(y.name, 'manifest-main-')] for x in manifest_jobs]),
     steps: common_steps + [
       {
-        run: 'curl -Ssfo cleanup.rb https://raw.githubusercontent.com/sorah/config/548e013da6d3e522fc9e71bcc679d5dd8eb5e558/bin/sorah-aws-ecr-public-cleanup',
+        run: 'curl -Ssfo cleanup.rb https://raw.githubusercontent.com/sorah/config/2fb9659b9e7e7c754ecda359c45ab24458a84860/bin/sorah-aws-ecr-public-cleanup',
       },
       {
         run: 'gem i aws-sdk-ecrpublic',
