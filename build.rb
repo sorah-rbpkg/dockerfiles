@@ -41,7 +41,8 @@ SERIES.each do |series|
   DISTROS.each do |distro|
     next if DISTRO_FILTER && !DISTRO_FILTER.include?(distro.name)
 
-    packages = apt_packages(distro.apt_url)
+    apt_url = series.proposed ? distro.proposed_apt_url : distro.apt_url
+    packages = apt_packages(apt_url)
     deb_versions = ->(pkgs) { pkgs.dig("ruby#{series.version}", "ruby#{series.version}")&.map { |_| _.fetch('Version')[0] } || [] }
 
     pinned = VERSIONS.dig(series.version, distro.name)
@@ -52,10 +53,10 @@ SERIES.each do |series|
       tries = 0
       until deb_versions.(packages).include?(pinned)
         tries += 1
-        raise "#{series.version}-#{distro.name}: #{pinned} is not in #{distro.apt_url}" if tries > 4
-        $stderr.puts "#{pinned} is not in #{distro.apt_url} yet, retrying"
+        raise "#{series.version}-#{distro.name}: #{pinned} is not in #{apt_url}" if tries > 4
+        $stderr.puts "#{pinned} is not in #{apt_url} yet, retrying"
         sleep 4 * 2**tries
-        packages = apt_packages(distro.apt_url, refresh: true)
+        packages = apt_packages(apt_url, refresh: true)
       end
       deb_version = pinned
     else
@@ -75,6 +76,7 @@ SERIES.each do |series|
       deb_ruby: deb_version,
       deb_ruby_default: default_version,
       nightly: NIGHTLY_BUILD,
+      proposed: series.proposed,
     }
 
     upstream_version = deb_version.match(/^(\d+:)?([^-]+)-.+$/)[2]

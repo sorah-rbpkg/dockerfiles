@@ -17,6 +17,9 @@ COPY files/apt-preference-priority /etc/apt/preferences.d/90-sorah-rbpkg-prefere
 RUN <% if nightly %>--mount=type=bind,from=debs,target=/debs <% end %>apt-get update \
   && apt-get upgrade -y \
   && echo "deb [signed-by=/usr/local/share/keyrings/sorah-rbpkg.gpg] http://cache.ruby-lang.org/lab/sorah/deb/ <%= distro %> main" > /etc/apt/sources.list.d/sorah-ruby.list \
+<%- if proposed -%>
+  && echo "deb [signed-by=/usr/local/share/keyrings/sorah-rbpkg.gpg] http://cache.ruby-lang.org/lab/sorah/deb/ <%= distro %>-proposed main" >> /etc/apt/sources.list.d/sorah-ruby.list \
+<%- end -%>
   && echo "Package: src:ruby-defaults\nPin: version $DEB_RUBY_DEFAULT\nPin-Priority: 999" > /etc/apt/preferences.d/91-sorah-rbpkg-ruby-defaults \
   && grep -r . /etc/apt/preferences.d \
   && apt-get update \

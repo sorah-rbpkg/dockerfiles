@@ -61,8 +61,11 @@ VERSIONS = JSON.parse(File.read(File.join(__dir__, 'versions.json')))
 # Series => distro => the nightly package built by sorah-rbpkg/build's nightly.yml, which also writes this file.
 NIGHTLY = JSON.parse(File.read(File.join(__dir__, 'nightly.json')))
 
-Release = Struct.new(:version, :arm, :default_distro, keyword_init: true)
-Distro = Struct.new(:family, :name, :apt_url, :arm, keyword_init: true)
+# A proposed series installs from <distro>-proposed of the apt repository and never takes latest.
+Release = Struct.new(:version, :arm, :default_distro, :proposed, keyword_init: true)
+Distro = Struct.new(:family, :name, :apt_url, :arm, keyword_init: true) do
+  def proposed_apt_url = apt_url.sub("/dists/#{name}/", "/dists/#{name}-proposed/")
+end
 # version is N.M.next for a nightly.
 BuiltImage = Struct.new(:series, :version, :distro, :dev, :arch, :nightly, keyword_init: true) do
   def repo
@@ -161,6 +164,7 @@ SERIES = [
   Release.new(version: '3.3', default_distro: 'jammy', arm: true),
   Release.new(version: '3.4', default_distro: 'noble', arm: true),
   Release.new(version: '4.0', default_distro: 'noble', arm: true),
+  Release.new(version: '4.1', default_distro: 'resolute', arm: true, proposed: true),
 ]
 
 def find_series(version)

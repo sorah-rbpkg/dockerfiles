@@ -49,6 +49,7 @@ local matrix = [
   { series: '3.3', distro: splitWithSpace('focal jammy noble              bookworm trixie'), arm: true },
   { series: '3.4', distro: splitWithSpace('      jammy noble resolute     bookworm trixie'), arm: true },
   { series: '4.0', distro: splitWithSpace('      jammy noble resolute     bookworm trixie'), arm: true },
+  { series: '4.1', distro: splitWithSpace('            noble resolute              trixie'), arm: true },
 ];
 local archs = ['amd64', 'arm64'];
 // Series sorah-rbpkg/build's nightly.yml builds packages of.
@@ -215,9 +216,10 @@ local build_jobs = [
   if std.member(nightly_series, pattern.series)
 ];
 
-// manifest.rb --latest reads only the default distro of the newest series. NOTE: keep in sync with config.rb
+// manifest.rb --latest reads only the default distro of the newest series that is not proposed. NOTE: keep in sync with config.rb
+local latest_series = '4.0';
 local latest_default_distro = 'noble';
-local latest_manifest_parents = [pattern_to_job_name('build', pattern) for pattern in build_job_patterns if pattern.series == matrix[std.length(matrix) - 1].series && pattern.distro == latest_default_distro];
+local latest_manifest_parents = [pattern_to_job_name('build', pattern) for pattern in build_job_patterns if pattern.series == latest_series && pattern.distro == latest_default_distro];
 local manifest_jobs = std.flattenArrays([
   manifest_subtag_job(pattern)
   for pattern in manifest_subtag_job_patterns

@@ -21,7 +21,7 @@
 
 where,
 
-- SERIES is like `2.6`, `2.7`, `3.0`, `3.1`, `3.2`, `3.3`, `3.4`, `4.0`
+- SERIES is like `2.6`, `2.7`, `3.0`, `3.1`, `3.2`, `3.3`, `3.4`, `4.0`, `4.1`
   - Starting Ruby 3.2.0, 3.1.3, 3.0.5, 2.7.7 and later versions, you can specify full version number as SERIES as well
 - DISTRO is like `focal`, `jammy`, `noble`, `bookworm`, `trixie`
 
@@ -37,6 +37,7 @@ for instance: `public.ecr.aws/sorah/ruby:3.2-dev-noble`, `public.ecr.aws/sorah/r
 - `3.3`, `3.3-dev` distro= `focal`, __`jammy`__, `noble`, `bullseye`, `bookworm`, `trixie`
 - `3.4`, `3.4-dev` distro= `jammy`, __`noble`__, `resolute`, `bookworm`, `trixie`
 - `4.0`, `4.0-dev` distro= `jammy`, __`noble`__, `resolute`, `bookworm`, `trixie`
+- `4.1`, `4.1-dev` distro= `noble`, __`resolute`__, `trixie` (preview, from the `-proposed` suites; never `latest`)
 
 _a distro marked bold is default - used on tags which omits DISTRO_
 

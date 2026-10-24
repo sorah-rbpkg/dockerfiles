@@ -56,7 +56,7 @@ p filters: {distro: DISTRO_FILTER, series: SERIES_FILTER }
 )
 
 # latest_tag
-latest_series = SERIES.last
+latest_series = SERIES.reject(&:proposed).last
 @manifests["#{latest_series.version}-#{latest_series.default_distro}"]&.then do |manifest|
   @manifests['latest'] = manifest.clone.tap { _1.kind = :latest; _1.name = 'latest' }
 end
