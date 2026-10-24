@@ -40,6 +40,12 @@ for instance: `public.ecr.aws/sorah/ruby:3.2-dev-noble`, `public.ecr.aws/sorah/r
 
 _a distro marked bold is default - used on tags which omits DISTRO_
 
+### Nightly
+
+`{SERIES}.next`, `{SERIES}.next-{DISTRO}`, `{SERIES}.next-dev` and `{SERIES}.next-dev-{DISTRO}` install a weekly package of the tip of Ruby's `ruby_N_M` branch, for `3.3`, `3.4` and `4.0` on the distros of their list above. They are for trying fixes before their release, and are rebuilt with each new snapshot without any review.
+
+The package is `rubyN.M` of version `<X.Y.Z>+git<YYYYMMDD>.g<commit>-0nkmi0~<distro>`, built by [sorah-rbpkg/build](https://github.com/sorah-rbpkg/build)'s `nightly.yml` and not in the apt repository. Its `ruby-defaults` and `rubygems-integration` are the released ones.
+
 ## Misc
 
 ### aarch64 (arm64 support)
@@ -75,3 +81,5 @@ gh attestation verify oci://public.ecr.aws/sorah/ruby:3.4 --repo sorah-rbpkg/doc
 ### Versions
 
 [`versions.json`](./versions.json) pins the Debian version of `rubyX.Y` each series and distro installs, and a build fails when the apt repository does not have it. [sorah-rbpkg/build](https://github.com/sorah-rbpkg/build)'s `bin/publish` updates and pushes it after releasing packages. A push that changes only `versions.json` builds just the series and distros it changed; other pushes and the scheduled rebuild build everything. Series and distros without a pin install the newest version in the apt repository.
+
+[`nightly.json`](./nightly.json) is the same for the nightly images, naming the run of sorah-rbpkg/build and its artifacts that hold each package. That run's `nightly.yml` pushes it once the packages pass their smoke test, and a push that changes only it builds just the nightly images it changed. The build verifies the packages' attestations from `nightly.yml` before installing them.

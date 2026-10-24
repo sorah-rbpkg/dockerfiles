@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
-# Decides what docker-build builds, as the outputs all and targets ("SERIES-DISTRO" names).
-# A push that changes only versions.json builds what it changed; anything else, the schedule included, builds all.
+# Decides what docker-build builds, as the outputs all and targets ("SERIES-DISTRO" names, "nightly-SERIES-DISTRO" for
+# N.M.next). A push that changes only versions.json or nightly.json builds what it changed; anything else, the schedule
+# included, builds all.
 require 'json'
 require 'open3'
 
@@ -15,14 +16,22 @@ def git(*args)
   status.success? ? out : nil
 end
 
+# SERIES-DISTRO of each entry of file that differs from the commit before.
+def changed_entries(before, file)
+  old = git('show', "#{before}:#{file}")&.then { |json| JSON.parse(json) }
+  output(all: true) unless old
+
+  new = JSON.parse(File.read(File.join(__dir__, file)))
+  new.flat_map { |series, distros| distros.filter_map { |distro, entry| "#{series}-#{distro}" if old.dig(series, distro) != entry } }
+end
+
 before = ENV['BEFORE'].to_s
 output(all: true) if ENV.fetch('GITHUB_EVENT_NAME') != 'push' || before.empty? || before.match?(/\A0+\z/)
 
 changed = git('diff', '--name-only', before, 'HEAD')&.lines(chomp: true)
-output(all: true) unless changed == ['versions.json']
+output(all: true) if changed.nil? || changed.empty? || !(changed - %w(versions.json nightly.json)).empty?
 
-old = git('show', "#{before}:versions.json")&.then { |json| JSON.parse(json) }
-output(all: true) unless old
-
-new = JSON.parse(File.read(File.join(__dir__, 'versions.json')))
-output(all: false, targets: new.flat_map { |series, distros| distros.filter_map { |distro, version| "#{series}-#{distro}" if old.dig(series, distro) != version } })
+targets = []
+targets.concat(changed_entries(before, 'versions.json')) if changed.include?('versions.json')
+targets.concat(changed_entries(before, 'nightly.json').map { "nightly-#{_1}" }) if changed.include?('nightly.json')
+output(all: false, targets:)

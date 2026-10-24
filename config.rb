@@ -58,10 +58,13 @@ end
 
 # Series => distro => Debian version, written by sorah-rbpkg/build's bin/publish when it releases.
 VERSIONS = JSON.parse(File.read(File.join(__dir__, 'versions.json')))
+# Series => distro => the nightly package built by sorah-rbpkg/build's nightly.yml, which also writes this file.
+NIGHTLY = JSON.parse(File.read(File.join(__dir__, 'nightly.json')))
 
 Release = Struct.new(:version, :arm, :default_distro, keyword_init: true)
 Distro = Struct.new(:family, :name, :apt_url, :arm, keyword_init: true)
-BuiltImage = Struct.new(:series, :version, :distro, :dev, :arch, keyword_init: true) do
+# version is N.M.next for a nightly.
+BuiltImage = Struct.new(:series, :version, :distro, :dev, :arch, :nightly, keyword_init: true) do
   def repo
     'sorah-ruby'
   end

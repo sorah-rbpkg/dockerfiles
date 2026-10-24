@@ -13,7 +13,8 @@ ARG BUNDLER2_VERSION="~> 2"
 COPY files/sorah-rbpkg.gpg /usr/local/share/keyrings/sorah-rbpkg.gpg
 COPY files/apt-preference-priority /etc/apt/preferences.d/90-sorah-rbpkg-preference
 
-RUN apt-get update \
+# A nightly installs the packages of the debs build context, by file name so the exact build is pinned.
+RUN <% if nightly %>--mount=type=bind,from=debs,target=/debs <% end %>apt-get update \
   && apt-get upgrade -y \
   && echo "deb [signed-by=/usr/local/share/keyrings/sorah-rbpkg.gpg] http://cache.ruby-lang.org/lab/sorah/deb/ <%= distro %> main" > /etc/apt/sources.list.d/sorah-ruby.list \
   && echo "Package: src:ruby-defaults\nPin: version $DEB_RUBY_DEFAULT\nPin-Priority: 999" > /etc/apt/preferences.d/91-sorah-rbpkg-ruby-defaults \
@@ -22,9 +23,15 @@ RUN apt-get update \
   && apt-get install --no-install-recommends --no-install-suggests -y \
   ca-certificates \
   ruby=${DEB_RUBY_DEFAULT} \
+<%- if nightly -%>
+  /debs/ruby${RUBY}_${DEB_RUBY}_<%= arch %>.deb \
+  /debs/libruby${RUBY}_${DEB_RUBY}_<%= arch %>.deb \
+  /debs/ruby${RUBY}-gems_${DEB_RUBY}_<%= arch %>.deb \
+<%- else -%>
   ruby${RUBY}=${DEB_RUBY} \
   libruby${RUBY}=${DEB_RUBY} \
   ruby${RUBY}-gems=${DEB_RUBY} \
+<%- end -%>
   tzdata \
   && rm -rf /var/lib/apt/lists/*
 

@@ -6,10 +6,14 @@ ARG RUBY=<%= ruby %>
 ARG DEB_RUBY_DEFAULT=<%= deb_ruby_default %>
 ARG DEB_RUBY=<%= deb_ruby %>
 
-RUN apt-get update \
+RUN <% if nightly %>--mount=type=bind,from=debs,target=/debs <% end %>apt-get update \
   && apt-get install --no-install-recommends --no-install-suggests -y \
     ruby-dev=${DEB_RUBY_DEFAULT} \
+<%- if nightly -%>
+    /debs/ruby${RUBY}-dev_${DEB_RUBY}_<%= arch %>.deb \
+<%- else -%>
     ruby${RUBY}-dev=${DEB_RUBY} \
+<%- end -%>
     git-core \
     build-essential \
     zlib1g-dev \

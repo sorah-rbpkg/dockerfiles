@@ -51,6 +51,8 @@ local matrix = [
   { series: '4.0', distro: splitWithSpace('      jammy noble resolute     bookworm trixie'), arm: true },
 ];
 local archs = ['amd64', 'arm64'];
+// Series sorah-rbpkg/build's nightly.yml builds packages of.
+local nightly_series = ['3.3', '3.4', '4.0'];
 
 local build_job_patterns = [
   { series: series_and_distro.series, distro: distro, arch: arch }
@@ -71,21 +73,45 @@ local pattern_to_job_name(prefix, pattern) =
   (if std.objectHas(pattern, 'arch') then std.format('-%s', [pattern.arch]) else '');
 
 
-local build_job(pattern) =
-  local name = pattern_to_job_name('build', pattern);
+// The packages of sorah-rbpkg/build's nightly.yml are artifacts there, which only its own token can download.
+local nightly_fetch_steps(pattern) = [
+  {
+    id: 'nightly-token',
+    uses: 'sorah/sts-cat/.github/actions/exchange-token@19e1177084d0f2dedb575ab1b78bd2a1a100f6e9',  // main
+    with: {
+      endpoint: '${{ secrets.STS_CAT_ENDPOINT }}',
+      scope: 'sorah-rbpkg',
+      identity: 'dockerfiles-nightly',
+      audience: 'https://sts-cat.nkmi.me',
+    },
+  },
+  {
+    run: 'ruby fetch-nightly.rb',
+    env: {
+      GH_TOKEN: '${{ steps.nightly-token.outputs.token }}',
+      SERIES_FILTER: pattern.series,
+      DIST_FILTER: pattern.distro,
+      ARCH_FILTER: pattern.arch,
+    },
+  },
+];
+
+local build_job(pattern, nightly=false) =
+  local name = pattern_to_job_name(if nightly then 'build-nightly' else 'build', pattern);
+  local target = std.format('%s%s-%s', [if nightly then 'nightly-' else '', pattern.series, pattern.distro]);
   {
     _name:: name,
     [name]: {
       name: name,
       needs: ['plan'],
-      'if': std.format("needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '%s-%s')", [pattern.series, pattern.distro]),
+      'if': std.format("needs.plan.outputs.all == 'true' || contains(fromJSON(needs.plan.outputs.targets), '%s')", [target]),
       'runs-on': (if pattern.arch == 'arm64' then 'ubuntu-24.04-arm' else 'ubuntu-24.04'),
       permissions: permissions,
-      steps: common_steps + [
+      steps: common_steps + (if nightly then nightly_fetch_steps(pattern) else []) + [
         // The docker driver cannot push provenance and SBOM attestations.
         { uses: 'docker/setup-buildx-action@f87e5991a6d7451dcb8d9637bfbc97413f497069' },  // v4.4.1
         {
-          run: 'ruby build.rb --pull --push',
+          run: 'ruby build.rb --pull --push' + (if nightly then ' --nightly' else ''),
           env: {
             SERIES_FILTER: pattern.series,
             DIST_FILTER: pattern.distro,
@@ -167,10 +193,26 @@ local manifest_subtag_job(pattern) = {
   ],
 }.inner;
 
+// N.M.next, from nightly.json.
+local manifest_nightly_job(pattern) = manifest_job(
+  pattern_to_job_name('manifest-nightly', pattern),
+  'subtag',
+  { DIST_FILTER: pattern.distro, SERIES_FILTER: pattern.series },
+  [
+    pattern_to_job_name('build-nightly', pattern { arch: arch })
+    for arch in archs
+    if arch == 'amd64' || (arch == 'arm64' && pattern.series != '2.6')
+  ],
+);
+
 
 local build_jobs = [
   build_job(pattern)
   for pattern in build_job_patterns
+] + [
+  build_job(pattern, nightly=true)
+  for pattern in build_job_patterns
+  if std.member(nightly_series, pattern.series)
 ];
 
 // manifest.rb --latest reads only the default distro of the newest series. NOTE: keep in sync with config.rb
@@ -182,6 +224,10 @@ local manifest_jobs = std.flattenArrays([
 ]) + [
   manifest_job('manifest-main-latest', 'latest', {}, latest_manifest_parents),
   manifest_job('manifest-hub-latest', 'latest', { DOCKERHUB: '1' }, latest_manifest_parents),
+] + [
+  manifest_nightly_job(pattern)
+  for pattern in manifest_subtag_job_patterns
+  if std.member(nightly_series, pattern.series)
 ];
 
 local cleanup_job = {
@@ -191,7 +237,7 @@ local cleanup_job = {
     permissions: { 'id-token': 'write', contents: 'read' },
     // Manifest jobs of series and distros left unbuilt are skipped.
     'if': '${{ !cancelled() && !contains(needs.*.result, \'failure\') }}',
-    needs: std.flattenArrays([[y.name for y in std.objectValues(x) if std.startsWith(y.name, 'manifest-main-')] for x in manifest_jobs]),
+    needs: std.flattenArrays([[y.name for y in std.objectValues(x) if std.startsWith(y.name, 'manifest-main-') || std.startsWith(y.name, 'manifest-nightly-')] for x in manifest_jobs]),
     steps: common_steps + [
       {
         run: 'curl -Ssfo cleanup.rb https://raw.githubusercontent.com/sorah/config/2fb9659b9e7e7c754ecda359c45ab24458a84860/bin/sorah-aws-ecr-public-cleanup',

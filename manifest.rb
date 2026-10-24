@@ -18,9 +18,12 @@ p filters: {distro: DISTRO_FILTER, series: SERIES_FILTER }
 
 @manifests = {}
 
+# A nightly is tagged N.M.next only, never as its series or latest.
+@released_images = @built_images.reject(&:nightly)
+
 # series_tag
 @manifests.merge!(
-  @built_images.group_by(&:series_tag).map do |tag, images|
+  @released_images.group_by(&:series_tag).map do |tag, images|
     series = find_series(images[0].series)
     next unless series.default_distro
     latest_version = images.map(&:version).sort.last
@@ -30,7 +33,7 @@ p filters: {distro: DISTRO_FILTER, series: SERIES_FILTER }
 
 # series_distro_tag
 @manifests.merge!(
-  @built_images.group_by(&:series_distro_tag).map do |tag, images|
+  @released_images.group_by(&:series_distro_tag).map do |tag, images|
     latest_version = images.map(&:version).sort.last
     [tag, Manifest.new(kind: :subtag, name: tag, images: images.select { _1.version == latest_version })]
   end.compact.to_h,
