@@ -1,4 +1,60 @@
 {
+  "3.3": {
+    "bookworm": {
+      "artifacts": {
+        "amd64": "nightly-ruby3.3-bookworm-amd64",
+        "arm64": "nightly-ruby3.3-bookworm-arm64"
+      },
+      "revision": "af48f08f2113db1cc4ee171f34e399d7a902151b",
+      "run_id": 40175693572,
+      "version": "3.3.13+git20261023.gaf48f08f21-0nkmi0~bookworm"
+    },
+    "bullseye": {
+      "artifacts": {
+        "amd64": "nightly-ruby3.3-bullseye-amd64",
+        "arm64": "nightly-ruby3.3-bullseye-arm64"
+      },
+      "revision": "af48f08f2113db1cc4ee171f34e399d7a902151b",
+      "run_id": 40175693572,
+      "version": "3.3.13+git20261023.gaf48f08f21-0nkmi0~bullseye"
+    },
+    "focal": {
+      "artifacts": {
+        "amd64": "nightly-ruby3.3-focal-amd64",
+        "arm64": "nightly-ruby3.3-focal-arm64"
+      },
+      "revision": "af48f08f2113db1cc4ee171f34e399d7a902151b",
+      "run_id": 40175693572,
+      "version": "3.3.13+git20261023.gaf48f08f21-0nkmi0~focal"
+    },
+    "jammy": {
+      "artifacts": {
+        "amd64": "nightly-ruby3.3-jammy-amd64",
+        "arm64": "nightly-ruby3.3-jammy-arm64"
+      },
+      "revision": "af48f08f2113db1cc4ee171f34e399d7a902151b",
+      "run_id": 40175693572,
+      "version": "3.3.13+git20261023.gaf48f08f21-0nkmi0~jammy"
+    },
+    "noble": {
+      "artifacts": {
+        "amd64": "nightly-ruby3.3-noble-amd64",
+        "arm64": "nightly-ruby3.3-noble-arm64"
+      },
+      "revision": "af48f08f2113db1cc4ee171f34e399d7a902151b",
+      "run_id": 40175693572,
+      "version": "3.3.13+git20261023.gaf48f08f21-0nkmi0~noble"
+    },
+    "trixie": {
+      "artifacts": {
+        "amd64": "nightly-ruby3.3-trixie-amd64",
+        "arm64": "nightly-ruby3.3-trixie-arm64"
+      },
+      "revision": "af48f08f2113db1cc4ee171f34e399d7a902151b",
+      "run_id": 40175693572,
+      "version": "3.3.13+git20261023.gaf48f08f21-0nkmi0~trixie"
+    }
+  },
   "3.4": {
     "bookworm": {
       "artifacts": {
@@ -44,6 +100,53 @@
       "revision": "366f5fdc00cbd2e7997e03b6654d10163ff19bad",
       "run_id": 40095526181,
       "version": "3.4.12+git20261023.g366f5fdc00-0nkmi0~trixie"
+    }
+  },
+  "4.0": {
+    "bookworm": {
+      "artifacts": {
+        "amd64": "nightly-ruby4.0-bookworm-amd64",
+        "arm64": "nightly-ruby4.0-bookworm-arm64"
+      },
+      "revision": "9bcca300daab1c0b05c2f17b89a99939fc3450a5",
+      "run_id": 40175693572,
+      "version": "4.0.9+git20261023.g9bcca300da-0nkmi0~bookworm"
+    },
+    "jammy": {
+      "artifacts": {
+        "amd64": "nightly-ruby4.0-jammy-amd64",
+        "arm64": "nightly-ruby4.0-jammy-arm64"
+      },
+      "revision": "9bcca300daab1c0b05c2f17b89a99939fc3450a5",
+      "run_id": 40175693572,
+      "version": "4.0.9+git20261023.g9bcca300da-0nkmi0~jammy"
+    },
+    "noble": {
+      "artifacts": {
+        "amd64": "nightly-ruby4.0-noble-amd64",
+        "arm64": "nightly-ruby4.0-noble-arm64"
+      },
+      "revision": "9bcca300daab1c0b05c2f17b89a99939fc3450a5",
+      "run_id": 40175693572,
+      "version": "4.0.9+git20261023.g9bcca300da-0nkmi0~noble"
+    },
+    "resolute": {
+      "artifacts": {
+        "amd64": "nightly-ruby4.0-resolute-amd64",
+        "arm64": "nightly-ruby4.0-resolute-arm64"
+      },
+      "revision": "9bcca300daab1c0b05c2f17b89a99939fc3450a5",
+      "run_id": 40175693572,
+      "version": "4.0.9+git20261023.g9bcca300da-0nkmi0~resolute"
+    },
+    "trixie": {
+      "artifacts": {
+        "amd64": "nightly-ruby4.0-trixie-amd64",
+        "arm64": "nightly-ruby4.0-trixie-arm64"
+      },
+      "revision": "9bcca300daab1c0b05c2f17b89a99939fc3450a5",
+      "run_id": 40175693572,
+      "version": "4.0.9+git20261023.g9bcca300da-0nkmi0~trixie"
     }
   }
 }
