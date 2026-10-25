@@ -81,7 +81,8 @@ SERIES.each do |series|
 
     upstream_version = deb_version.match(/^(\d+:)?([^-]+)-.+$/)[2]
     raise "version mismatch with series: series=#{series.version} deb_version=#{deb_version} version=#{upstream_version}" unless upstream_version.start_with?("#{series.version}.")
-    version = NIGHTLY_BUILD ? "#{series.version}.next" : upstream_version
+    # Docker tags cannot carry "~", so 4.1.0~preview1 is tagged 4.1.0.preview1.
+    version = NIGHTLY_BUILD ? "#{series.version}.next" : upstream_version.tr('~', '.')
 
     ARCHS.each do |arch|
       next if ARCH_FILTER && !ARCH_FILTER.include?(arch)
