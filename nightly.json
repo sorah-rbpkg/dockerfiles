@@ -148,5 +148,34 @@
       "run_id": 40175693572,
       "version": "4.0.9+git20261023.g9bcca300da-0nkmi0~trixie"
     }
+  },
+  "4.1": {
+    "noble": {
+      "artifacts": {
+        "amd64": "nightly-ruby4.1-noble-amd64",
+        "arm64": "nightly-ruby4.1-noble-arm64"
+      },
+      "revision": "7677a3c4b4cfe331ea21789fb9d3c73a7206376a",
+      "run_id": 40220029754,
+      "version": "4.1.0~preview1+git20261025.g7677a3c4b4-0nkmi0~noble"
+    },
+    "resolute": {
+      "artifacts": {
+        "amd64": "nightly-ruby4.1-resolute-amd64",
+        "arm64": "nightly-ruby4.1-resolute-arm64"
+      },
+      "revision": "7677a3c4b4cfe331ea21789fb9d3c73a7206376a",
+      "run_id": 40220029754,
+      "version": "4.1.0~preview1+git20261025.g7677a3c4b4-0nkmi0~resolute"
+    },
+    "trixie": {
+      "artifacts": {
+        "amd64": "nightly-ruby4.1-trixie-amd64",
+        "arm64": "nightly-ruby4.1-trixie-arm64"
+      },
+      "revision": "7677a3c4b4cfe331ea21789fb9d3c73a7206376a",
+      "run_id": 40220029754,
+      "version": "4.1.0~preview1+git20261025.g7677a3c4b4-0nkmi0~trixie"
+    }
   }
 }
