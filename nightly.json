@@ -108,45 +108,45 @@
         "amd64": "nightly-ruby4.0-bookworm-amd64",
         "arm64": "nightly-ruby4.0-bookworm-arm64"
       },
-      "revision": "9bcca300daab1c0b05c2f17b89a99939fc3450a5",
-      "run_id": 40175693572,
-      "version": "4.0.9+git20261023.g9bcca300da-0nkmi0~bookworm"
+      "revision": "342caec27b8413b5a9b786db9951623b167856ba",
+      "run_id": 41788937389,
+      "version": "4.0.9+git20261103.g342caec27b-0nkmi0~bookworm"
     },
     "jammy": {
       "artifacts": {
         "amd64": "nightly-ruby4.0-jammy-amd64",
         "arm64": "nightly-ruby4.0-jammy-arm64"
       },
-      "revision": "9bcca300daab1c0b05c2f17b89a99939fc3450a5",
-      "run_id": 40175693572,
-      "version": "4.0.9+git20261023.g9bcca300da-0nkmi0~jammy"
+      "revision": "342caec27b8413b5a9b786db9951623b167856ba",
+      "run_id": 41788937389,
+      "version": "4.0.9+git20261103.g342caec27b-0nkmi0~jammy"
     },
     "noble": {
       "artifacts": {
         "amd64": "nightly-ruby4.0-noble-amd64",
         "arm64": "nightly-ruby4.0-noble-arm64"
       },
-      "revision": "9bcca300daab1c0b05c2f17b89a99939fc3450a5",
-      "run_id": 40175693572,
-      "version": "4.0.9+git20261023.g9bcca300da-0nkmi0~noble"
+      "revision": "342caec27b8413b5a9b786db9951623b167856ba",
+      "run_id": 41788937389,
+      "version": "4.0.9+git20261103.g342caec27b-0nkmi0~noble"
     },
     "resolute": {
       "artifacts": {
         "amd64": "nightly-ruby4.0-resolute-amd64",
         "arm64": "nightly-ruby4.0-resolute-arm64"
       },
-      "revision": "9bcca300daab1c0b05c2f17b89a99939fc3450a5",
-      "run_id": 40175693572,
-      "version": "4.0.9+git20261023.g9bcca300da-0nkmi0~resolute"
+      "revision": "342caec27b8413b5a9b786db9951623b167856ba",
+      "run_id": 41788937389,
+      "version": "4.0.9+git20261103.g342caec27b-0nkmi0~resolute"
     },
     "trixie": {
       "artifacts": {
         "amd64": "nightly-ruby4.0-trixie-amd64",
         "arm64": "nightly-ruby4.0-trixie-arm64"
       },
-      "revision": "9bcca300daab1c0b05c2f17b89a99939fc3450a5",
-      "run_id": 40175693572,
-      "version": "4.0.9+git20261023.g9bcca300da-0nkmi0~trixie"
+      "revision": "342caec27b8413b5a9b786db9951623b167856ba",
+      "run_id": 41788937389,
+      "version": "4.0.9+git20261103.g342caec27b-0nkmi0~trixie"
     }
   },
   "4.1": {
